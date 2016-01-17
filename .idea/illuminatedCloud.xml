@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="IlluminatedCloudSettings">
+    <option name="connections">
+      <list>
+        <IlluminatedCloudConnection>
+          <option name="checkForConflicts" value="true" />
+          <option name="defaultModuleName" value="girlsRockDevOrg" />
+          <option name="developmentPackages">
+            <list>
+              <DevelopmentPackageExt>
+                <option name="description" value="grcCampApp" />
+                <option name="managed" value="true" />
+                <option name="name" value="grcCampApp" />
+              </DevelopmentPackageExt>
+            </list>
+          </option>
+          <option name="name" value="girlsRockDevOrg" />
+          <option name="offlineSymbolTableGenerationDate" value="1453053228136" />
+          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/girlsRockDevOrg/OfflineSymbolTable.zip" />
+          <option name="organizationNamespace" value="grcapp" />
+          <option name="organizationType" value="DEVELOPMENT" />
+          <option name="password" value="df99df9adf93dffadfc6dfffdfc7dfe1dfc1dfcfdff3dfd0" />
+          <option name="securityToken" value="dfd8df9bdfc7dfdcdf9adf93dfccdfe2dfdfdfd8dfefdffedfeedfcbdfe1dfdcdfdbdff3dff0dfd8dffbdfd9dfe7dfda" />
+          <option name="username" value="girlsrockdevorg@mikesherry.com" />
+          <option name="workaroundForHttp411IssueEnabled" value="true" />
+        </IlluminatedCloudConnection>
+      </list>
+    </option>
+    <option name="selectedConnectionIndex" value="0" />
+  </component>
+</project>

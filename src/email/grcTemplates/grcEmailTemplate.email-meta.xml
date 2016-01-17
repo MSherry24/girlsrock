@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Girls_Rock_Letterhead</letterhead>
+    <name>grcEmailTemplate</name>
+    <style>freeForm</style>
+    <subject>Application Confirmation &amp; Next Steps</subject>
+    <textOnly>Confirmation
+
+Thank you for applying for Girls Rock! Chicago’s 2015 summer camp! Your application is almost complete. We just need your creative sample and your $10 non-refundable application fee.
+
+STEP TWO: APPLICATION FEE
+
+Girls Rock! Chicago requires a $10 non-refundable application fee. If you previously selected to waive this fee, please disregard. You can submit your payment in three ways:
+
+1. Send via PayPal here.
+2. Mail a check payable to “Girls Rock! Chicago” to our NEW address:
+
+1530 W. Superior St.
+Chicago, IL 60642
+
+3. Arrange to drop off cash at our office. Please email apply@girlsrockchicago.org to schedule a time.
+
+STEP THREE: CREATIVE SAMPLE
+
+As part of this application, campers are asked to submit a creative sample explaining why they would like to attend camp. We welcome all forms of creative samples. You can submit your creative sample in two ways:
+
+1. Email the file or a link to the file to apply@girlsrockchicago.org.
+2. Mail the creative sample to our NEW office address:
+
+1530 W. Superior St.
+Chicago, IL  60642
+
+Applicants are accepted and instruments are assigned on a first come, first served basis. Applications are not considered complete until the creative samples are submitted. Please note: All submitted materials become the property of Girls Rock! Chicago and cannot be returned.
+
+CARPOOLING
+
+We receive many requests from camper families interested in assistance in coordinating carpooling with campers in nearby neighborhoods. If you are interested in carpooling, please connect with other parents using the Girls Rock! Chicago parent Facebook page, or contact us atapply@girlsrockchicago.org for details.
+
+LAST NOTES
+
+You will receive an email notification of acceptance and the instrument assignment within three weeks of Girls Rock! Chicago receiving your completed application. A complete application includes:
+
+1. 2015 Camp Application
+2. $10 Application Fee (Unless Waived) (Payable here)
+3. Creative Sample
+
+Please do not contact us unless it has been over three weeks since you submitted all of the materials. Please be patient when contacting us. We receive many emails during the time leading up to camp, and cannot always respond right away.
+
+If you have questions about camp or the application process, please emailapply@girlsrockchicago.org.</textOnly>
+    <type>html</type>
+</EmailTemplate>

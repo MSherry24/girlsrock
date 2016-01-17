@@ -1,0 +1,2436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="IlluminatedCloud" version="4">
+  <component name="FacetManager">
+    <facet type="IlluminatedCloud" name="Illuminated Cloud™">
+      <configuration>
+        <option name="connectionName" value="girlsRockDevOrg" />
+        <option name="moduleContents">
+          <ModuleContents>
+            <option name="contentSelectionType" value="SELECTED" />
+            <option name="manifest">
+              <Manifest>
+                <option name="types">
+                  <set>
+                    <MetadataType>
+                      <option name="name" value="ActionLinkGroupTemplate" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="AnalyticSnapshot" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="CamperApplicationControl" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ChangePasswordController" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ChangePasswordControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ForgotPasswordController" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ForgotPasswordControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MyProfilePageController" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MyProfilePageControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SiteLoginController" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SiteLoginControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SiteRegisterController" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SiteRegisterControllerTest" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="test_CamperApplicationControl" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="ApexClass" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="SiteLogin" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SitePoweredBy" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="grcSiteFooter" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="grcSiteHeader" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="ApexComponent" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="AnswersHome" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="BandwidthExceeded" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ChangePassword" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Exception" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="FileNotFound" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ForgotPassword" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ForgotPasswordConfirm" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="IdeasHome" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="InMaintenance" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MyProfilePage" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SiteLogin" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SiteRegister" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SiteRegisterConfirm" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="StdExceptionTemplate" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Unauthorized" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="UnderConstruction" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="grcSiteTemplate" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="ApexPage" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="ApexTrigger" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="AppSwitcher" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Salesforce1" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="AppMenu" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="ApprovalProcess" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Case.Standard" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.Standard" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="AssignmentRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="AssignmentRules" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="AuraDefinitionBundle" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="AuthProvider" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="AutoResponseRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="AutoResponseRules" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.Test Sales Process" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="BusinessProcess" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CallCenter" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="ChannelLayout" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Internal Zone" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Community" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CompactLayout" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="ConnectedApp" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CorsWhitelistOrigin" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="standard__AppLauncher" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Chatter" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Community" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Content" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Marketing" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Platform" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Sales" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Service" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__ServiceConsole" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Sites" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="standard__Work" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomApplication" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CustomApplicationComponent" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CustomFeedFilter" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account.Active__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.CustomerPriority__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.NumberofLocations__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.SLAExpirationDate__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.SLASerialNumber__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.SLA__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.UpsellOpportunity__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Apartment_Unit_Number__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Application_Date__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Application_Fee_Method__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Application_Fee_Paid__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Applying_for_Financial_Aid__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Attend_2nd_Choice_Session__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Attended_Camp_Before__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Bringing_Instrument_to_Camp__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Behavioral_Emotional_Needs_List__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Behavioral_Emotional_Needs__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Email__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Ethnicity__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_First_Name__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Food_Allergies_List__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Food_Allergies__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Full_Name__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Last_Name__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Med_Conditions_Allergies_List__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Medical_Conditions_Allergies__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Music_Type__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_Race__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Camper_s_Date_of_Birth__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Can_We_Quote_You__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Carpool_Interest__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Carpool_Permission_to_Share__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.City__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Creative_Sample_Received__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.EC1_Primary_Phone__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.EC1_Relationship_to_Camper__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.EC1_Secondary_Phone__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.EC2_Primary_Phone__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.EC2_Relationship_to_Camper__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.EC2_Secondary_Phone__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Emergency_Contact_1_Name__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Emergency_Contact_2_Name__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Explain_Financial_Aid_Need__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Free_Lunch_Program__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Further_Comments__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Gear_Loan_Interest__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Household_Income__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Household__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.How_Did_You_Hear_About_GRC__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.How_Many_Dependents__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.How_Much_Tuition_Can_You_Pay__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.How_Will_You_Pay_App_Fee__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.How_Will_You_Submit_Creative_Sample__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Lives_with_Camper__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Music_Experience__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Need_Lunch_Provided__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Parent_Guardian_Email__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Parent_Guardian_First_Name__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Parent_Guardian_Last_Name__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Performed_Before__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Previous_Instrument__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Primary_Phone__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Secondary_Phone__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Session_Choice__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Siblings_or_Relatives_Attending__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Siblings_or_Relatives__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Single_Income_Family__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.State__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Street_Address__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Student_at_Josephinum__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Student_at_Quest__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Student_at_Suder__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Total_Household_Income__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Tuition_Paid__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Tuition_Payment_Method__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Waive_Application_Fee__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Work_Phone__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X1st_Choice_Instrument_Experience__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X1st_Choice_Instrument__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X1st_Choice_Instrument_at_Home__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2nd_Choice_Instrument_At_Home__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2nd_Choice_Instrument_Experience__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2nd_Choice_Instrument__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X3rd_Choice_Instrument_At_Home__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X3rd_Choice_Instrument_Experience__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X3rd_Choice_Instrument__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.Zip_Code__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.rightOrLeftHanded__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.EngineeringReqNumber__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.PotentialLiability__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.Product__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.SLAViolation__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.Languages__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.Level__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Goal.OrigGoalId__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.CurrentGenerators__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.NumberofLocations__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.Primary__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.ProductInterest__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.SICCode__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Metric.OrigMetricId__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.CurrentGenerators__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.DeliveryInstallationStatus__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.MainCompetitors__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.OrderNumber__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.TrackingNumber__c" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomField" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="CampApp2ndChoiceSession" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppAttendedBefore" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppDJ" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppDOB" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppDemographicInfo" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppEmergencyContactInfo" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppFinanacialAid" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppFinancialAid1" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppFinancialAid2" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppFinancialAid3" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppFinancialAid4" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppFinancialAidApp" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppFirstName" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppIfYes" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppInformation" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppInstrumentSelection" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppLastName" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppLastQuestions" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppMedBehavDietInfo" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppNeedLunchText" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppPreviousInstrument" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppSession062215" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppSession080315" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppSession1" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppSession2" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppSiblings" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppSuderStudent" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppTotalEstimatedIncome" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampAppWaiveFee" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp1stChoice" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp1stChoiceInstrument" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp1stChoiceInstrumentAtHome" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp1stChoiceInstrumentExperience" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp2ndChoice" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp2ndChoiceInstrument" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp3rdChoice" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campApp3rdChoiceInstrument" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppApplyingForFinancialAid" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppAsian" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppBass" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppBehavioralOrEmotional" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppBehavioralOrEmotionalExtra" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppBlackOrAfricanAmerican" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppBringingInstrument" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppCamperEmail" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppCamperFullName" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppCamperMusicType" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppCampersRace" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppCanWeQuoteYou" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppCity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppClickSave" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppContactInfo" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppDietaryRestrictionsAllergies" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppDrums" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC1Name" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC1PrimaryPhone" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC1RelationShipToCamper" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC1SecondaryPhone" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC2Name" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC2PrimaryPhone" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC2RelationShipToCamper" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppEC2SecondaryPhone" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppExplainExperience" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppExplainExperienceExtra" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppExplainFinancialAid" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppFurtherComments" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppGuitar" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppHearAboutGRC" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppHispanic" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppHouseholdIncome" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppHowManyDependents" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppHowMuchTuitionCanYouPay" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppIfYesPleaseList" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppIfYesPleaseListAndExplain" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppKeyboard" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppLivesWithCamper" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppMedicalCondiditonsAllergies" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppNativeAmerican" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppNeedLunchProvided" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppOther" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppPacificIslander" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppParentEmail" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppParentFirstName" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppParentLastName" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppParticipateInFreeLunch" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppPaymentMethod" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppPerformedBefore" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppPerformedBeforeExtra" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppPrimaryPhone" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppSecondaryPhone" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppSingleIncomeFamily" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppState" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppTitle" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppWhite" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppWorkPhone" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="campAppZip" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="rightOrLeftHanded" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomLabel" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="CustomLabels" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomLabels" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CustomMetadata" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AccountCleanInfo" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="AccountContactRole" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Activity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Asset" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Campaign" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampaignMember" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CaseContactRole" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ContactCleanInfo" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ContentVersion" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ContractContactRole" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DandBCompany" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DuplicateRecordItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DuplicateRecordSet" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Event" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="FeedItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ForecastingCategoryMapping" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Idea" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="LeadCleanInfo" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Macro" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MacroAction" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MacroInstruction" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OpportunityCompetitor" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OpportunityContactRole" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OpportunityLineItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OrderItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PartnerRole" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Pricebook2" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PricebookEntry" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Product2" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Site" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SocialPersona" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Solution" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="StreamingChannel" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Task" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="UserProvisioningRequest" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomObject" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account-es" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account-fr" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account-ja" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact-es" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact-fr" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact-ja" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead-fr" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead-ja" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity-es" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity-fr" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity-ja" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npe01__Contacts_And_Orgs_Settings__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npe01__OppPayment__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npe01__Payment_Field_Mapping_Settings__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npo02__Household__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npo02__Households_Settings__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npo02__Opportunity_Rollup_Error__c-en_US" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npo02__User_Rollup_Field_Settings__c-en_US" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomObjectTranslation" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CustomPageWebLink" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="CustomPermission" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomSite" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomTab" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="Dashboard" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="DataCategoryGroup" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="folder" value="true" />
+                            <option name="name" value="grcDocs" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="grcDocs/grclogo.png" />
+                            <option name="parentFolder" value="grcDocs" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Document" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="folder" value="true" />
+                            <option name="name" value="grcTemplates" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="grcTemplates/grcEmailTemplate" />
+                            <option name="parentFolder" value="grcTemplates" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="folder" value="true" />
+                            <option name="name" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/MarketingProductInquiryResponse" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SalesNewCustomerEmail" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportCaseAssignmentNotification" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportCaseCreatedPhoneInquiries" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportCaseCreatedWebInquiries" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportCaseResponse" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportEscalatedCaseNotification" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportEscalatedCaseReassignment" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportSelfServiceNewLoginandPassword" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public/SupportSelfServiceResetPassword" />
+                            <option name="parentFolder" value="unfiled$public" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="EmailTemplate" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Case.Standard" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="EscalationRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="EscalationRules" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="ExternalDataSource" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="FieldSet" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="FlexiPage" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="Flow" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="FlowDefinition" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="Group" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="grcDatePicker" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="HomePageComponent" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="DE Default" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="HomePageLayout" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="npe01" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npo02" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="sf_com_apps" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="InstalledPackage" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account-Account %28Marketing%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account-Account %28Sales%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account-Account %28Support%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account-Account Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Asset-Asset Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Campaign-Campaign Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampaignMember-Campaign Member Page Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c-Camp Application Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c-test layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case-Case %28Marketing%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case-Case %28Sales%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case-Case %28Support%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case-Case Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CaseClose-Close Case Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact-Contact %28Marketing%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact-Contact %28Sales%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact-Contact %28Support%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact-Contact Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ContentVersion-General" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract-Contract Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DandBCompany-D%26B Company Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DuplicateRecordSet-Duplicate Record Set Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Event-Event Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="FeedItem-Feed Item Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Global-Global Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Idea-Idea Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead-Lead %28Marketing%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead-Lead %28Sales%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead-Lead %28Support%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead-Lead Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Macro-Macro Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity-Opportunity %28Marketing%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity-Opportunity %28Sales%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity-Opportunity %28Support%29 Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity-Opportunity Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OpportunityLineItem-Opportunity Product Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order-Order Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OrderItem-Order Product Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Pricebook2-Price Book Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PricebookEntry-Price Book Entry Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Product2-Product Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SocialPersona-Social Persona Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SocialPost-Social Post Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Solution-Solution Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Task-Task Layout" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="User-User Layout" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Layout" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Girls_Rock_Letterhead" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Letterhead" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account.AllAccounts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.MyAccounts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.NewLastWeek" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.NewThisWeek" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Account.PlatinumandGoldSLACustomers" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Activity.AllActivities" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Activity.MyActivities" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Activity.TodaysTasks" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Activity.UpcomingEvents" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Asset.AllAssets" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Campaign.AllActiveCampaigns" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Campaign.MyActiveCampaigns" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.All" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.AllClosedCases" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.AllOpenCases" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.MyCases" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.MyOpenCases" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.AllContacts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.BirthdaysThisMonth" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.MyContacts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.NewLastWeek" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.NewThisWeek" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract.AllActivatedContracts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract.AllContracts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract.AllDraftContracts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract.AllInApprovalContracts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract.MyActivatedContracts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract.MyDraftContracts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract.MyInApprovalContracts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Idea.Ideas_Last_7_Days" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.AllOpenLeads" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.MyUnreadLeads" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.TodaysLeads" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.ViewCustom1" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.ViewCustom2" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.AllOpportunities" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.ClosingNextMonth" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.ClosingThisMonth" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.MyOpportunities" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.NewLastWeek" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.NewThisWeek" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.Private" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.Won" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order.AllActivatedOrders" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order.AllDraftOrders" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order.AllOrders" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Product2.AllProducts" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Solution.AllReviewedSolutions" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Solution.AllUnreviewedSolutions" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="User.ActiveUsers" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="User.AdminUsers" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="User.AllUsers" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="WorkFeedbackRequest.AboutTopics" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="WorkFeedbackRequest.All" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="WorkFeedbackTemplate.All" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="ListView" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account.Standard_Account_Match_Rule_v1_0" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact.Standard_Contact_Match_Rule_v1_1" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead.Standard_Lead_Match_Rule_v1_0" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="MatchingRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="MatchingRules" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="NamedCredential" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="PathAssistant" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="PermissionSet" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="PlatformCachePartition" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="PostTemplate" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Admin" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper Application Profile" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Chatter External User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Chatter Free User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Chatter Moderator User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ContractManager" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Cross Org Data Proxy User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Custom%3A Marketing Profile" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Custom%3A Sales Profile" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Custom%3A Support Profile" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Customer Community Login User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Customer Community User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Customer Portal Manager Custom" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Customer Portal Manager Standard" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Force%2Ecom - App Subscription User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Force%2Ecom - Free User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Gold Partner User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Guest" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="HighVolumePortal" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Identity User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MarketingProfile" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Partner App Subscription User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Partner Community Login User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Partner Community User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PlatformPortal" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ReadOnly" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Silver Partner User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SolutionManager" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Standard" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="StandardAul" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Work%2Ecom Only User" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Profile" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="Queue" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Case.NewChildCase" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CollaborationGroup.NewGroupMember" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CollaborationGroup.NewGroupRecord" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="FeedItem.NewTaskFromFeedItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="LogACall" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewAccount" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewCase" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewContact" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewEvent" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewGroup" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewLead" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewNote" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewOpportunity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="NewTask" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Task.Defer" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Task.EditDescription" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Task.UpdatePriority" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Task.UpdateStatus" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="QuickAction" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2006_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2007_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2008_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2009_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2010_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2011_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2012_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2013_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c.X2014_Girls_Camp_Application" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Metric.Completion" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Metric.Progress" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.Test_Record_Type" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="RecordType" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="ApexDevNet" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="RemoteSiteSetting" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="npe01__Nonprofit_Edition_Reports" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="npo02__Household_Reports" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="unfiled$public" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Report" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="ReportType" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="CEO" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CFO" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="COO" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ChannelSalesTeam" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CustomerSupportInternational" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CustomerSupportNorthAmerica" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DirectorChannelSales" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DirectorDirectSales" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EasternSalesTeam" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="InstallationRepairServices" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MarketingTeam" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SVPCustomerServiceSupport" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SVPHumanResources" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SVPSalesMarketing" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="VPInternationalSales" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="VPMarketing" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="VPNorthAmericanSales" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="WesternSalesTeam" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Role" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="SamlSsoConfig" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="Scontrol" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Activities" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Address" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="BusinessHours" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="ChatterAnswers" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Company" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Entitlement" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Forecasting" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Ideas" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Knowledge" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="LeadConvert" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="LiveAgent" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Mobile" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Name" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PathAssistant" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="PersonalJourney" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Product" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Quote" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Security" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Settings" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="SharingCriteriaRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="SharingOwnerRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="SharingReason" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Asset" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Campaign" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="User" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="SharingRules" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="SharingSet" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="SiteDotCom" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="SiteSamples" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="girlsRockLogo" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="jQuery" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="StaticResource" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="SynonymDictionary" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="TransactionSecurityPolicy" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="ValidationRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account.Billing" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Campaign.ViewCampaignInfluenceReport" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case.UpsellCrosssellOpportunity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity.DeliveryStatus" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="WebLink" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Asset" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Campaign" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="CampaignMember" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Camper_Application__c" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contract" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DandBCompany" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DuplicateRecordItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="DuplicateRecordSet" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Event" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="FeedItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Idea" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Macro" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MacroAction" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="MacroInstruction" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OpportunityLineItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="OrderItem" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Organization" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Product2" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Site" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="SocialPersona" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Solution" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="StreamingChannel" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Task" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="User" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="UserLicense" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="UserProvisioningRequest" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="Workflow" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="WorkflowAlert" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="WorkflowFieldUpdate" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="WorkflowKnowledgePublish" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="WorkflowOutboundMessage" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="WorkflowRule" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="WorkflowSend" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                    <MetadataType>
+                      <option name="name" value="WorkflowTask" />
+                      <option name="wildcard" value="false" />
+                    </MetadataType>
+                  </set>
+                </option>
+              </Manifest>
+            </option>
+          </ModuleContents>
+        </option>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="IlluminatedCloud (girlsRockDevOrg)" jdkType="IlluminatedCloud" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

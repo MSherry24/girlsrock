@@ -1,0 +1,726 @@
+<apex:page controller="CamperApplicationControl" showHeader="false" standardStylesheets="true" docType="html-5.0">
+<apex:composition template="{!$Site.Template}">
+<apex:define name="body">
+    
+<style type="text/css">
+        .question {
+            font-weight:bold;
+        }
+        .title {
+            color: #d20024;
+            font-size: 164%;
+        }
+        .italicText {
+            font-style: italic;
+        }
+        .multiSelectPicklistTable .multiSelectPicklistRow select {
+            height: 8em;
+            width: 20em;
+        }
+        textarea {
+            height: 1.2em;
+            width: 20em;
+        }
+        .center {
+            text-align: center;
+        }
+        input[type="button"]:disabled {
+            color: gray;
+        }
+        input[type="submit"]:disabled {
+            color: gray;
+        }
+        input[type="text"]:disabled {
+            background-color: gray;
+        }
+        .validationError {
+            color: #d20024;
+            font-size: 125%
+        }
+        .wideLabel {
+            width: 500px;
+        }
+    </style>
+    <!-- <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-1.11.1.min.js')}" /> -->
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
+    
+    <script type="text/javascript">
+    j$ = jQuery.noConflict();
+    j$(document).ready(function () {
+                initialize();
+    });
+    function initialize() {
+        
+    }
+    function textBoxEnableValidation(theCheckBox, theTextBox) {
+        // No longer needed
+        var textBox = j$("[id*='" + theTextBox + "']");
+        if (j$("[id*='" + theCheckBox + "']").prop('checked')) { 
+            textBox.prop("disabled",false);
+        } else {
+            textBox.prop("disabled",true);
+            textBox.val('');
+        }
+    }
+    
+    function addCalYears() { 
+        var select = document.getElementById('calYearPicker');
+        if (!select) return;
+        
+        select.innerHTML = '';
+        var startYear = new Date().getFullYear() - 90;
+        for (var year = startYear; year < startYear + 100; year++) {
+            select.options[select.options.length] = new Option(year, year);
+    	}
+    }
+        
+    var waitThenRedirect = function() {
+    	window.setTimeout(function() {
+    		window.location.href = "http://girlsrockchicago.org/girlscamp/confirmation/";
+    	}, 10000);
+    };
+    
+    var saving = function() {
+        j$('[id*="saveButton"]').attr('value', 'Please Wait');
+        j$('[id*="saveButton"]').addClass('btnDisabled');
+    }
+    </script>
+   <apex:form id="page">
+        <apex:actionFunction name="save" action="save" rerender="" />
+       <apex:actionStatus id="nextStatus" onstop="addCalYears()"/>
+       <apex:actionStatus id="prevStatus" onstop="addCalYears()"/>
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!prevPage}" id="prevButton" disabled="{!renderPage1 || renderPage11}"
+                                    rerender="page" immediate="true" status="prevStatus"
+                                    value="Previous"/>
+                <apex:commandButton action="{!save}" id="saveButton" disabled="{!saveDisabled}"
+                                    rerender="page" onclick="saving()" oncomplete="waitThenRedirect()"
+                                    value="Submit Application" />
+                <apex:commandButton action="{!nextPage}" id="nextButton"
+                                    rerender="page" status="nextStatus"
+                                    value="Next" disabled="{!renderPage10 || renderPage11}"/>
+            </apex:pageBlockButtons>
+            <!-- Page 1 - What session? -->
+            <apex:outputPanel id="page1">
+                <apex:pageBlockSection columns="1" rendered="{!renderPage1}" >
+                    <apex:outputLabel value="{!$Label.campAppTitle}" styleClass="title" />
+                    <apex:outputLabel value="Page 1 of 10" styleClass="question" />
+                    <apex:outputLabel value="Which session of camp would you like to attend? *" styleClass="question" />
+                    <apex:outputLabel value="Campers may only select one session." />
+                    <apex:selectRadio value="{!session}" required="false">
+                        <apex:selectOptions value="{!sessionOptions}"/>
+                    </apex:selectRadio>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            
+            <!-- Page 2 - Camper Information -->
+            <apex:outputPanel id="page2">
+                <apex:pageblockSection columns="1" rendered="{!renderPage2}" >
+                    <apex:outputLabel value="{!$Label.CampAppInformation}" styleClass="title" />
+                    <apex:outputLabel value="Page 2 of 10" styleClass="question" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppFirstName}" styleClass="question"/>
+                        <apex:inputField id="camperFirstName" value="{!newApp.Camper_First_Name__c}" required="true"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppLastName}" styleClass="question"/>
+                        <apex:inputField id="camperLastName" value="{!newApp.Camper_Last_Name__c}" required="true"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppDOB}" styleClass="question"/>
+                        <apex:inputField id="camperDateOfBirth" value="{!newApp.Camper_s_Date_of_Birth__c}" showDatePicker="true" required="true"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppAttendedBefore}" styleClass="question" />
+                        <apex:outputPanel >
+                            <apex:outputLabel value="You may select more than one answer" />
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attended2006}" />
+                                            <apex:outputLabel value="2006"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attended2007}" />
+                                            <apex:outputLabel value="2007"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attended2008}" />
+                                            <apex:outputLabel value="2008"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attended2009}" />
+                                            <apex:outputLabel value="2009"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedJune2010}" />
+                                            <apex:outputLabel value="June 2010"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedAugust2010}" />
+                                            <apex:outputLabel value="August 2010"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedJune2011}" />
+                                            <apex:outputLabel value="June 2011"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedAugust2011}" />
+                                            <apex:outputLabel value="August 2011"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedJune2012}" />
+                                            <apex:outputLabel value="June 2012"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedAugust2012}" />
+                                            <apex:outputLabel value="August 2012"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedJune2013}" />
+                                            <apex:outputLabel value="June 2013"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedAugust2013}" />
+                                            <apex:outputLabel value="August 2013"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedJune2014}" />
+                                            <apex:outputLabel value="June 2014"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedAugust2014}" />
+                                            <apex:outputLabel value="August 2014"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedInAnotherCity}" />
+                                            <apex:outputLabel value="Attended Camp in Another City"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!appliedNeverAttended}" />
+                                            <apex:outputLabel value="Applied, but Never Attended"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!neverAttendedOrApplied}" />
+                                            <apex:outputLabel value="Never Attended or Applied Before"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!other}" />
+                                            <apex:outputLabel value="Other"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppPreviousInstrument}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <apex:outputLabel value="You may select more than one answer" />
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!campAppBass}" />
+                                            <apex:outputLabel value="Bass"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!campAppDjTurntable}" />
+                                            <apex:outputLabel value="Dj/Turntable"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!campAppDrums}" />
+                                            <apex:outputLabel value="Drums"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!campAppGuitar}" />
+                                            <apex:outputLabel value="Guitar"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!campAppKeyboard}" />
+                                            <apex:outputLabel value="Keyboard"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampApp2ndChoiceSession}" styleClass="question" />
+                        <apex:selectRadio value="{!attendSecondSession}">
+                            <apex:selectOptions value="{!YesNoOptions}"/>
+                        </apex:selectRadio>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputpanel >
+                            <apex:outputLabel value="{!$Label.CampAppSiblings}" styleClass="question" />
+                        </apex:outputpanel>
+                        <apex:outputpanel >
+                            <apex:selectRadio value="{!camperSiblingsAttending}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
+                            <div><apex:outputLabel value="{!$Label.CampAppIfYes}" styleClass="italicText" /></div>
+                            <div class="wideLabel">
+                                <apex:input value="{!camperSiblings}" id="camperSiblingsTextbox"/>
+                            </div>
+                        </apex:outputpanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppSuderStudent}" styleClass="question"/>
+                        <apex:outputpanel >
+                            <apex:selectRadio value="{!studentAtSuder}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
+                        </apex:outputpanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>
+            </apex:outputPanel>
+            <!-- Page 3 - Contact Information -->
+            <apex:outputPanel id="page3">
+                <apex:pageblockSection columns="1" rendered="{!renderPage3}" >
+                    <apex:outputLabel value="{!$Label.campAppContactInfo}" styleClass="title" />
+                    <apex:outputLabel value="Page 3 of 10" styleClass="question" />
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppParentFirstName}" styleClass="question"/>
+                      <apex:inputField id="parentFirstName" value="{!newApp.Parent_Guardian_First_Name__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppParentLastName}" styleClass="question"/>
+                      <apex:inputField id="parentLastName" value="{!newApp.Parent_Guardian_Last_Name__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputpanel >
+                            <apex:outputLabel value="Address Line 1 *" styleClass="question"/>
+                            <div>Number and Street</div>
+                        </apex:outputpanel> 
+                        <apex:inputField id="streetAddress" value="{!newApp.Street_Address__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputpanel >
+                            <apex:outputLabel value="Address Line 2" styleClass="question"/>
+                            <div>Apartment/Unit Number, etc.</div>
+                        </apex:outputpanel> 
+                        <apex:inputField id="apartmentNumber" value="{!newApp.Apartment_Unit_Number__c}" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppCity}" styleClass="question"/>
+                      <apex:inputField id="city" value="{!newApp.City__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppState}" styleClass="question"/>
+                      <apex:inputField id="state" value="{!newApp.State__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppZip}" styleClass="question"/>
+                      <apex:inputField id="zip" value="{!newApp.Zip_Code__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppParentEmail}" styleClass="question"/>
+                      <apex:inputField id="parentEmail" value="{!newApp.Parent_Guardian_Email__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppCamperEmail}" styleClass="question"/>
+                      <apex:inputField id="camperEmail" value="{!newApp.Camper_Email__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppPrimaryPhone}" styleClass="question"/>
+                      <apex:inputField id="primaryPhone" value="{!newApp.Primary_Phone__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppSecondaryPhone}" styleClass="question"/>
+                      <apex:inputField id="secondaryPhone" value="{!newApp.Secondary_Phone__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppWorkPhone}" styleClass="question"/>
+                      <apex:inputField id="workPhone" value="{!newApp.Work_Phone__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppHearAboutGRC}" styleClass="question"/>
+                      <apex:inputField id="howDidYouHearAboutGRC" value="{!newApp.How_Did_You_Hear_About_GRC__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>
+            </apex:outputPanel>
+            <!-- Page 4 - Emergency Contact Information -->
+            <apex:outputPanel id="page4">
+                <apex:pageblockSection columns="1" rendered="{!renderPage4}" >
+                    <apex:outputLabel value="{!$Label.CampAppEmergencyContactInfo}" styleClass="title" />
+                    <apex:outputLabel value="Page 4 of 10" styleClass="question" />
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC1Name}" styleClass="question"/>
+                      <apex:inputField id="EC1Name" value="{!newApp.Emergency_Contact_1_Name__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC1RelationShipToCamper}" styleClass="question"/>
+                      <apex:inputField id="EC1RelationshipToCamper" value="{!newApp.EC1_Relationship_to_Camper__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC1PrimaryPhone}" styleClass="question"/>
+                      <apex:inputField id="EC1PrimaryPhone" value="{!newApp.EC1_Primary_Phone__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC1SecondaryPhone}" styleClass="question"/>
+                      <apex:inputField id="EC1SecondaryPhone" value="{!newApp.EC1_Secondary_Phone__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC2Name}" styleClass="question"/>
+                      <apex:inputField id="EC2Name" value="{!newApp.Emergency_Contact_2_Name__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC2RelationShipToCamper}" styleClass="question"/>
+                      <apex:inputField id="EC2RelationshipToCamper" value="{!newApp.EC2_Relationship_to_Camper__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC2PrimaryPhone}" styleClass="question"/>
+                      <apex:inputField id="EC2PrimaryPhone" value="{!newApp.EC2_Primary_Phone__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                      <apex:outputLabel value="{!$Label.campAppEC2SecondaryPhone}" styleClass="question"/>
+                      <apex:inputField id="EC2SecondaryPhone" value="{!newApp.EC2_Secondary_Phone__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>
+            </apex:outputPanel>
+            <!-- Page 5 - Instrument Selection -->
+            <apex:outputPanel id="page5">
+                <apex:pageblockSection columns="1" rendered="{!renderPage5}" >
+                    <apex:outputLabel value="{!$Label.CampAppInstrumentSelection}" styleClass="title" />
+                    <apex:outputLabel value="Page 5 of 10" styleClass="question" />
+                    <apex:outputLabel value="**You must make three DIFFERENT selections below**" />
+                    <apex:outputLabel value="{!$Label.campApp1stChoice}" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp1stChoiceInstrument}" styleClass="question"/>
+                        <apex:inputField id="X1stChoiceInstrument" value="{!newApp.X1st_Choice_Instrument__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentAtHome}" styleClass="question"/>
+                        <apex:selectRadio id="X1stChoiceInstrumentAtHome" value="{!firstChoiceInstrumentAtHome}" required="true">
+                            <apex:selectOptions value="{!YesNoOptions}"/>
+                        </apex:selectRadio>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentExperience}" styleClass="question"/>
+                        <apex:inputField id="X1stChoiceInstrumentExperience" value="{!newApp.X1st_Choice_Instrument_Experience__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:outputLabel value="{!$Label.campApp2ndChoice}" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp2ndChoiceInstrument}" styleClass="question"/>
+                        <apex:inputField id="X2ndChoiceInstrument" value="{!newApp.X2nd_Choice_Instrument__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentAtHome}" styleClass="question"/>
+                        <apex:selectRadio id="X2ndChoiceInstrumentAtHome" value="{!secondChoiceInstrumentAtHome}" required="true">
+                            <apex:selectOptions value="{!YesNoOptions}"/>
+                        </apex:selectRadio>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentExperience}" styleClass="question"/>
+                        <apex:inputField id="X2ndChoiceInstrumentExperience" value="{!newApp.X2nd_Choice_Instrument_Experience__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:outputLabel value="{!$Label.campApp3rdChoice}" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp3rdChoiceInstrument}" styleClass="question"/>
+                        <apex:inputField id="X3rdChoiceInstrument" value="{!newApp.X3rd_Choice_Instrument__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentAtHome}" styleClass="question"/>
+                        <apex:selectRadio id="X3rdChoiceInstrumentAtHome" value="{!thirdChoiceInstrumentAtHome}" required="true">
+                            <apex:selectOptions value="{!YesNoOptions}"/>
+                        </apex:selectRadio>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentExperience}" styleClass="question"/>
+                        <apex:inputField id="X3rdChoiceInstrumentExperience" value="{!newApp.X3rd_Choice_Instrument_Experience__c}" required="true" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppBringingInstrument}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <div><apex:outputLabel value="You can select more than one answer" /></div>
+                            <div><apex:inputField id="BringingInstrumentToCamp" value="{!newApp.Bringing_Instrument_to_Camp__c}" required="true" /></div>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                    	<apex:outputLabel value="{!$Label.rightOrLeftHanded}" styleClass="question"/>
+                    	<apex:selectRadio id="rightOrLeftHanded" value="{!rightOrLeftHanded}" required="true">
+                            <apex:selectOptions value="{!RightOrLeftHandedOptions}"/>
+                        </apex:selectRadio>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppExplainExperience}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <div id="camperExperienceLabel" class="wideLabel"><apex:outputLabel value="{!$Label.campAppExplainExperienceExtra}" /></div>
+                            <div><apex:inputField id="MusicExperience" value="{!newApp.Music_Experience__c}" required="true" /></div>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppPerformedBefore}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <div><apex:outputLabel value="{!$Label.campAppPerformedBeforeExtra}" /></div>
+                            <div><apex:inputField id="PerformedBefore" value="{!newApp.Performed_Before__c}" required="true" /></div>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppCamperMusicType}" styleClass="question"/>
+                        <apex:inputField id="CamperMusicType" value="{!newApp.Camper_Music_Type__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>
+            </apex:outputPanel>
+            <!-- Page 6 - Medical/Behavioral/Dietary Information -->
+            <apex:outputPanel id="page6">
+                <apex:pageblockSection columns="1" rendered="{!renderPage6}" >
+                    <apex:outputLabel value="{!$Label.CampAppMedBehavDietInfo}" styleClass="title" />
+                    <apex:outputLabel value="Page 6 of 10" styleClass="question" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppMedicalCondiditonsAllergies}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <apex:selectRadio value="{!medicalConditionsOrAllergies}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppIfYesPleaseList}" styleClass="question"/>
+                        <apex:inputField id="MedicalCondiditonsAllergiesList" value="{!newApp.Camper_Med_Conditions_Allergies_List__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppBehavioralOrEmotional}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <div class="wideLabel"><apex:outputLabel value="{!$Label.campAppBehavioralOrEmotionalExtra}" /></div>
+                            <div>
+                                <apex:selectRadio value="{!behavioralOrEmotional}">
+                            		<apex:selectOptions value="{!YesNoOptions}"/>
+                        		</apex:selectRadio>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppIfYesPleaseListAndExplain}" styleClass="question"/>
+                        <apex:inputField id="BehavioralOrEmotionalList" value="{!newApp.Camper_Behavioral_Emotional_Needs_List__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppDietaryRestrictionsAllergies}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <apex:selectRadio value="{!dietaryRestrictions}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppIfYesPleaseListAndExplain}" styleClass="question"/>
+                        <apex:inputField id="DietaryRestrictionsList" value="{!newApp.Camper_Food_Allergies_List__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>
+            </apex:outputPanel> 
+            <!-- Page 7 - Demographic Information (optional) -->
+            <apex:outputPanel id="page7">
+                <apex:pageblockSection columns="1" rendered="{!renderPage7}" >
+                <apex:outputLabel value="{!$Label.CampAppDemographicInfo}" styleClass="title" />
+                    <apex:outputLabel value="Page 7 of 10" styleClass="question" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppHouseholdIncome}" styleClass="question"/>
+                        <apex:inputField id="HouseholdIncome" value="{!newApp.Household_Income__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppLivesWithCamper}" styleClass="question"/>
+                        <apex:inputField id="LivesWithCamper" value="{!newApp.Lives_with_Camper__c}" required="false" />
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppCampersRace}" styleClass="question" />
+                        <apex:outputPanel >
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!nativeAmerican}" />
+                                            <apex:outputLabel value="{!$Label.campAppNativeAmerican}"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!asian}" />
+                                            <apex:outputLabel value="{!$Label.campAppAsian}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!black}" />
+                                            <apex:outputLabel value="{!$Label.campAppBlackOrAfricanAmerican}"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!pacificIsland}" />
+                                            <apex:outputLabel value="{!$Label.campAppPacificIslander}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!hispanic}" />
+                                            <apex:outputLabel value="{!$Label.campAppHispanic}"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!white}" />
+                                            <apex:outputLabel value="{!$Label.campAppWhite}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:inputCheckbox value="{!otherRace}" />
+                                            <apex:outputLabel value="{!$Label.campAppOther}"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>    
+            </apex:outputPanel>
+            <!-- Page 8 - Financial Aid -->
+            <apex:outputPanel id="page8">
+                <apex:pageblockSection columns="1" rendered="{!renderPage8}" >
+                <apex:outputLabel value="{!$Label.CampAppFinanacialAid}" styleClass="title" />
+                    <apex:outputLabel value="Page 8 of 10" styleClass="question" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppApplyingForFinancialAid}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <apex:selectRadio value="{!applyingForFinancialAid}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>    
+            </apex:outputPanel>
+            <!-- Page 9 - Financial Aid Application (skip if no financial aid) -->
+            <apex:outputPanel id="page9">
+                <apex:pageblockSection columns="1" rendered="{!renderPage9}" >
+                <apex:outputLabel value="{!$Label.CampAppFinancialAidApp}" styleClass="title" />
+                    <apex:outputLabel value="Page 9 of 10" styleClass="question" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="" />
+                            <apex:outputPanel >
+                                <div class="wideLabel">
+                                    <div>
+                                        {!$Label.CampAppFinancialAid1}
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        {!$Label.CampAppFinancialAid2}
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        {!$Label.CampAppFinancialAid3}
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        {!$Label.CampAppFinancialAid4}
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppHowMuchTuitionCanYouPay}" styleClass="question" />
+                        <apex:inputField id="HowMuchCanYouAffordToPay" value="{!newApp.How_Much_Tuition_Can_You_Pay__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppTotalEstimatedIncome}" styleClass="question" />
+                        <apex:inputField id="TotalEstimatedIncome" value="{!newApp.Total_Household_Income__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppWaiveFee}" styleClass="question" />
+                        <apex:outputPanel >
+                            <apex:selectRadio value="{!waiveFee}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppSingleIncomeFamily}" styleClass="question" />
+                        <apex:outputPanel >
+                            <apex:selectRadio value="{!singleIncomeFamily}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppHowManyDependents}" styleClass="question" />
+                        <apex:inputField id="HowManyDependents" value="{!newApp.How_Many_Dependents__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppParticipateInFreeLunch}" styleClass="question" />
+                        <apex:inputField id="ParticipateInFreeLunch" value="{!newApp.Free_Lunch_Program__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppNeedLunchProvided}" styleClass="question" />
+                        <apex:outputPanel >
+                            <div class="wideLabel"><apex:outputLabel value="{!$Label.CampAppNeedLunchText}" /></div>
+                            <div>
+                                <apex:selectRadio value="{!needLunch}">
+                            		<apex:selectOptions value="{!YesNoOptions}"/>
+                        		</apex:selectRadio>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppExplainFinancialAid}" styleClass="question" />
+                        <apex:inputField id="ExplainFinancialAidNeed" value="{!newApp.Explain_Financial_Aid_Need__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageblockSection>    
+            </apex:outputPanel>
+            <!-- Page 10 - Last Questions -->
+            <apex:outputPanel id="page10">
+                <apex:pageblockSection columns="1" rendered="{!renderPage10}" >
+                <apex:outputLabel value="{!$Label.CampAppLastQuestions}" styleClass="title" />
+                    <apex:outputLabel value="Page 10 of 10" styleClass="question" />
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppPaymentMethod}" styleClass="question" />
+                        <apex:inputField id="PaymentMethod" value="{!newApp.Application_Fee_Method__c}" required="true" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppCanWeQuoteYou}" styleClass="question" />
+                        <apex:inputField id="CanWeQuoteYou" value="{!newApp.Can_We_Quote_You__c}" required="false" />
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.campAppFurtherComments}" styleClass="question" />
+                        <apex:inputField id="FurtherComments" value="{!newApp.Further_Comments__c}" required="false" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageblockSection>    
+            </apex:outputPanel>
+            <apex:outputPanel id="page11">
+                <apex:pageblockSection columns="1" rendered="{!renderPage11}" >
+                	<div class="title">
+						Thank you for applying to Girls Rock! Chicago.
+                    </div>
+                    <br/>
+                    <div class="question">
+                        <p>
+                            You are being redirected to the Girls Rock! Chicago site where there is information about the next steps you should take.
+                        </p>
+                        <br/>
+                        <br/>
+                        <a href="http://girlsrockchicago.org/girlscamp/confirmation/">
+                            If you are not automatically redirected in ten seconds, click here.
+                        </a>
+                    </div>
+                </apex:pageblockSection>    
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+    </apex:define>
+</apex:composition>
+</apex:page>
