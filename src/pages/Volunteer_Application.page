@@ -1,0 +1,258 @@
+<apex:page id="Volunteer_Application" controller="VolunteerApplicationControl" showHeader="false" standardStylesheets="true" docType="html-5.0">
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="body">
+            <style type="text/css">
+                .question {
+                font-weight:bold;
+                }
+                .title {
+                color: #d20024;
+                font-size: 164%;
+                }
+                .italicText {
+                font-style: italic;
+                }
+                .multiSelectPicklistTable .multiSelectPicklistRow select {
+                height: 8em;
+                width: 20em;
+                }
+                textarea {
+                height: 1.2em;
+                width: 20em;
+                }
+                .center {
+                text-align: center;
+                }
+                input[type="button"]:disabled {
+                color: gray;
+                }
+                input[type="submit"]:disabled {
+                color: gray;
+                }
+                input[type="text"]:disabled {
+                background-color: gray;
+                }
+                .validationError {
+                color: #d20024;
+                font-size: 125%
+                }
+                .wideLabel {
+                width: 500px;
+                }
+                .margin-center {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .helpLink {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                .italic {
+                    font-style: italic;
+                }
+            </style>
+            <!-- <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-1.11.1.min.js')}" /> -->
+            <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
+
+            <script type="text/javascript">
+                j$ = jQuery.noConflict();
+                j$(document).ready(function () {
+                            initialize();
+                });
+                function initialize() {
+                    addEventToHelpLink(['preferredPronouns']);
+                    addCalYears();
+                }
+                function textBoxEnableValidation(theCheckBox, theTextBox) {
+                    // No longer needed
+                    var textBox = j$("[id*='" + theTextBox + "']");
+                    if (j$("[id*='" + theCheckBox + "']").prop('checked')) {
+                        textBox.prop("disabled",false);
+                    } else {
+                        textBox.prop("disabled",true);
+                        textBox.val('');
+                    }
+                }
+
+                function addCalYears() {
+                    var select = document.getElementById('calYearPicker');
+                    if (!select) return;
+
+                    select.innerHTML = '';
+                    var startYear = new Date().getFullYear() - 90;
+                    for (var year = startYear; year < startYear + 100; year++) {
+                        select.options[select.options.length] = new Option(year, year);
+                    }
+                }
+
+                var waitThenRedirect = function() {
+                    window.setTimeout(function() {
+                        window.location.href = "http://girlsrockchicago.org/girlscamp/confirmation/";
+                    }, 10000);
+                };
+
+                var saving = function() {
+                    j$('[id*="saveButton"]').attr('value', 'Please Wait');
+                    j$('[id*="saveButton"]').addClass('btnDisabled');
+                }
+
+                function addEventToHelpLink(fieldNames) {
+                    j$.each(fieldNames, function (i, fieldName) {
+                        j$('#' + fieldName + '-ShowHelp').on('click', function() {
+                            j$('#' + fieldName + '-ShowHelp').hide();
+                            j$('#' + fieldName + '-HideHelp').show();
+                            j$('#' + fieldName + '-Help').show();
+                        });
+                        j$('#' + fieldName + '-HideHelp').on('click', function() {
+                            j$('#' + fieldName + '-ShowHelp').show();
+                            j$('#' + fieldName + '-HideHelp').hide();
+                            j$('#' + fieldName + '-Help').hide();
+                        });
+                    });
+                }
+            </script>
+            <apex:form id="page">
+                <apex:actionFunction name="save" action="save" rerender="" />
+                <apex:actionStatus id="nextStatus" onstop="addCalYears()"/>
+                <apex:actionStatus id="prevStatus" onstop="addCalYears()"/>
+                <apex:pageBlock >
+                    <apex:pageBlockButtons >
+                        <apex:commandButton action="{!prevPage}" id="prevButton" disabled="{!renderPage1}"
+                                            rerender="page" immediate="true" status="prevStatus"
+                                            value="Previous"/>
+                        <apex:commandButton action="{!save}" id="saveButton" disabled="{!saveDisabled}"
+                                            rerender="page" onclick="saving()" oncomplete="waitThenRedirect()"
+                                            value="Submit Application" />
+                        <apex:commandButton action="{!nextPage}" id="nextButton"
+                                            rerender="page" status="nextStatus"
+                                            value="Next" disabled="{!renderPage7}"/>
+                    </apex:pageBlockButtons>
+                    <!-- Page 1 - Personal Information -->
+                    <apex:outputPanel id="page1">
+                        <apex:pageBlockSection columns="1" rendered="{!renderPage1}" >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - PERSONAL INFORMATION" styleClass="title" />
+                            <apex:outputLabel value="Page 1 of 7" styleClass="question" />
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="First Name" styleClass="question"/>
+                                <apex:inputField id="firstName" value="{!newApp.First_Name__c}" required="true"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Last Name" styleClass="question"/>
+                                <apex:inputField id="lastName" value="{!newApp.Last_Name__c}" required="true"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Name You Go By" styleClass="question"/>
+                                <apex:inputField id="lastName" value="{!newApp.Name_you_go_by__c}" required="false"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="What are your preferred gender pronouns?" styleClass="question"/>
+                                <apex:outputPanel>
+                                    <apex:inputField id="preferredPronouns" value="{!newApp.What_are_your_preferred_gender_pronouns__c}" required="false"/>
+                                    <div id="preferredPronouns-ShowHelp" class="helpLink">Show Help</div>
+                                    <div id="preferredPronouns-HideHelp" class="helpLink" style="display:none">Hide Help</div>
+                                    <div id="preferredPronouns-Help" style="display:none" class="wideLabel italic">
+                                        A preferred gender pronoun, or PGP, is the pronoun or set of pronouns that an individual would like others to use when talking to or about that individual. Examples of answers to this question are "she/her/hers," "he/him/his," and "they/them/theirs." Girls Rock! Chicago strives to be as inclusive as possible of transgender and gender non-conforming youth and adults.
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Date of Birth" styleClass="question"/>
+                                <apex:outputPanel>
+                                    <apex:inputField id="dateOfBirth" value="{!newApp.Date_of_Birth__c}" required="true"/>
+                                    <div class="wideLabel italic">
+                                        You must be 17 at the start of session one to be eligible to volunteer. 17 and 18 year olds may volunteer as Junior Counselors.
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Email Address" styleClass="question"/>
+                                <apex:inputField id="emailAddress" value="{!newApp.Email_Address__c}" required="true"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Phone Number" styleClass="question"/>
+                                <apex:outputPanel >
+                                    <apex:inputField id="phoneNumber" value="{!newApp.grcapp__Phone_Number__c}" required="true"/>
+                                    <div class="wideLabel italic">
+                                        Preferably the number at which we can reach you during camp week.
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Street Address" styleClass="question"/>
+                                <apex:outputPanel >
+                                    <apex:inputField id="streetAddress" value="{!newApp.Street_Address__c}" required="true"/>
+                                    <div class="wideLabel italic">
+                                        Number and Street Name
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Address Line 2" styleClass="question"/>
+                                <apex:inputField id="addressLine2" value="{!newApp.Address_Line_2__c}" required="false"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="City" styleClass="question"/>
+                                <apex:inputField id="city" value="{!newApp.City__c}" required="true"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="State" styleClass="question"/>
+                                <apex:inputField id="state" value="{!newApp.State__c}" required="true"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Zip" styleClass="question"/>
+                                <apex:inputField id="zipCode" value="{!newApp.Zip_Code__c}" required="true"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="If you are coming from out of town, would you like help finding a Chicago host?" styleClass="question"/>
+                                <apex:inputField id="comingFromOutOfTown" value="{!newApp.Coming_From_Out_Of_Town__c}" required="false"/>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- Page 2 - AVAILABILITY -->
+                    <apex:outputPanel id="page2">
+                        <apex:pageBlockSection rendered="{!renderPage2}" columns="1"  >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - AVAILABILITY" styleClass="title" />
+                            <apex:outputLabel value="Page 2 of 7" styleClass="question" />
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- Page 3 - INTERESTS -->
+                    <apex:outputPanel id="page3">
+                        <apex:pageBlockSection columns="1" rendered="{!renderPage3}" >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - INTERESTS" styleClass="title" />
+                            <apex:outputLabel value="Page 3 of 7" styleClass="question" />
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- Page 4 - RELATED EXPERIENCE -->
+                    <apex:outputPanel id="page4">
+                        <apex:pageBlockSection columns="1" rendered="{!renderPage4}" >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - RELATED EXPERIENCE" styleClass="title" />
+                            <apex:outputLabel value="Page 4 of 7" styleClass="question" />
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- Page 5 - GENERAL VOLUNTEER INFO -->
+                    <apex:outputPanel id="page5">
+                        <apex:pageBlockSection columns="1" rendered="{!renderPage5}" >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - GENERAL VOLUNTEER INFO" styleClass="title" />
+                            <apex:outputLabel value="Page 5 of 7" styleClass="question" />
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- Page 6 - TRANSIT & HOSTING -->
+                    <apex:outputPanel id="page6">
+                        <apex:pageBlockSection columns="1" rendered="{!renderPage6}" >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - TRANSIT & HOSTING" styleClass="title" />
+                            <apex:outputLabel value="Page 6 of 7" styleClass="question" />
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- Page 7 - THANK YOU for applying to volunteer at Girls Rock! Chicago's 2016 summer camp! -->
+                    <apex:outputPanel id="page7">
+                        <apex:pageBlockSection columns="1" rendered="{!renderPage7}" >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - THANK YOU for applying to volunteer at Girls Rock! Chicago's 2016 summer camp!" styleClass="title" />
+                            <apex:outputLabel value="Page 7 of 7" styleClass="question" />
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+</apex:page>
