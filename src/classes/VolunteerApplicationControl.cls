@@ -11,6 +11,30 @@ public with sharing class VolunteerApplicationControl {
     public Boolean JuniorCounsellor { get; set; }
     public Boolean RoadieFullTime { get; set; }
     public Boolean RoadiePartTime { get; set; }
+    public Boolean Session1_OpenAvailability { get; set; }
+    public Boolean Session1_9to5 { get; set; }
+    public Boolean Session1_9to1 { get; set; }
+    public Boolean Session1_1to5 { get; set; }
+    public Boolean Session1_Weekend { get; set; }
+    public Boolean Session1_Other { get; set; }
+    public Boolean Session1_Varies { get; set; }
+    public Boolean Session1_NotAvailable { get; set; }
+    public Boolean Session2_OpenAvailability { get; set; }
+    public Boolean Session2_9to5 { get; set; }
+    public Boolean Session2_9to1 { get; set; }
+    public Boolean Session2_1to5 { get; set; }
+    public Boolean Session2_Weekend { get; set; }
+    public Boolean Session2_Other { get; set; }
+    public Boolean Session2_Varies { get; set; }
+    public Boolean Session2_NotAvailable { get; set; }
+    public Boolean LadiesRock_OpenAvailability { get; set; }
+    public Boolean LadiesRock_FullTIme { get; set; }
+    public Boolean LadiesRock_Morning { get; set; }
+    public Boolean LadiesRock_Evening { get; set; }
+    public Boolean LadiesRock_Sunday { get; set; }
+    public Boolean LadiesRock_Other { get; set; }
+    public Boolean LadiesRock_Varies { get; set; }
+    public Boolean LadiesRock_NotAvailable { get; set; }
     Volunteer_Application__c newApp { get; set; }
     Boolean validationOn = true;
 

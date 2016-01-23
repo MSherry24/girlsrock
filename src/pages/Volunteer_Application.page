@@ -228,81 +228,259 @@
                         <apex:pageBlockSection rendered="{!renderPage2}" columns="1"  >
                             <apex:outputLabel value="2016 GR!C Volunteer Application - AVAILABILITY" styleClass="title" />
                             <apex:outputLabel value="Page 2 of 7" styleClass="question" />
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="What is your availability during GR!C camp SESSION ONE?  Check all that apply."/>
+                                    <apex:outputPanel>
+                                        <div class="italic">Session 1: Monday, July 6 - Sunday, July 12</div>
+                                        <div class="italic">If your availability varies or extends beyond the listed hours, Girls Rock! Chicago will contact you for additional details</div>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_OpenAvailability }"/>
+                                                        <span>I have open availability; I can help any time throughout the week.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_9to5 }"/>
+                                                        <span>I am available Monday - Friday, 9AM - 5PM.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_9to1 }"/>
+                                                        <span>I am available Monday - Friday, 9AM - 1PM.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_1to5 }"/>
+                                                        <span>I am available Monday - Friday, 1PM - 5PM.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_Weekend }"/>
+                                                        <span>I am available on the weekend.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_Other }"/>
+                                                        <span>I have availability that extends beyond the hours listed here; please contact me to discuss additional opportunities.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_Varies }"/>
+                                                        <span>My availability varies; please contact me to discuss my options.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_NotAvailable }"/>
+                                                        <span>I'm not available to volunteer.</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Comments"/>
+                                <apex:inputField value="{!newApp.Session_One_Availability_Comments__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="What is your availability during GR!C camp SESSION TWO?  Check all that apply."/>
+                                <apex:outputPanel>
+                                    <div class="italic"> Session 2: ???</div>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_OpenAvailability }"/>
+                                                    <span>I have open availability; I can help any time throughout the week.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_9to5 }"/>
+                                                    <span>I am available Monday - Friday, 9AM - 5PM.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_9to1 }"/>
+                                                    <span>I am available Monday - Friday, 9AM - 1PM.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_1to5 }"/>
+                                                    <span>I am available Monday - Friday, 1PM - 5PM.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_Weekend }"/>
+                                                    <span>I am available on the weekend.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_Other }"/>
+                                                    <span>I have availability that extends beyond the hours listed here; please contact me to discuss additional opportunities.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_Varies }"/>
+                                                    <span>My availability varies; please contact me to discuss my options.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_NotAvailable }"/>
+                                                    <span>I'm not available to volunteer.</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Comments"/>
+                                <apex:inputField value="{!newApp.Session_Two_Availability_Comments__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="What is your availability during LADIES ROCK CAMP?  Check all that apply."/>
+                                <apex:outputPanel>
+                                    <div class="italic">Ladies Rock Camp: Insert Dates Here</div>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_OpenAvailability}"/></td>
+                                                <td><span>I have open availability; I can help any time throughout the session.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_FullTIme}"/></td>
+                                                <td><span>I am available Friday - Sunday, Insert Full Time Hours</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_Morning}"/></td>
+                                                <td><span>I am available Friday - Sunday, Insert Morning Hours</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_Evening}"/></td>
+                                                <td><span>I am available Friday - Sunday, Insert Evening Hours</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_Sunday}"/></td>
+                                                <td><span>I am available on Sunday (Showcase!)</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_Other}"/></td>
+                                                <td><span>I have availability that extends beyond the hours listed here; please contact me to discuss additional opportunities.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_Varies}"/></td>
+                                                <td><span>My availability varies; please contact me to discuss my options.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LadiesRock_NotAvailable}"/></td>
+                                                <td><span>I'm not available to volunteer.</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Comments"/>
+                                <apex:inputField value="{!newApp.Ladies_Rock_Availability_Comments__c}" />
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- Page 3 - INTERESTS -->
+                    <apex:outputPanel id="page3">
+                        <apex:pageBlockSection columns="1" rendered="{!renderPage3}" >
+                            <apex:outputLabel value="2016 GR!C Volunteer Application - INTERESTS" styleClass="title" />
+                            <apex:outputLabel value="Page 3 of 7" styleClass="question" />
                             <apex:pageblockSectionItem >
                                 <apex:outputLabel value="What position(s) are you interested in?" styleClass="question"/>
                                 <apex:outputPanel >
                                     <apex:outputLabel styleClass="wideLabel italic" value="Detailed job descriptions are on our website. Please keep in mind that some positions, like Counselor and Band Coach, require a full-week volunteer commitment.  While you may select multiple part-time positions, if your preferred position is full-time, please sign up for only ONE position. Keep both Saturday and Sunday open for the showcase and recording." />
                                     <table>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!BandCoach}" />
-                                                    <span>BAND COACH</span>
-                                                    <span> - <b>musical experience required</b></span>
-                                                    <span> - (Monday - Friday, 2:30pm-4:30pm; showcase and recording)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!InstrumentTeacher}" />
-                                                    <span>INSTRUMENT TEACHER</span>
-                                                    <span> - <b>musical experience required</b></span>
-                                                    <span> - (Monday - Friday, 10:30am-12:30pm)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!Counsellor}" />
-                                                    <span>COUNSELOR</span>
-                                                    <span> - <b>FULL TIME</b></span>
-                                                    <span> - (Monday - Friday, 9am-5pm; showcase)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!WorkshopLeader}" />
-                                                    <span> WORKSHOP LEADER</span>
-                                                    <span> - (1 hour, one day of camp)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!BeforeCampCare}" />
-                                                    <span>BEFORE-CAMP CARE</span>
-                                                    <span> - (Monday - Friday, 7:45am-9:15am)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!AfterCampCare}" />
-                                                    <span>AFTER-CAMP CARE</span>
-                                                    <span> - (Monday - Friday, 4:45pm-6:15pm)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox id="juniorCounselorCheckbox" onchange="showHideSection('juniorCounselorCheckbox', 'JuniorCounsellorQuestion');" value="{!JuniorCounsellor}" />
-                                                    <span>JUNIOR COUNSELOR</span>
-                                                    <span> - <b>FULL TIME</b></span>
-                                                    <span> - (Monday - Friday, 9am-5pm; showcase)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!RoadieFullTime}" />
-                                                    <span>ROADIE</span>
-                                                    <span> - <b>FULL TIME</b></span>
-                                                    <span> - (Monday - Friday, 9am-5pm; showcase)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!RoadiePartTime}" />
-                                                    <span>ROADIE</span>
-                                                    <span> - <b>PART TIME</b></span>
-                                                    <span> - We will contact you for your availability</span>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!BandCoach}" />
+                                                <span>BAND COACH</span>
+                                                <span> - <b>musical experience required</b></span>
+                                                <span> - (Monday - Friday, 2:30pm-4:30pm; showcase and recording)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!InstrumentTeacher}" />
+                                                <span>INSTRUMENT TEACHER</span>
+                                                <span> - <b>musical experience required</b></span>
+                                                <span> - (Monday - Friday, 10:30am-12:30pm)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!Counsellor}" />
+                                                <span>COUNSELOR</span>
+                                                <span> - <b>FULL TIME</b></span>
+                                                <span> - (Monday - Friday, 9am-5pm; showcase)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!WorkshopLeader}" />
+                                                <span> WORKSHOP LEADER</span>
+                                                <span> - (1 hour, one day of camp)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!BeforeCampCare}" />
+                                                <span>BEFORE-CAMP CARE</span>
+                                                <span> - (Monday - Friday, 7:45am-9:15am)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!AfterCampCare}" />
+                                                <span>AFTER-CAMP CARE</span>
+                                                <span> - (Monday - Friday, 4:45pm-6:15pm)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox id="juniorCounselorCheckbox" onchange="showHideSection('juniorCounselorCheckbox', 'JuniorCounsellorQuestion');" value="{!JuniorCounsellor}" />
+                                                <span>JUNIOR COUNSELOR</span>
+                                                <span> - <b>FULL TIME</b></span>
+                                                <span> - (Monday - Friday, 9am-5pm; showcase)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!RoadieFullTime}" />
+                                                <span>ROADIE</span>
+                                                <span> - <b>FULL TIME</b></span>
+                                                <span> - (Monday - Friday, 9am-5pm; showcase)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!RoadiePartTime}" />
+                                                <span>ROADIE</span>
+                                                <span> - <b>PART TIME</b></span>
+                                                <span> - We will contact you for your availability</span>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </apex:outputPanel>
@@ -315,13 +493,6 @@
                                     <apex:inputField id="juniorCounsellor" value="{!newApp.Junior_Counsellor__c}" required="false"/>
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>
-                        </apex:pageBlockSection>
-                    </apex:outputPanel>
-                    <!-- Page 3 - INTERESTS -->
-                    <apex:outputPanel id="page3">
-                        <apex:pageBlockSection columns="1" rendered="{!renderPage3}" >
-                            <apex:outputLabel value="2016 GR!C Volunteer Application - INTERESTS" styleClass="title" />
-                            <apex:outputLabel value="Page 3 of 7" styleClass="question" />
                         </apex:pageBlockSection>
                     </apex:outputPanel>
                     <!-- Page 4 - RELATED EXPERIENCE -->
