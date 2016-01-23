@@ -3,41 +3,41 @@
         <apex:define name="body">
             <style type="text/css">
                 .question {
-                font-weight:bold;
+                    font-weight:bold;
                 }
                 .title {
-                color: #d20024;
-                font-size: 164%;
+                    color: #d20024;
+                    font-size: 164%;
                 }
                 .italicText {
-                font-style: italic;
+                    font-style: italic;
                 }
                 .multiSelectPicklistTable .multiSelectPicklistRow select {
-                height: 8em;
-                width: 20em;
+                    height: 8em;
+                    width: 20em;
                 }
                 textarea {
-                height: 1.2em;
-                width: 20em;
+                    height: 1.2em;
+                    width: 20em;
                 }
                 .center {
-                text-align: center;
+                    text-align: center;
                 }
                 input[type="button"]:disabled {
-                color: gray;
+                    color: gray;
                 }
                 input[type="submit"]:disabled {
-                color: gray;
+                    color: gray;
                 }
                 input[type="text"]:disabled {
-                background-color: gray;
+                    background-color: gray;
                 }
                 .validationError {
-                color: #d20024;
-                font-size: 125%
+                    color: #d20024;
+                    font-size: 125%
                 }
                 .wideLabel {
-                width: 500px;
+                    width: 500px;
                 }
                 .margin-center {
                     margin-left: auto;
@@ -50,6 +50,9 @@
                 }
                 .italic {
                     font-style: italic;
+                }
+                .hidden {
+                    display: none;
                 }
             </style>
             <!-- <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-1.11.1.min.js')}" /> -->
@@ -64,9 +67,11 @@
                     addEventToHelpLink(['preferredPronouns']);
                     addCalYears();
                     addShowHideEventWatchers();
+                    j$('.hideRow').closest('tr').hide();
                 }
 
                 function addShowHideEventWatchers() {
+
                 }
 
                 function textBoxEnableValidation(theCheckBox, theTextBox) {
@@ -122,6 +127,16 @@
                         j$("[class*='" + sectionId + "']").show();
                     } else {
                         j$("[class*='" + sectionId + "']").hide();
+                    }
+                }
+
+                function showHideSectionByPicklistValue(pickListClass, sectionClass, values) {
+                    var pickListValue = j$('.' +  pickListClass).val();
+                    if (j$.inArray(pickListValue, values) !== -1) {
+                        j$('.' +  sectionClass).closest('tr').show();
+                    } else {
+                        j$('.' +  sectionClass).closest('tr').hide();
+                        j$('.' + sectionClass + 'Text').val('');
                     }
                 }
 
@@ -492,6 +507,22 @@
                                 <apex:outputPanel styleClass="JuniorCounsellorQuestion" style="display:none">
                                     <apex:inputField id="juniorCounsellor" value="{!newApp.Junior_Counsellor__c}" required="false"/>
                                 </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Do you have any experience fixing or working with GEAR (guitars, drums, bass, amps, etc.)"/>
+                                <apex:inputField styleClass="gearExperienceInput" value="{!newApp.Gear_Experience__c}" onChange="showHideSectionByPicklistValue('gearExperienceInput', 'gearExperienceExplained', ['Yes', 'Some'])"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel styleClass="gearExperienceExplained hideRow" value="Please explain your previous gear experience:"/>
+                                <apex:inputField styleClass="gearExperienceExplainedText" value="{!newApp.Gear_Experience_Explained__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Do you have any musical experience? "/>
+                                <apex:inputField styleClass="musicalExperienceInput" value="{!newApp.Musical_Experience__c}" onChange="showHideSectionByPicklistValue('musicalExperienceInput', 'musicalExperienceExplained', ['Yes', 'Some'])"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem  >
+                                <apex:outputLabel styleClass="musicalExperienceExplained hideRow" value="Please explain your previous musical experience:"/>
+                                <apex:inputField styleClass="musicalExperienceExplainedText" value="{!newApp.Musical_Experience_Explained__c}"/>
                             </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     </apex:outputPanel>
