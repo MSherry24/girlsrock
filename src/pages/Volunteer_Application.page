@@ -437,7 +437,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <apex:inputCheckbox value="{!InstrumentTeacher}" />
+                                                <apex:inputCheckbox value="{!InstrumentTeacher}" id="instrumentTeacherCheckbox" onClick="showHideSection('instrumentTeacherCheckbox', 'instrument-teacher');"/>
                                                 <span>INSTRUMENT TEACHER</span>
                                                 <span> - <b>musical experience required</b></span>
                                                 <span> - (Monday - Friday, 10:30am-12:30pm)</span>
@@ -453,7 +453,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <apex:inputCheckbox value="{!WorkshopLeader}" />
+                                                <apex:inputCheckbox value="{!WorkshopLeader}" id="workshopLeader" onClick="showHideSection('workshopLeader', 'workshop-explained');"/>
                                                 <span> WORKSHOP LEADER</span>
                                                 <span> - (1 hour, one day of camp)</span>
                                             </td>
@@ -523,6 +523,40 @@
                             <apex:pageBlockSectionItem  >
                                 <apex:outputLabel styleClass="musicalExperienceExplained hideRow" value="Please explain your previous musical experience:"/>
                                 <apex:inputField styleClass="musicalExperienceExplainedText" value="{!newApp.Musical_Experience_Explained__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel value="If you checked INSTRUMENT TEACHER above, please indicate which instrument(s) you feel competent teaching." styleClass="question instrument-teacher hidden"/>
+                                <apex:outputPanel styleClass="instrument-teacher hidden">
+                                    <apex:outputLabel styleClass="wideLabel italic" value="Check all that apply." />
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!InstrumentTeacherBass}"/></td>
+                                                <td><span>Bass</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!InstrumentTeacherDrums}"/></td>
+                                                <td><span>Drums</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!InstrumentTeacherGuitar}"/></td>
+                                                <td><span>Guitar</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!InstrumentTeacherKeyboards}"/></td>
+                                                <td><span>Keyboards</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!InstrumentTeacherDJ}"/></td>
+                                                <td><span>Turntables/DJ</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                            </apex:pageblockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel styleClass="workshop-explained hidden" value="What kind of workshop would you like to lead? We have a few standard topics (like songwriting), but we're open to new suggestions every year. In the past we have offered self-defense, the history of women in music, DIY recording, how to set up a PA, and more. Please provide a brief summary and we will contact you!"/>
+                                <apex:inputField styleClass="workshop-explained hidden" value="{!newapp.Workshop_Leader_Explained__c}"/>
                             </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     </apex:outputPanel>

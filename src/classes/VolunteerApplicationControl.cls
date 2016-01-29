@@ -35,6 +35,11 @@ public with sharing class VolunteerApplicationControl {
     public Boolean LadiesRock_Other { get; set; }
     public Boolean LadiesRock_Varies { get; set; }
     public Boolean LadiesRock_NotAvailable { get; set; }
+    public Boolean InstrumentTeacherBass { get; set; }
+    public Boolean InstrumentTeacherDrums { get; set; }
+    public Boolean InstrumentTeacherGuitar { get; set; }
+    public Boolean InstrumentTeacherKeyboards { get; set; }
+    public Boolean InstrumentTeacherDJ { get; set; }
     Volunteer_Application__c newApp { get; set; }
     Boolean validationOn = true;
 
