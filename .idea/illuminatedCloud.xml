@@ -6,6 +6,7 @@
         <IlluminatedCloudConnection>
           <option name="buildSuccessDatesBySourceRootRelativePath">
             <map>
+              <entry key="CLASSES/TEST_VOLUNTEERAPPLICATIONCONTROL.CLS" value="1457296032000" />
               <entry key="CLASSES/VOLUNTEERAPPLICATIONCONTROL.CLS" value="1453074688000" />
               <entry key="PAGES/CAMPER_APPLICATION.PAGE" value="1453069655000" />
               <entry key="PAGES/VOLUNTEER_APPLICATION.PAGE" value="1453077354000" />
@@ -27,17 +28,12 @@
           <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/girlsRockDevOrg/OfflineSymbolTable.zip" />
           <option name="organizationNamespace" value="grcapp" />
           <option name="organizationType" value="DEVELOPMENT" />
-          <option name="password" value="df99df9adf93dffadfc6dfffdfc7dfe1dfc1dfcfdff3dfd0" />
-          <option name="securityToken" value="dfd8df9bdfc7dfdcdf9adf93dfccdfe2dfdfdfd8dfefdffedfeedfcbdfe1dfdcdfdbdff3dff0dfd8dffbdfd9dfe7dfda" />
+          <option name="password" value="dfe7df99df8cdff0dfe4dffbdfcddf9adfeddf9ddfdddfe9" />
+          <option name="securityToken" value="dff2dfe8dffcdfeedfc1dff3dfdddfe8df9edf92dfe4dfffdf9ddfcddfc5dfffdfefdfeedffadfd8dfc3dffddfdedff2dfff" />
           <option name="username" value="girlsrockdevorg@mikesherry.com" />
           <option name="workaroundForHttp411IssueEnabled" value="true" />
         </IlluminatedCloudConnection>
       </list>
-    </option>
-    <option name="ignoredModuleNames">
-      <set>
-        <option value="girlsRockDevOrg" />
-      </set>
     </option>
     <option name="selectedConnectionIndex" value="0" />
   </component>
