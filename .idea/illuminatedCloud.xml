@@ -4,6 +4,13 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
+          <option name="buildSuccessDatesBySourceRootRelativePath">
+            <map>
+              <entry key="CLASSES/VOLUNTEERAPPLICATIONCONTROL.CLS" value="1453074688000" />
+              <entry key="PAGES/CAMPER_APPLICATION.PAGE" value="1453069655000" />
+              <entry key="PAGES/VOLUNTEER_APPLICATION.PAGE" value="1453077354000" />
+            </map>
+          </option>
           <option name="checkForConflicts" value="true" />
           <option name="defaultModuleName" value="girlsRockDevOrg" />
           <option name="developmentPackages">
@@ -26,6 +33,11 @@
           <option name="workaroundForHttp411IssueEnabled" value="true" />
         </IlluminatedCloudConnection>
       </list>
+    </option>
+    <option name="ignoredModuleNames">
+      <set>
+        <option value="girlsRockDevOrg" />
+      </set>
     </option>
     <option name="selectedConnectionIndex" value="0" />
   </component>
