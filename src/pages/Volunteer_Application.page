@@ -71,7 +71,6 @@
                 }
 
                 function addShowHideEventWatchers() {
-
                 }
 
                 function textBoxEnableValidation(theCheckBox, theTextBox) {
@@ -565,6 +564,47 @@
                         <apex:pageBlockSection columns="1" rendered="{!renderPage4}" >
                             <apex:outputLabel value="2016 GR!C Volunteer Application - RELATED EXPERIENCE" styleClass="title" />
                             <apex:outputLabel value="Page 4 of 7" styleClass="question" />
+                            <apex:pageBlockSectionItem>
+                                <apex:OutputLabel value="Do you have experience working with girls ages 8 to 16?"/>
+                                <apex:inputField value="{!newapp.Girls_Work_Experience__c}" styleClass="girlsWorkExperience" onChange="showHideSectionByPicklistValue('girlsWorkExperience', 'girlsWorkExperienceExplained', ['Yes']);"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel styleClass="girlsWorkExperienceExplained hideRow" value="Please explain your previous experience."/>
+                                <apex:inputField value="{!newapp.Girls_Work_Experience_Explained__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:OutputLabel value="Do you have any experience working with children with special needs (e.g., ADHD, downs syndrome, behavioral needs etc.)?"/>
+                                <apex:inputField value="{!newapp.Special_Needs_Experience__c}" styleClass="specialNeedsExperience" onChange="showHideSectionByPicklistValue('specialNeedsExperience', 'specialNeedsExperienceExplained', ['Yes']);"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel styleClass="specialNeedsExperienceExplained hideRow" value="Please explain your previous experience."/>
+                                <apex:inputField value="{!newapp.Special_Needs_Experience_Explained__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:OutputLabel value="Have you ever been convicted of a crime in any state (including felonies, misdemeanors, and guilty pleas) other than minor traffic offenses?"/>
+                                <apex:inputField value="{!newapp.Previous_Convictions__c}" styleClass="previousConvictions" onChange="showHideSectionByPicklistValue('previousConvictions', 'previousConvictionsExplained', ['Yes']);"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel styleClass="previousConvictionsExplained hideRow" value="Please provide further explanation."/>
+                                <apex:inputField value="{!newapp.Previous_Convictions_Explained__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:OutputLabel value="We will feed you! All lunches and snacks are provided. Do you have any dietary restrictions or allergies?"/>
+                                <apex:inputField value="{!newapp.Dietary_Restrictions__c}" styleClass="dietaryRestrictions" onChange="showHideSectionByPicklistValue('dietaryRestrictions', 'dietaryRestrictionsExplained', ['Yes']);"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel styleClass="dietaryRestrictionsExplained hideRow" value="Let's make sure we aren't giving you what you can't eat! Vegetarian? Gluten free? Let us know."/>
+                                <apex:inputField value="{!newapp.Dietary_Restrictions_Explained__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Who should we contact in the event of an emergency?"/>
+                                <apex:outputPanel>
+                                    <apex:inputField id="emergencyContact" value="{!newApp.Emergency_Contact__c}" required="{!validationOn}"/>
+                                    <div class="wideLabel italic">
+                                        Please provide us with the name and telephone number for the best person(s) to contact should anything go wrong.
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     </apex:outputPanel>
                     <!-- Page 5 - GENERAL VOLUNTEER INFO -->
@@ -572,6 +612,126 @@
                         <apex:pageBlockSection columns="1" rendered="{!renderPage5}" >
                             <apex:outputLabel value="2016 GR!C Volunteer Application - GENERAL VOLUNTEER INFO" styleClass="title" />
                             <apex:outputLabel value="Page 5 of 7" styleClass="question" />
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="What is your availability during LADIES ROCK CAMP?  Check all that apply."/>
+                                <apex:outputPanel>
+                                    <div class="italic">Check all that apply.</div>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!No_First_Time}"/></td>
+                                            <td><span>Nope! This is my first time.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2015Two}"/></td>
+                                            <td><span>Yes, 2015 Session Two.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2015One}"/></td>
+                                            <td><span>Yes, 2015 Session One.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2014Two}"/></td>
+                                            <td><span>Yes, 2014 Session Two.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2014One}"/></td>
+                                            <td><span>Yes, 2014 Session One.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2013Two}"/></td>
+                                            <td><span>Yes, 2013 Session Two.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2013One}"/></td>
+                                            <td><span>Yes, 2013 Session One.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2012Two}"/></td>
+                                            <td><span>Yes, 2012 Session Two.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2012One}"/></td>
+                                            <td><span>Yes, 2012 Session One.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2011Two}"/></td>
+                                            <td><span>Yes, 2011 Session Two.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2011One}"/></td>
+                                            <td><span>Yes, 2011 Session One.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2010Two}"/></td>
+                                            <td><span>Yes, 2010 Session Two.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2010One}"/></td>
+                                            <td><span>Yes, 2010 Session One.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2009}"/></td>
+                                            <td><span>Yes, in 2009.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2008}"/></td>
+                                            <td><span>Yes, in 2008.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2007}"/></td>
+                                            <td><span>Yes, in 2007.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!Yes2006}"/></td>
+                                            <td><span>Yes, in 2006</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!VolunteeredButNotForCamp}"/></td>
+                                            <td><span>I have volunteered for Ladies Rock! Camp or interned for Girls Rock! Chicago before, but I have not worked at camp.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!VolunteeredInAnotherCity}"/></td>
+                                            <td><span>I have volunteered for rock camp in another city.</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><apex:inputCheckbox value="{!VolunteeredButNotWorkedAtCamp}"/></td>
+                                            <td><span>I have volunteered or interned for Girls Rock! Chicago before, but I have not worked at camp.</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:OutputLabel value="What is your t-shirt size?"/>
+                                <apex:OutputPanel>
+                                    <apex:inputField value="{!newapp.T_Shirt_Size__c}" />
+                                    <div class="italic wideLabel">
+                                        All volunteers wear bright red GR!C tees. (We'll try our best to get you something that fits, but don't be surprised if you have to tie or cinch your shirt).
+                                    </div>
+                                </apex:OutputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:OutputLabel value="Why do you want to volunteer for Girls Rock! Chicago?"/>
+                                <apex:OutputPanel>
+                                    <apex:inputField value="{!newapp.grcapp__Why_do_you_want_to_volunteer__c}" />
+                                    <div class="italic wideLabel">
+                                        We all commit our time and talent to GR!C for a multitude of reasons as unique as we are. Help us get to know the motivations behind the people who make up Girls Rock! Chicago. Childhood tales, stories of inspiring concerts, radio reminiscences, and rants about exes are just a few examples of how volunteers have explained their reason for seeking involvement with GR!C. Your turn!
+                                    </div>
+                                </apex:OutputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="How did you hear about Girls Rock! Chicago?"/>
+                                <apex:inputField value="{!newApp.How_did_you_hear_about_grc__c}" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Can we quote you?"/>
+                                <apex:inputField value="{!newApp.Can_we_quote_you__c}" />
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Extra notes that didn't fit anywhere else? Additional questions? Write 'em here:"/>
+                                <apex:inputField value="{!newApp.Extra_Notes__c}" />
+                            </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     </apex:outputPanel>
                     <!-- Page 6 - TRANSIT & HOSTING -->
@@ -579,6 +739,30 @@
                         <apex:pageBlockSection columns="1" rendered="{!renderPage6}" >
                             <apex:outputLabel value="2016 GR!C Volunteer Application - TRANSIT & HOSTING" styleClass="title" />
                             <apex:outputLabel value="Page 6 of 7" styleClass="question" />
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel/>
+                                <apex:outputPanel >
+                                    <div class="italic wideLabel">
+                                        We are lucky to be supported by a volunteer pool that not only crosses the entire city of Chicago from the far south side to Rogers Park on the north end and all of the surrounding suburbs, but also draws travelers from cities and states without camps. In an effort to provide the most support to these fearless supporters of us, the following optional questions will address transit/hosting needs and offers.
+                                    </div>
+                                    <br/>
+                                    <div class="italic wideLabel">
+                                        Suder Montessori is located near the intersection of Washington and Damen, near the I-290 (for drivers) and accessible via the Damen or Madison buses, also within a half-mile walking distance from the Green Line (Ashland) and Blue Line (Illinois Medical District).
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Interested in carpool?"/>
+                                <apex:inputField value="{!newApp.Carpool__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Do you require transit assistance? (Select Yes if the cost of transit to/from camp could prohibit your ability to volunteer)" />
+                                <apex:inputField value="{!newApp.Transit_Assistance__c}" styleClass="transitAssistance" onChange="showHideSectionByPicklistValue('transitAssistance', 'transitAssistanceExplained', ['Yes']);"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel styleClass="transitAssistanceExplained hideRow" value="Please describe your need for transit assistance so we may begin to explore ways to provide this support."/>
+                                <apex:inputField value="{!newApp.Transit_Assistance_Explained__c}"/>
+                            </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     </apex:outputPanel>
                     <!-- Page 7 - THANK YOU for applying to volunteer at Girls Rock! Chicago's 2016 summer camp! -->

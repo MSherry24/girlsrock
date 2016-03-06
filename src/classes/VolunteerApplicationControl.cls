@@ -40,9 +40,29 @@ public with sharing class VolunteerApplicationControl {
     public Boolean InstrumentTeacherGuitar { get; set; }
     public Boolean InstrumentTeacherKeyboards { get; set; }
     public Boolean InstrumentTeacherDJ { get; set; }
+    public Boolean No_First_Time { get; set; }
+    public Boolean Yes2015Two { get; set; }
+    public Boolean Yes2015One { get; set; }
+    public Boolean Yes2014Two { get; set; }
+    public Boolean Yes2014One { get; set; }
+    public Boolean Yes2013Two { get; set; }
+    public Boolean Yes2013One { get; set; }
+    public Boolean Yes2012Two { get; set; }
+    public Boolean Yes2012One { get; set; }
+    public Boolean Yes2011Two { get; set; }
+    public Boolean Yes2011One { get; set; }
+    public Boolean Yes2010Two { get; set; }
+    public Boolean Yes2010One { get; set; }
+    public Boolean Yes2009 { get; set; }
+    public Boolean Yes2008 { get; set; }
+    public Boolean Yes2007 { get; set; }
+    public Boolean Yes2006 { get; set; }
+    public Boolean VolunteeredButNotForCamp { get; set; }
+    public Boolean VolunteeredInAnotherCity { get; set; }
+    public Boolean VolunteeredButNotWorkedAtCamp { get; set; }
+
     Volunteer_Application__c newApp { get; set; }
     Boolean validationOn = true;
-
 
     // Logic Controls
     public VolunteerApplicationControl() {
