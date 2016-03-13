@@ -243,7 +243,7 @@
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What is your availability during GR!C camp SESSION ONE?  Check all that apply."/>
                                     <apex:outputPanel>
-                                        <div class="italic">Session 1: Monday, July 6 - Sunday, July 12</div>
+                                        <div class="italic">Session 1: {!sessionOneStart} - {!sessionOneEnd}</div>
                                         <div class="italic">If your availability varies or extends beyond the listed hours, Girls Rock! Chicago will contact you for additional details</div>
                                         <table>
                                             <tbody>
@@ -306,7 +306,7 @@
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What is your availability during GR!C camp SESSION TWO?  Check all that apply."/>
                                 <apex:outputPanel>
-                                    <div class="italic"> Session 2: ???</div>
+                                    <div class="italic"> Session 2: {!SessionTwoStart} - {!SessionTwoEnd}</div>
                                     <table>
                                         <tbody>
                                             <tr>
@@ -368,7 +368,7 @@
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What is your availability during LADIES ROCK CAMP?  Check all that apply."/>
                                 <apex:outputPanel>
-                                    <div class="italic">Ladies Rock Camp: Insert Dates Here</div>
+                                    <div class="italic">Ladies Rock Camp: {!LadiesRockStart} - {!LadiesRockEnd}</div>
                                     <table>
                                         <tbody>
                                             <tr>
@@ -419,21 +419,20 @@
                                         <tbody>
                                         <tr>
                                             <td><apex:inputCheckbox value="{!LoadInSession1}"/></td>
-                                            <td><span>Load In Session 1 - Friday, July 3rd and Sunday, July 5th</span></td>
+                                            <td><span>Load In Session 1 - {!Session1LoadIn1} and {!Session1LoadIn2}</span></td>
                                         </tr>
                                         <tr>
                                             <td><apex:inputCheckbox value="{!LoadOutSession1}"/></td>
-                                            <td><span>Load Out Session 1 - Saturday, July 11th</span></td>
+                                            <td><span>Load Out Session 1 - {!Session1LoadOut}</span></td>
                                         </tr>
                                         <tr>
                                             <td><apex:inputCheckbox value="{!LoadInSession2}"/></td>
-                                            <td><span>Load In Session 2 - Saturday, August 1st and Sunday, August 2nd</span></td>
+                                            <td><span>Load In Session 2 - {!Session2LoadIn1} and {!Session2LoadIn2}</span></td>
                                         </tr>
                                         <tr>
                                             <td><apex:inputCheckbox value="{!LoadOutSession2}"/></td>
-                                            <td><span>Load Out Session 2 - Sunday, August 9th</span></td>
+                                            <td><span>Load Out Session 2 - {!Session2LoadOut}</span></td>
                                         </tr>
-
                                         </tbody>
                                     </table>
                                 </apex:outputPanel>

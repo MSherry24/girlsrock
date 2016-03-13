@@ -64,6 +64,18 @@ public with sharing class VolunteerApplicationControl {
     public Boolean VolunteeredButNotForCamp { get; set; }
     public Boolean VolunteeredInAnotherCity { get; set; }
     public Boolean VolunteeredButNotWorkedAtCamp { get; set; }
+    public String SessionOneStart { get{ return GrcUtils.SessionOneStart; } }
+    public String SessionOneEnd { get{ return GrcUtils.SessionOneEnd; } }
+    public String SessionTwoStart { get{ return GrcUtils.SessionTwoStart; } }
+    public String SessionTwoEnd { get{ return GrcUtils.SessionTwoEnd; } }
+    public String LadiesRockStart { get{ return GrcUtils.LadiesRockStart; } }
+    public String LadiesRockEnd { get{ return GrcUtils.LadiesRockEnd; } }
+    public String Session1LoadIn1 { get {return GrcUtils.Session1LoadIn1;} }
+    public String Session1LoadIn2 { get {return GrcUtils.Session1LoadIn2;} }
+    public String Session1LoadOut { get {return GrcUtils.Session1LoadOut;} }
+    public String Session2LoadIn1 { get {return GrcUtils.Session2LoadIn1;} }
+    public String Session2LoadIn2 { get {return GrcUtils.Session2LoadIn2;} }
+    public String Session2LoadOut { get {return GrcUtils.Session2LoadOut;} }
 
     Volunteer_Application__c newApp { get; set; }
     Boolean validationOn = true;

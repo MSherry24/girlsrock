@@ -1,6 +1,25 @@
 @isTest
 public with sharing class Test_VolunteerApplicationControl {
 
+    @testSetup
+    static void testSetup() {
+        Camp_Dates__c dates = new Camp_Dates__c (
+                Session_One_Start__c = Date.Today(),
+                Session_One_End__c = Date.Today(),
+                Session_Two_Start__c = Date.Today(),
+                Session_Two_End__c = Date.Today(),
+                Ladies_Rock_Start__c = Date.Today(),
+                Ladies_Rock_End__c = Date.Today(),
+                Session_One_Load_In_1__c = Date.Today(),
+                Session_One_Load_In_2__c = Date.Today(),
+                Session_One_Load_Out__c = Date.Today(),
+                Session_Two_Load_In_1__c = Date.Today(),
+                Session_Two_Load_In_2__c = Date.Today(),
+                Session_Two_Load_Out__c = Date.Today()
+        );
+        insert dates;
+    }
+
     @isTest
     static void test_constructor()
     {

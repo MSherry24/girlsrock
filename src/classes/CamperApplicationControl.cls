@@ -19,156 +19,50 @@ public class CamperApplicationControl {
     Integer pageNumber { get; set; }
     Camper_Application__c newApp { get; set; }
     
-    public boolean attended2006
-    {
-        get;
-        set;
-    }
-    public boolean attended2007
-    {
-        get;
-        set;
-    }
-    public boolean attended2008
-    {
-        get;
-        set;
-    }
-    public boolean attended2009
-    {
-        get;
-        set;
-    }
-    public boolean attendedJune2010
-    {
-        get;
-        set;
-    }
-    public boolean attendedAugust2010
-    {
-        get;
-        set;
-    }
-    public boolean attendedJune2011
-    {
-        get;
-        set;
-    }
-    public boolean attendedAugust2011
-    {
-        get;
-        set;
-    }
-    public boolean attendedJune2012
-    {
-        get;
-        set;
-    }
-    public boolean attendedAugust2012
-    {
-        get;
-        set;
-    }
-    public boolean attendedJune2013
-    {
-        get;
-        set;
-    }
-    public boolean attendedAugust2013
-    {
-        get;
-        set;
-    }
-    public boolean attendedJune2014
-    {
-        get;
-        set;
-    }
-    public boolean attendedAugust2014
-    {
-        get;
-        set;
-    }
-    public boolean attendedInAnotherCity
-    {
-        get;
-        set;
-    }
-    public boolean appliedNeverAttended
-    {
-        get;
-        set;
-    }
-    public boolean neverAttendedOrApplied
-    {
-        get;
-        set;
-    }
-    public boolean Other
-    {
-        get;
-        set;
-    }
-    public boolean campAppBass
-    {
-        get;
-        set;
-    }
-    public boolean campAppDjTurntable
-    {
-        get;
-        set;
-    }
-    public boolean campAppDrums
-    {
-        get;
-        set;
-    }
-    public boolean campAppGuitar
-    {
-        get;
-        set;
-    }
-    public boolean campAppKeyboard
-    {
-        get;
-        set;
-    }
-    public boolean nativeAmerican
-    {
-        get;
-        set;
-    }
-    public boolean asian
-    {
-        get;
-        set;
-    }
-    public boolean black
-    {
-        get;
-        set;
-    }
-    public boolean pacificIsland
-    {
-        get;
-        set;
-    }
-    public boolean hispanic
-    {
-        get;
-        set;
-    }
-    public boolean white
-    {
-        get;
-        set;
-    }
-    public boolean otherRace
-    {
-        get;
-        set;
-    }
+    public boolean attended2006 { get; set; }
+    public boolean attended2007 { get; set; }
+    public boolean attended2008 { get; set; }
+    public boolean attended2009 { get; set; }
+    public boolean attendedJune2010 { get; set; }
+    public boolean attendedAugust2010 { get; set; }
+    public boolean attendedJune2011 { get; set; }
+    public boolean attendedAugust2011 { get; set; }
+    public boolean attendedJune2012 { get; set; }
+    public boolean attendedAugust2012 { get; set; }
+    public boolean attendedJune2013 { get; set; }
+    public boolean attendedAugust2013 { get; set; }
+    public boolean attendedJune2014 { get; set; }
+    public boolean attendedAugust2014 { get; set; }
+    public boolean attendedJune2015 { get; set; }
+    public boolean attendedAugust2015 { get; set; }
+    public boolean attendedInAnotherCity { get; set; }
+    public boolean appliedNeverAttended { get; set; }
+    public boolean neverAttendedOrApplied { get; set; }
+    public boolean Other { get; set; }
+    public boolean campAppBass { get; set; }
+    public boolean campAppDjTurntable { get; set; }
+    public boolean campAppDrums { get; set; }
+    public boolean campAppGuitar { get; set; }
+    public boolean campAppKeyboard { get; set; }
+    public boolean nativeAmerican { get; set; }
+    public boolean asian { get; set; }
+    public boolean black { get; set; }
+    public boolean pacificIsland { get; set; }
+    public boolean hispanic { get; set; }
+    public boolean white { get; set; }
+    public boolean otherRace { get; set; }
+    public String SessionOneStart { get{ return GrcUtils.SessionOneStartVerbose; } }
+    public String SessionOneEnd { get{ return GrcUtils.SessionOneEndVerbose; } }
+    public String SessionTwoStart { get{ return GrcUtils.SessionTwoStartVerbose; } }
+    public String SessionTwoEnd { get{ return GrcUtils.SessionTwoEndVerbose; } }
+    public String LadiesRockStart { get{ return GrcUtils.LadiesRockStart; } }
+    public String LadiesRockEnd { get{ return GrcUtils.LadiesRockEnd; } }
+    public String Session1LoadIn1 { get {return GrcUtils.Session1LoadIn1;} }
+    public String Session1LoadIn2 { get {return GrcUtils.Session1LoadIn2;} }
+    public String Session1LoadOut { get {return GrcUtils.Session1LoadOut;} }
+    public String Session2LoadIn1 { get {return GrcUtils.Session2LoadIn1;} }
+    public String Session2LoadIn2 { get {return GrcUtils.Session2LoadIn2;} }
+    public String Session2LoadOut { get {return GrcUtils.Session2LoadOut;} }
     
     // Logic Controls
     public CamperApplicationControl() {
@@ -317,8 +211,8 @@ public class CamperApplicationControl {
     // UI Controls                
     public List<SelectOption> getSessionOptions() {
         List<SelectOption> options = new List<SelectOption>(); 
-        options.add(new SelectOption('SESSION1', Label.CampAppSession062215)); 
-        options.add(new SelectOption('SESSION2', Label.CampAppSession080315)); 
+        options.add(new SelectOption('SESSION1', SessionOneStart + ' - ' + SessionOneEnd));
+        options.add(new SelectOption('SESSION2', SessionTwoStart + ' - ' + SessionTwoEnd));
         return options; 
     }
     public List<SelectOption> getYesNoOptions() {

@@ -209,6 +209,16 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <apex:inputCheckbox value="{!attendedJune2015}" />
+                                            <apex:outputLabel value="June 2015"/>
+                                        </td>
+                                        <td>
+                                            <apex:inputCheckbox value="{!attendedAugust2015}" />
+                                            <apex:outputLabel value="August 2015"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             <apex:inputCheckbox value="{!attendedInAnotherCity}" />
                                             <apex:outputLabel value="Attended Camp in Another City"/>
                                         </td>
