@@ -128,8 +128,26 @@
                         <apex:inputField id="camperLastName" value="{!newApp.Camper_Last_Name__c}" required="true"/>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Camper_Application__c.fields.Name_Your_Camper_Goes_By__c.Label}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <apex:inputField id="nameCamperGoesBy" value="{!newApp.Name_Your_Camper_Goes_By__c}" required="false"/>
+                            <div class="italicText">This is the name that we will call the camper and what we will put on their name tag.</div>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Camper_Application__c.fields.Preferred_Gender_Pronouns__c.Label}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <apex:inputField id="preferredGenderPronouns" value="{!newApp.Preferred_Gender_Pronouns__c}" required="false"/>
+                            <div class="italicText">Preferred Gender Pronouns are the set of pronouns that an individual would like others to use when talking to or about that individual. Girls Rock! Chicago strives to be as inclusive as possible of transgender and gender nonconforming youth. Examples include she/her/hers, they/them/theirs, and he/him/his.</div>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.CampAppDOB}" styleClass="question"/>
                         <apex:inputField id="camperDateOfBirth" value="{!newApp.Camper_s_Date_of_Birth__c}" showDatePicker="true" required="true"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Camper_Application__c.fields.Camper_Age__c.Label}" styleClass="question"/>
+                        <apex:inputField id="camperAge" value="{!newApp.Camper_Age__c}" required="true"/>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.CampAppAttendedBefore}" styleClass="question" />
@@ -305,6 +323,14 @@
                         	</apex:selectRadio>
                         </apex:outputpanel>
                     </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Camper_Application__c.fields.Student_at_Josephinum__c.Label}" styleClass="question"/>
+                        <apex:outputpanel >
+                            <apex:selectRadio value="{!studentAtJosephinum}">
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
+                        </apex:outputpanel>
+                    </apex:pageblockSectionItem>
                 </apex:pageblockSection>
             </apex:outputPanel>
             <!-- Page 3 - Contact Information -->
@@ -463,10 +489,44 @@
                         <apex:inputField id="X3rdChoiceInstrumentExperience" value="{!newApp.X3rd_Choice_Instrument_Experience__c}" required="true" />
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
-                        <apex:outputLabel value="{!$Label.campAppBringingInstrument}" styleClass="question"/>
-                        <apex:outputPanel >
-                            <div><apex:outputLabel value="You can select more than one answer" /></div>
-                            <div><apex:inputField id="BringingInstrumentToCamp" value="{!newApp.Bringing_Instrument_to_Camp__c}" required="true" /></div>
+                        <apex:outputLabel value="Does your camper plan on bringing an instrument to camp?" styleClass="question"/>
+                        <apex:outputPanel>
+                            <div class="italicText">You can select more than one answer</div>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <apex:inputCheckbox value="{!BringingBass}"/>
+                                        <apex:outputLabel value="Bass"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:inputCheckbox value="{!BringingElectricGuitar}"/>
+                                        <apex:outputLabel value="Electric Guitar"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:inputCheckbox value="{!BringingKeyboard}"/>
+                                        <apex:outputLabel value="Keyboard"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:inputCheckbox value="{!NotBringingInstrument}"/>
+                                        <apex:outputLabel value="I do not plan to bring an instrument to camp"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:inputCheckbox value="{!BringingOther}"/>
+                                        <apex:outputLabel value="Other"/>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
@@ -619,7 +679,7 @@
             <!-- Page 9 - Financial Aid Application (skip if no financial aid) -->
             <apex:outputPanel id="page9">
                 <apex:pageblockSection columns="1" rendered="{!renderPage9}" >
-                <apex:outputLabel value="{!$Label.CampAppFinancialAidApp}" styleClass="title" />
+                    <apex:outputLabel value="{!$Label.CampAppFinancialAidApp}" styleClass="title" />
                     <apex:outputLabel value="Page 9 of 10" styleClass="question" />
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="" />
@@ -697,6 +757,10 @@
                 <apex:pageblockSection columns="1" rendered="{!renderPage10}" >
                 <apex:outputLabel value="{!$Label.CampAppLastQuestions}" styleClass="title" />
                     <apex:outputLabel value="Page 10 of 10" styleClass="question" />
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="I understand that my child must be available for all seven days of camp to participate." styleClass="question" />
+                        <apex:inputField id="ChildMustBeAvailable" value="{!newApp.Child_Must_Be_Available__c}" required="true" />
+                    </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.campAppPaymentMethod}" styleClass="question" />
                         <apex:inputField id="PaymentMethod" value="{!newApp.Application_Fee_Method__c}" required="true" />

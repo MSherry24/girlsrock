@@ -1,24 +1,25 @@
 public class CamperApplicationControl {
     // Control Variables
-    String session = null;
-    String attendSecondSession = null;
-    String camperSiblings = null;
-    String camperSiblingsAttending = null;
-    String firstChoiceInstrumentAtHome = null;
-    String secondChoiceInstrumentAtHome = null;
-    String thirdChoiceInstrumentAtHome = null;
-    String rightOrLeftHanded = null;
-    String studentAtSuder = null;
-    String medicalConditionsOrAllergies = null;
-    String behavioralOrEmotional = null;
-    String dietaryRestrictions = null;
-    String waiveFee = null;
-    String singleIncomeFamily = null;
-    String needLunch = null;
-    String applyingForFinancialAid = null;
-    Integer pageNumber { get; set; }
+    public String session {get; set;}
+    public String attendSecondSession {get; set;}
+    public String camperSiblings {get; set;}
+    public String camperSiblingsAttending {get; set;}
+    public String firstChoiceInstrumentAtHome {get; set;}
+    public String secondChoiceInstrumentAtHome {get; set;}
+    public String thirdChoiceInstrumentAtHome {get; set;}
+    public String rightOrLeftHanded {get; set;}
+    public String studentAtSuder {get; set;}
+    public String studentAtJosephinum {get; set;}
+    public String medicalConditionsOrAllergies {get; set;}
+    public String behavioralOrEmotional {get; set;}
+    public String dietaryRestrictions {get; set;}
+    public String waiveFee {get; set;}
+    public String singleIncomeFamily {get; set;}
+    public String needLunch {get; set;}
+    public String applyingForFinancialAid {get; set;}
+    public Integer pageNumber { get; set;}
     Camper_Application__c newApp { get; set; }
-    
+
     public boolean attended2006 { get; set; }
     public boolean attended2007 { get; set; }
     public boolean attended2008 { get; set; }
@@ -63,6 +64,11 @@ public class CamperApplicationControl {
     public String Session2LoadIn1 { get {return GrcUtils.Session2LoadIn1;} }
     public String Session2LoadIn2 { get {return GrcUtils.Session2LoadIn2;} }
     public String Session2LoadOut { get {return GrcUtils.Session2LoadOut;} }
+    public Boolean BringingBass {get; set;}
+    public Boolean BringingElectricGuitar {get; set;}
+    public Boolean BringingKeyboard {get; set;}
+    public Boolean NotBringingInstrument {get; set;}
+    public Boolean BringingOther {get; set;}
     
     // Logic Controls
     public CamperApplicationControl() {
@@ -70,6 +76,7 @@ public class CamperApplicationControl {
         this.session='SESSION1';
         this.attendSecondSession = 'Yes';
         this.studentAtSuder = 'No';
+        this.studentAtJosephinum = 'No';
         this.camperSiblingsAttending = 'No';
         this.camperSiblings = '';
         this.firstChoiceInstrumentAtHome = 'No';
@@ -88,38 +95,7 @@ public class CamperApplicationControl {
     public Camper_Application__c getNewApp() {
         return this.newApp;
     }
-    public String getSession() { return this.session; } 
-    public void setSession(String s) { this.session = s; }
-    public String getAttendSecondSession() { return this.attendSecondSession; }                  
-    public void setAttendSecondSession(String s) { this.attendSecondSession = s; } 
-    public String getStudentAtSuder() { return this.studentAtSuder; }                  
-    public void setStudentAtSuder(String s) { this.studentAtSuder = s; }
-    public String getCamperSiblingsAttending() { return this.camperSiblingsAttending; }                  
-    public void setCamperSiblingsAttending(String s) { this.camperSiblingsAttending = s; }
-    public String getCamperSiblings() { return this.camperSiblings; }
-    public void setCamperSiblings(String s) { this.camperSiblings = s; }
-    public String getfirstChoiceInstrumentAtHome() { return this.firstChoiceInstrumentAtHome; }
-    public void setfirstChoiceInstrumentAtHome(String s) { this.firstChoiceInstrumentAtHome = s; }
-    public String getsecondChoiceInstrumentAtHome() { return this.secondChoiceInstrumentAtHome; }
-    public void setsecondChoiceInstrumentAtHome(String s) { this.secondChoiceInstrumentAtHome = s; }
-    public String getthirdChoiceInstrumentAtHome() { return this.secondChoiceInstrumentAtHome; }
-    public void setthirdChoiceInstrumentAtHome(String s) { this.secondChoiceInstrumentAtHome = s; }
-    public String getRightOrLeftHanded() { return this.rightOrLeftHanded; }
-    public void setRightOrLeftHanded(String s) { this.rightOrLeftHanded = s; }
-    public String getmedicalConditionsOrAllergies() { return this.medicalConditionsOrAllergies; }
-    public void setmedicalConditionsOrAllergies(String s) { this.medicalConditionsOrAllergies = s; }
-    public String getbehavioralOrEmotional() { return this.behavioralOrEmotional; }
-    public void setbehavioralOrEmotional(String s) { this.behavioralOrEmotional = s; }
-    public String getdietaryRestrictions() { return this.dietaryRestrictions; }
-    public void setdietaryRestrictions(String s) { this.dietaryRestrictions = s; }
-    public String getWaiveFee() { return this.waiveFee; }
-    public void setWaiveFee(String s) { this.waiveFee = s; }
-    public String getsingleIncomeFamily() { return this.singleIncomeFamily; }
-    public void setsingleIncomeFamily(String s) { this.singleIncomeFamily = s; }
-    public String getNeedLunch() { return this.needLunch; }
-    public void setNeedLunch(String s) { this.needLunch = s; }
-    public String getApplyingForFinancialAid() { return this.applyingForFinancialAid; }
-    public void setApplyingForFinancialAid(String s) { this.applyingForFinancialAid = s; }
+
     public void save() {
         newApp.Camper_Full_Name__c = newApp.Camper_First_Name__c + ' ' + newApp.Camper_Last_Name__c;
         newApp.Application_Date__c = Date.today();
@@ -131,6 +107,7 @@ public class CamperApplicationControl {
         previousInstrumentExperience(); 
         newApp.Attend_2nd_Choice_Session__c = attendSecondSession == 'Yes' ? true : false;
         newApp.Student_at_Suder__c = studentAtSuder == 'Yes' ? true : false;
+        newApp.Student_at_Josephinum__c = studentAtJosephinum == 'Yes' ? true : false;
         newApp.Siblings_or_Relatives_Attending__c = camperSiblingsAttending == 'Yes' ? true : false;
         newApp.Siblings_or_Relatives__c = this.camperSiblings != null ? this.camperSiblings : '';
         // Page 3 - All inputfields
@@ -140,7 +117,13 @@ public class CamperApplicationControl {
         newApp.X2nd_Choice_Instrument_at_Home__c = this.secondChoiceInstrumentAtHome;
         newApp.X3rd_Choice_Instrument_at_Home__c = this.thirdChoiceInstrumentAtHome;
         newApp.rightOrLeftHanded__c = this.rightOrLeftHanded;
-        // Page 6
+        newApp.Bringing_Instrument_To_Camp_Text__c = '';
+        newApp.Bringing_Instrument_To_Camp_Text__c += BringingBass ? 'Bass;' : '';
+        newApp.Bringing_Instrument_To_Camp_Text__c += BringingElectricGuitar ? 'Electric Guitar;' : '';
+        newApp.Bringing_Instrument_To_Camp_Text__c += BringingKeyboard ? 'Keyboard;' : '';
+        newApp.Bringing_Instrument_To_Camp_Text__c += NotBringingInstrument ? 'I do not plan to bring an instrument to camp;' : '';
+        newApp.Bringing_Instrument_To_Camp_Text__c += BringingOther ? 'Other;' : '';
+                // Page 6
         newApp.Camper_Medical_Conditions_Allergies__c = medicalConditionsOrAllergies == 'Yes' ? true : false;
         newApp.Camper_Behavioral_Emotional_Needs__c = behavioralOrEmotional == 'Yes' ? true : false;
         newApp.Camper_Food_Allergies__c = dietaryRestrictions == 'Yes' ? true : false;
