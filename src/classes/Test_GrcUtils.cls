@@ -4,7 +4,7 @@ public with sharing class Test_GrcUtils {
     @isTest
     static void test_Dates()
     {
-        Camp_Dates__c dates = new Camp_Dates__c (
+        Important_Dates__c dates = new Important_Dates__c (
                 Session_One_Start__c = Date.Today(),
                 Session_One_End__c = Date.Today(),
                 Session_Two_Start__c = Date.Today(),

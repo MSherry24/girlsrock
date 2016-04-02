@@ -2,7 +2,7 @@
 public class test_CamperApplicationControl {
     @testSetup
     static void testSetup() {
-        Camp_Dates__c dates = new Camp_Dates__c (
+        Important_Dates__c dates = new Important_Dates__c (
                 Session_One_Start__c = Date.Today(),
                 Session_One_End__c = Date.Today(),
                 Session_Two_Start__c = Date.Today(),
