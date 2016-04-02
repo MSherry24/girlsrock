@@ -69,7 +69,7 @@ public class CamperApplicationControl {
     public Boolean BringingKeyboard {get; set;}
     public Boolean NotBringingInstrument {get; set;}
     public Boolean BringingOther {get; set;}
-    
+
     // Logic Controls
     public CamperApplicationControl() {
         this.newApp = new Camper_Application__c();
@@ -90,6 +90,11 @@ public class CamperApplicationControl {
         this.singleIncomeFamily = 'No';
         this.needLunch = 'No';
         this.applyingForFinancialAid = 'No';
+        this.BringingBass = false;
+        this.BringingElectricGuitar = false;
+        this.BringingKeyboard = false;
+        this.NotBringingInstrument = false;
+        this.BringingOther = false;
         this.pageNumber = 1;
     }
     public Camper_Application__c getNewApp() {
@@ -102,9 +107,9 @@ public class CamperApplicationControl {
         // Page 1
         newApp.Session_Choice__c = this.session == 'SESSION1' ? 'Session 1' : 'Session 2';
         // Page 2
-        attendedBefore(); 
+        attendedBefore();
         newApp.Name = newApp.Camper_First_Name__c + ' ' + newApp.Camper_Last_Name__c;
-        previousInstrumentExperience(); 
+        previousInstrumentExperience();
         newApp.Attend_2nd_Choice_Session__c = attendSecondSession == 'Yes' ? true : false;
         newApp.Student_at_Suder__c = studentAtSuder == 'Yes' ? true : false;
         newApp.Student_at_Josephinum__c = studentAtJosephinum == 'Yes' ? true : false;
@@ -123,7 +128,7 @@ public class CamperApplicationControl {
         newApp.Bringing_Instrument_To_Camp_Text__c += BringingKeyboard ? 'Keyboard;' : '';
         newApp.Bringing_Instrument_To_Camp_Text__c += NotBringingInstrument ? 'I do not plan to bring an instrument to camp;' : '';
         newApp.Bringing_Instrument_To_Camp_Text__c += BringingOther ? 'Other;' : '';
-                // Page 6
+        // Page 6
         newApp.Camper_Medical_Conditions_Allergies__c = medicalConditionsOrAllergies == 'Yes' ? true : false;
         newApp.Camper_Behavioral_Emotional_Needs__c = behavioralOrEmotional == 'Yes' ? true : false;
         newApp.Camper_Food_Allergies__c = dietaryRestrictions == 'Yes' ? true : false;
@@ -140,9 +145,9 @@ public class CamperApplicationControl {
         this.pageNumber++;
         sendConfirmationEmail(newApp.id);
     }
-    
+
     //Page 2 methods
-    public void attendedBefore() 
+    public void attendedBefore()
     {
         String attendedBefore = '';
         if (attended2006 ==  true) { attendedBefore += '2006;'; }
@@ -165,7 +170,7 @@ public class CamperApplicationControl {
         if (Other == true) { attendedBefore += 'Other'; }
         newApp.Attended_Camp_Before__c = attendedBefore;
     }
-    
+
     public void previousInstrumentExperience()
     {
         String previousInstruments = '';
@@ -176,7 +181,7 @@ public class CamperApplicationControl {
         if (campAppKeyboard ==  true) { previousInstruments += 'Keyboard;'; }
         newApp.Previous_Instrument__c = previousInstruments;
     }
-    
+
     // Page 7 methods
     public void camperRace()
     {
@@ -190,27 +195,27 @@ public class CamperApplicationControl {
         if (otherRace ==  true) { camperRace += 'Other;'; }
         newApp.Camper_Race__c = camperRace;
     }
-    
+
     // UI Controls                
     public List<SelectOption> getSessionOptions() {
-        List<SelectOption> options = new List<SelectOption>(); 
+        List<SelectOption> options = new List<SelectOption>();
         options.add(new SelectOption('SESSION1', SessionOneStart + ' - ' + SessionOneEnd));
         options.add(new SelectOption('SESSION2', SessionTwoStart + ' - ' + SessionTwoEnd));
-        return options; 
+        return options;
     }
     public List<SelectOption> getYesNoOptions() {
-        List<SelectOption> options = new List<SelectOption>(); 
-        options.add(new SelectOption('Yes', 'Yes')); 
-        options.add(new SelectOption('No', 'No')); 
-        return options; 
+        List<SelectOption> options = new List<SelectOption>();
+        options.add(new SelectOption('Yes', 'Yes'));
+        options.add(new SelectOption('No', 'No'));
+        return options;
     }
     public List<SelectOption> getRightOrLeftHandedOptions() {
-        List<SelectOption> options = new List<SelectOption>(); 
-        options.add(new SelectOption('Right Handed', 'Right Handed')); 
-        options.add(new SelectOption('Left Handed', 'Left Handed')); 
-        return options; 
+        List<SelectOption> options = new List<SelectOption>();
+        options.add(new SelectOption('Right Handed', 'Right Handed'));
+        options.add(new SelectOption('Left Handed', 'Left Handed'));
+        return options;
     }
-    
+
     public boolean getrenderPage1() { return this.pageNumber == 1; }
     public boolean getrenderPage2() { return this.pageNumber == 2; }
     public boolean getrenderPage3() { return this.pageNumber == 3; }
@@ -223,7 +228,7 @@ public class CamperApplicationControl {
     public boolean getrenderPage10() { return this.pageNumber == 10; }
     public boolean getrenderPage11() { return this.pageNumber == 11; }
     public boolean getSaveDisabled() { return this.pageNumber != 10; }
-    public void nextpage() { 
+    public void nextpage() {
         if (this.pageNumber == 8 && this.applyingForFinancialAid == 'No') {
             //newApp.Applying_for_Financial_Aid__c == false) {
             this.pageNumber = 10;
@@ -232,7 +237,7 @@ public class CamperApplicationControl {
             this.pageNumber++;
         }
     }
-    public void prevpage() { 
+    public void prevpage() {
         if (this.pageNumber == 10 && this.applyingForFinancialAid == 'No') {
             this.pageNumber = 8;
         }
@@ -240,44 +245,44 @@ public class CamperApplicationControl {
             this.pageNumber--;
         }
     }
-    
+
     public static void sendConfirmationEmail (String newAppId) {
         Camper_Application__c newApp = [SELECT Parent_Guardian_Email__c, Parent_Guardian_Last_Name__c FROM Camper_Application__c where id = :newAppId][0];
         // Create temporary contact to be used in the email send.
         if (test.isRunningTest()) {
             newApp.Parent_Guardian_Email__c = 'a@sample.com';
-            newApp.Parent_Guardian_Last_Name__c = 'sample';   
+            newApp.Parent_Guardian_Last_Name__c = 'sample';
         }
         contact tempContact = new Contact(
-            email = newApp.Parent_Guardian_Email__c, 
-            lastName = newApp.Parent_Guardian_Last_Name__c
+                email = newApp.Parent_Guardian_Email__c,
+                lastName = newApp.Parent_Guardian_Last_Name__c
         );
         insert tempContact;
         ID contactID = tempContact.ID;
-        
-        
+
+
         String grcTemplateId = [select id from EmailTemplate where developername='grcEmailTemplate'][0].id;
         Messaging.reserveSingleEmailCapacity(2);
         Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-        
+
         // Make tempContact the target object to use its email address.
         mail.setTargetObjectId(contactID);
-        
+
         // Specify the text content of the email.
-		mail.setTemplateId(grcTemplateId);
-        
+        mail.setTemplateId(grcTemplateId);
+
         // Specify the address used when the recipients reply to the email. 
         mail.setReplyTo('apply@girlsrockchicago.org');
-        
+
         // Specify the name used as the display name.
         mail.setSenderDisplayName('Girls Rock! Chicago');
 
         // Set to True if you want to BCC yourself on the email.
         mail.setBccSender(true);
-            
+
         system.debug('mail = ' + mail);
         // Send the email you have created.
-        
+
         if (!Test.isRunningTest()) {
             try {
                 Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
