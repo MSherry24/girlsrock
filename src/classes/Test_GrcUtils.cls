@@ -16,7 +16,9 @@ public with sharing class Test_GrcUtils {
                 Session_One_Load_Out__c = Date.Today(),
                 Session_Two_Load_In_1__c = Date.Today(),
                 Session_Two_Load_In_2__c = Date.Today(),
-                Session_Two_Load_Out__c = Date.Today()
+                Session_Two_Load_Out__c = Date.Today(),
+                Ladies_Rock_Load_In_1__c = Date.Today(),
+                Ladies_Rock_Load_In_2__c = Date.Today()
         );
         insert dates;
 
@@ -33,6 +35,8 @@ public with sharing class Test_GrcUtils {
             String Session2LoadIn1 = GrcUtils.Session2LoadIn1;
             String Session2LoadIn2 = GrcUtils.Session2LoadIn2;
             String Session2LoadOut = GrcUtils.Session2LoadOut;
+            String LadiesRockLoadIn1 = GrcUtils.LadiesRockLoadIn1;
+            String LadiesRockLoadIn2 = GrcUtils.LadiesRockLoadIn2;
             String SessionOneStartVerbose = GrcUtils.SessionOneStartVerbose;
             String SessionOneEndVerbose = GrcUtils.SessionOneEndVerbose;
             String SessionTwoStartVerbose = GrcUtils.SessionTwoStartVerbose;
@@ -51,6 +55,8 @@ public with sharing class Test_GrcUtils {
         System.AssertNotEquals(null,Session2LoadIn1);
         System.AssertNotEquals(null,Session2LoadIn2);
         System.AssertNotEquals(null,Session2LoadOut);
+        System.AssertNotEquals(null,LadiesRockLoadIn1);
+        System.AssertNotEquals(null,LadiesRockLoadIn2);
         System.AssertNotEquals(null,SessionOneStartVerbose);
         System.AssertNotEquals(null,SessionOneEndVerbose);
         System.AssertNotEquals(null,SessionTwoStartVerbose);

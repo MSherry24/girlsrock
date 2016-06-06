@@ -75,7 +75,7 @@ public class CamperApplicationControl {
         this.newApp = new Camper_Application__c();
         this.session='SESSION1';
         this.attendSecondSession = 'Yes';
-        this.studentAtSuder = 'No';
+//        this.studentAtSuder = '';
         this.studentAtJosephinum = 'No';
         this.camperSiblingsAttending = 'No';
         this.camperSiblings = '';
@@ -111,7 +111,7 @@ public class CamperApplicationControl {
         newApp.Name = newApp.Camper_First_Name__c + ' ' + newApp.Camper_Last_Name__c;
         previousInstrumentExperience();
         newApp.Attend_2nd_Choice_Session__c = attendSecondSession == 'Yes' ? true : false;
-        newApp.Student_at_Suder__c = studentAtSuder == 'Yes' ? true : false;
+//        newApp.Student_at_Suder__c = studentAtSuder == 'Yes' ? true : false;
         newApp.Student_at_Josephinum__c = studentAtJosephinum == 'Yes' ? true : false;
         newApp.Siblings_or_Relatives_Attending__c = camperSiblingsAttending == 'Yes' ? true : false;
         newApp.Siblings_or_Relatives__c = this.camperSiblings != null ? this.camperSiblings : '';

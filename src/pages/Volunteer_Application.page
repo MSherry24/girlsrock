@@ -192,6 +192,10 @@
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Age" styleClass="question"/>
+                                <apex:inputField id="age" value="{!newApp.Age__c}" required="true"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Email Address" styleClass="question"/>
                                 <apex:inputField id="emailAddress" value="{!newApp.Email_Address__c}" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
@@ -377,15 +381,15 @@
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LadiesRock_FullTIme}"/></td>
-                                                <td><span>I am available Friday - Sunday, Insert Full Time Hours</span></td>
+                                                <td><span>I am available Friday - Sunday, TBD Full Time</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LadiesRock_Morning}"/></td>
-                                                <td><span>I am available Friday - Sunday, Insert Morning Hours</span></td>
+                                                <td><span>I am available Friday - Sunday, TBD Morning Hours</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LadiesRock_Evening}"/></td>
-                                                <td><span>I am available Friday - Sunday, Insert Evening Hours</span></td>
+                                                <td><span>I am available Friday - Sunday, TBD Evening Hours</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LadiesRock_Sunday}"/></td>
@@ -418,12 +422,12 @@
                                     <table>
                                         <tbody>
                                         <tr>
-                                            <td><apex:inputCheckbox value="{!LoadInSession1}"/></td>
-                                            <td><span>Load In Session 1 - {!Session1LoadIn1} and {!Session1LoadIn2}</span></td>
+                                            <td><apex:inputCheckbox value="{!LoadInLadiesRock}"/></td>
+                                            <td><span>Load In Ladies Rock Camp - {!LadiesRockLoadIn1} and {!LadiesRockLoadIn2}</span></td>
                                         </tr>
                                         <tr>
-                                            <td><apex:inputCheckbox value="{!LoadOutSession1}"/></td>
-                                            <td><span>Load Out Session 1 - {!Session1LoadOut}</span></td>
+                                            <td><apex:inputCheckbox value="{!LoadInSession1}"/></td>
+                                            <td><span>Load In Session 1 - {!Session1LoadIn1} and {!Session1LoadIn2}</span></td>
                                         </tr>
                                         <tr>
                                             <td><apex:inputCheckbox value="{!LoadInSession2}"/></td>
@@ -597,6 +601,10 @@
                                 <apex:inputField value="{!newapp.Girls_Work_Experience_Explained__c}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="What language(s) do you speak?"/>
+                                <apex:inputField value="{!newapp.Languages__c}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
                                 <apex:OutputLabel value="Do you have any experience working with children with special needs (e.g., ADHD, downs syndrome, behavioral needs etc.)?"/>
                                 <apex:inputField value="{!newapp.Special_Needs_Experience__c}" styleClass="specialNeedsExperience" onChange="showHideSectionByPicklistValue('specialNeedsExperience', 'specialNeedsExperienceExplained', ['Yes']);" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
@@ -637,7 +645,7 @@
                             <apex:outputLabel value="2016 GR!C Volunteer Application - GENERAL VOLUNTEER INFO" styleClass="title" />
                             <apex:outputLabel value="Page 5 of 7" styleClass="question" />
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="What is your availability during LADIES ROCK CAMP?  Check all that apply."/>
+                                <apex:outputLabel value="Have you volunteered before?"/>
                                 <apex:outputPanel>
                                     <div class="italic">Check all that apply.</div>
                                     <table>
@@ -771,7 +779,7 @@
                                     </div>
                                     <br/>
                                     <div class="italic wideLabel">
-                                        Suder Montessori is located near the intersection of Washington and Damen, near the I-290 (for drivers) and accessible via the Damen or Madison buses, also within a half-mile walking distance from the Green Line (Ashland) and Blue Line (Illinois Medical District).
+                                        Josephinum Academy is located at the intersection of LeMoyne and Oakley, near 90/94 (for drivers) and accessible via the Damen, Western, or North buses. It's also within a half-mile walking distance from the Blue Line (Damen or Western).
                                     </div>
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>

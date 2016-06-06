@@ -172,8 +172,8 @@ public with sharing class Test_VolunteerApplicationControl {
         vac.LadiesRock_Other = true;
         vac.LadiesRock_Varies = true;
         vac.LadiesRock_NotAvailable = true;
+        vac.LoadInLadiesRock = true;
         vac.LoadInSession1 = true;
-        vac.LoadOutSession1 = true;
         vac.LoadInSession2 = true;
         vac.LoadOutSession2 = true;
         vac.InstrumentTeacherBass = true;

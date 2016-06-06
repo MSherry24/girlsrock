@@ -1,4 +1,4 @@
-public with sharing class VolunteerApplicationControl {
+global class VolunteerApplicationControl {
     public boolean getValidationOn() { return true; }
     // Control Variables
     Integer pageNumber { get; set; }
@@ -36,9 +36,9 @@ public with sharing class VolunteerApplicationControl {
     public Boolean LadiesRock_Varies { get; set; }
     public Boolean LadiesRock_NotAvailable { get; set; }
     public Boolean LoadInSession1 { get; set; }
-    public Boolean LoadOutSession1 { get; set; }
     public Boolean LoadInSession2 { get; set; }
     public Boolean LoadOutSession2 { get; set; }
+    public Boolean LoadInLadiesRock { get; set; }
     public Boolean InstrumentTeacherBass { get; set; }
     public Boolean InstrumentTeacherDrums { get; set; }
     public Boolean InstrumentTeacherGuitar { get; set; }
@@ -76,6 +76,8 @@ public with sharing class VolunteerApplicationControl {
     public String Session2LoadIn1 { get {return GrcUtils.Session2LoadIn1;} }
     public String Session2LoadIn2 { get {return GrcUtils.Session2LoadIn2;} }
     public String Session2LoadOut { get {return GrcUtils.Session2LoadOut;} }
+    public String LadiesRockLoadIn1 { get {return GrcUtils.LadiesRockLoadIn1;} }
+    public String LadiesRockLoadIn2 { get {return GrcUtils.LadiesRockLoadIn2;} }
 
     Volunteer_Application__c newApp { get; set; }
     Boolean validationOn = true;
@@ -124,10 +126,10 @@ public with sharing class VolunteerApplicationControl {
         if (LadiesRock_NotAvailable) {newApp.Ladies_Rock_Availability__c += 'I\'m not available to volunteer. ';}
         // Load in/Load out
         newApp.Load_In_Load_Out_Availability__c = '';
-        if(LoadInSession1) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 1 - Friday, July 3rd & Sunday, July 5th; ';}
-        if(LoadOutSession1) {newApp.Load_In_Load_Out_Availability__c += 'Load Out Session 1 - Saturday, July 11th; ';}
-        if(LoadInSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 2 - Saturday, August 1st & Sunday, August 2nd; ';}
-        if(LoadOutSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load Out Session 2 - Sunday, August 9th; ';}
+        if(LoadInLadiesRock) {newApp.Load_In_Load_Out_Availability__c += 'Load In Ladies Rock; ';}
+        if(LoadInSession1) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 1; ';}
+        if(LoadInSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 2; ';}
+        if(LoadOutSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load Out Session 2; ';}
         // Page 3
         // Positions
         newApp.positions__c = '';
@@ -172,11 +174,11 @@ public with sharing class VolunteerApplicationControl {
         if(VolunteeredButNotForCamp) {newApp.Volunteered_Before__c += 'I have volunteered for Ladies Rock! Camp or interned for Girls Rock! Chicago before, but I have not worked at camp. ';}
         if(VolunteeredInAnotherCity) {newApp.Volunteered_Before__c += 'I have volunteered for rock camp in another city. ';}
         if(VolunteeredButNotWorkedAtCamp) {newApp.Volunteered_Before__c += 'I have volunteered or interned for Girls Rock! Chicago before, but I have not worked at camp. ';}
-                // Page 6
+        // Page 6
         // Page 7
         upsert newApp;
         this.pageNumber++;
-//            sendConfirmationEmail(newApp.id);
+        sendConfirmationEmail(newApp.id);
     }
 
     // UI Controls
@@ -194,5 +196,54 @@ public with sharing class VolunteerApplicationControl {
     }
     public void prevpage() {
         this.pageNumber--;
+    }
+
+    public static void sendConfirmationEmail (String newAppId) {
+        Volunteer_Application__c newApp = [SELECT Email_Address__c, Last_Name__c FROM Volunteer_Application__c where id = :newAppId][0];
+        // Create temporary contact to be used in the email send.
+        if (test.isRunningTest()) {
+            newApp.Email_Address__c = 'a@sample.com';
+            newApp.Last_Name__c = 'sample';
+        }
+        contact tempContact = new Contact(
+                email = newApp.Email_Address__c,
+                lastName = newApp.Last_Name__c
+        );
+        insert tempContact;
+        ID contactID = tempContact.ID;
+
+
+        String grcVoluneerTemplateId = [select id from EmailTemplate where developername='grcVolunteerEmailTemplate'][0].id;
+        Messaging.reserveSingleEmailCapacity(2);
+        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+
+        // Make tempContact the target object to use its email address.
+        mail.setTargetObjectId(contactID);
+
+        // Specify the text content of the email.
+        mail.setTemplateId(grcVoluneerTemplateId);
+
+        // Specify the address used when the recipients reply to the email.
+        mail.setReplyTo('volunteer@girlsrockchicago.org');
+
+        // Specify the name used as the display name.
+        mail.setSenderDisplayName('Girls Rock! Chicago');
+
+        // Set to True if you want to BCC yourself on the email.
+        mail.setBccSender(true);
+
+        system.debug('mail = ' + mail);
+        // Send the email you have created.
+
+        if (!Test.isRunningTest()) {
+            try {
+                Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
+            }
+            catch (emailexception e) {
+                system.debug('email exception - ' + e);
+            }
+        }
+        // Delete Temporary contact
+        delete tempContact;
     }
 }

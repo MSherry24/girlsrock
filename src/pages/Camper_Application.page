@@ -13,6 +13,10 @@
         .italicText {
             font-style: italic;
         }
+        .link {
+            text-decoration: underline;
+            cursor: pointer;
+        }
         .multiSelectPicklistTable .multiSelectPicklistRow select {
             height: 8em;
             width: 20em;
@@ -315,16 +319,16 @@
                             </div>
                         </apex:outputpanel>
                     </apex:pageblockSectionItem>
+                    <!--<apex:pageblockSectionItem >-->
+                        <!--<apex:outputLabel value="{!$Label.CampAppSuderStudent}" styleClass="question"/>-->
+                        <!--<apex:outputpanel >-->
+                            <!--<apex:selectRadio value="{!studentAtSuder}">-->
+                            	<!--<apex:selectOptions value="{!YesNoOptions}"/>-->
+                        	<!--</apex:selectRadio>-->
+                        <!--</apex:outputpanel>-->
+                    <!--</apex:pageblockSectionItem>-->
                     <apex:pageblockSectionItem >
-                        <apex:outputLabel value="{!$Label.CampAppSuderStudent}" styleClass="question"/>
-                        <apex:outputpanel >
-                            <apex:selectRadio value="{!studentAtSuder}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
-                        </apex:outputpanel>
-                    </apex:pageblockSectionItem>
-                    <apex:pageblockSectionItem >
-                        <apex:outputLabel value="{!$ObjectType.Camper_Application__c.fields.Student_at_Josephinum__c.Label}" styleClass="question"/>
+                        <apex:outputLabel value="Is the camper a current student at Josephinum Academy?" styleClass="question"/>
                         <apex:outputpanel >
                             <apex:selectRadio value="{!studentAtJosephinum}">
                                 <apex:selectOptions value="{!YesNoOptions}"/>
@@ -490,44 +494,7 @@
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="Does your camper plan on bringing an instrument to camp?" styleClass="question"/>
-                        <apex:outputPanel>
-                            <div class="italicText">You can select more than one answer</div>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <apex:inputCheckbox value="{!BringingBass}"/>
-                                        <apex:outputLabel value="Bass"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <apex:inputCheckbox value="{!BringingElectricGuitar}"/>
-                                        <apex:outputLabel value="Electric Guitar"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <apex:inputCheckbox value="{!BringingKeyboard}"/>
-                                        <apex:outputLabel value="Keyboard"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <apex:inputCheckbox value="{!NotBringingInstrument}"/>
-                                        <apex:outputLabel value="I do not plan to bring an instrument to camp"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <apex:inputCheckbox value="{!BringingOther}"/>
-                                        <apex:outputLabel value="Other"/>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-
-                        </apex:outputPanel>
+                        <apex:inputField value="{!newApp.Bringing_Instrument_to_Camp__c}" required="true"/>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                     	<apex:outputLabel value="{!$Label.rightOrLeftHanded}" styleClass="question"/>
@@ -672,6 +639,7 @@
                             <apex:selectRadio value="{!applyingForFinancialAid}">
                             	<apex:selectOptions value="{!YesNoOptions}"/>
                         	</apex:selectRadio>
+                            <div class="italicText">The full price of tuition is $500. Please see our financial aid guideliness here: <a class="link" onClick="window.open('https://goo.gl/OmFihP');">https://goo.gl/OmFihP</a></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                 </apex:pageblockSection>    
@@ -698,14 +666,15 @@
                                     </div>
                                     <br/>
                                     <div>
-                                        {!$Label.CampAppFinancialAid4}
+                                        <span>{!$Label.CampAppFinancialAid4}</span>
+                                        <span> <a class="link" onClick="window.open('https://goo.gl/OmFihP');">https://goo.gl/OmFihP</a></span>
                                     </div>
                                 </div>
                             </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.campAppHowMuchTuitionCanYouPay}" styleClass="question" />
-                        <apex:inputField id="HowMuchCanYouAffordToPay" value="{!newApp.How_Much_Tuition_Can_You_Pay__c}" required="true" />
+                        <apex:inputField id="HowMuchCanYouAffordToPay" value="{!newApp.grcapp__How_Much_Tuition_2016__c}" required="true" />
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.CampAppTotalEstimatedIncome}" styleClass="question" />
