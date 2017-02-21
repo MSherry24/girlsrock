@@ -1,5 +1,4 @@
 global class VolunteerApplicationControl {
-    public boolean getValidationOn() { return true; }
     // Control Variables
     Integer pageNumber { get; set; }
     public Boolean BandCoach { get; set; }
@@ -28,35 +27,41 @@ global class VolunteerApplicationControl {
     public Boolean Session2_Varies { get; set; }
     public Boolean Session2_NotAvailable { get; set; }
     public Boolean LadiesRock_OpenAvailability { get; set; }
-    public Boolean LadiesRock_FullTIme { get; set; }
-    public Boolean LadiesRock_Morning { get; set; }
-    public Boolean LadiesRock_Evening { get; set; }
-    public Boolean LadiesRock_Sunday { get; set; }
+    public Boolean LadiesRock_FridayMorning { get; set; }
+    public Boolean LadiesRock_WeekendMorning{ get; set; }
+    public Boolean LadiesRock_WeekendEvening { get; set; }
+    public Boolean LadiesRock_MondayEvening { get; set; }
     public Boolean LadiesRock_Other { get; set; }
-    public Boolean LadiesRock_Varies { get; set; }
     public Boolean LadiesRock_NotAvailable { get; set; }
     public Boolean LoadInSession1 { get; set; }
     public Boolean LoadInSession2 { get; set; }
     public Boolean LoadOutSession2 { get; set; }
     public Boolean LoadInLadiesRock { get; set; }
+    public Boolean LoadOutOther { get; set; }
+    public Boolean ShredShop_Saturday1 { get; set; }
+    public Boolean ShredShop_Sunday1 {get; set; }
+    public Boolean ShredShop_Saturday2 { get; set; }
+    public Boolean ShredShop_Sunday2 {get; set; }
+    public Boolean ShredShop_Other {get; set; }
+    public Boolean ShredShop_NotAvailable { get; set; }
+    public Boolean JAMusicClub_Tuesday330_5 { get; set; }
+    public Boolean JAMusicClub_Tuesday430_6 { get; set; }
+    public Boolean JAMusicClub_Tuesday330_6 { get; set; }
+    public Boolean JAMusicClub_Other { get; set; }
+    public Boolean JAMusicClub_NotAvailable { get; set; }
     public Boolean InstrumentTeacherBass { get; set; }
     public Boolean InstrumentTeacherDrums { get; set; }
     public Boolean InstrumentTeacherGuitar { get; set; }
     public Boolean InstrumentTeacherKeyboards { get; set; }
     public Boolean InstrumentTeacherDJ { get; set; }
     public Boolean No_First_Time { get; set; }
-    public Boolean Yes2015Two { get; set; }
-    public Boolean Yes2015One { get; set; }
-    public Boolean Yes2014Two { get; set; }
-    public Boolean Yes2014One { get; set; }
-    public Boolean Yes2013Two { get; set; }
-    public Boolean Yes2013One { get; set; }
-    public Boolean Yes2012Two { get; set; }
-    public Boolean Yes2012One { get; set; }
-    public Boolean Yes2011Two { get; set; }
-    public Boolean Yes2011One { get; set; }
-    public Boolean Yes2010Two { get; set; }
-    public Boolean Yes2010One { get; set; }
+    public Boolean Yes2016 { get; set; }
+    public Boolean Yes2015 { get; set; }
+    public Boolean Yes2014 { get; set; }
+    public Boolean Yes2013 { get; set; }
+    public Boolean Yes2012 { get; set; }
+    public Boolean Yes2011 { get; set; }
+    public Boolean Yes2010 { get; set; }
     public Boolean Yes2009 { get; set; }
     public Boolean Yes2008 { get; set; }
     public Boolean Yes2007 { get; set; }
@@ -80,7 +85,7 @@ global class VolunteerApplicationControl {
     public String LadiesRockLoadIn2 { get {return GrcUtils.LadiesRockLoadIn2;} }
 
     Volunteer_Application__c newApp { get; set; }
-    Boolean validationOn = true;
+    public Boolean validationOn { get { return true; }}
 
     // Logic Controls
     public VolunteerApplicationControl() {
@@ -101,8 +106,7 @@ global class VolunteerApplicationControl {
         if (Session1_9to1) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
         if (Session1_1to5) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
         if (Session1_Weekend) {newApp.Session_One_Availability__c += 'I am available on the weekend. ';}
-        if (Session1_Other) {newApp.Session_One_Availability__c += 'I have availability that extends beyond the hours listed here; please contact me to discuss additional opportunities. ';}
-        if (Session1_Varies) {newApp.Session_One_Availability__c += 'My availability varies; please contact me to discuss my options. ';}
+        if (Session1_Other) {newApp.Session_One_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
         if (Session1_NotAvailable) {newApp.Session_One_Availability__c += 'I\'m not available to volunteer. ';}
         // Session 2 Availability
         newApp.Session_Two_Availability__c = '';
@@ -111,18 +115,16 @@ global class VolunteerApplicationControl {
         if (Session2_9to1) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
         if (Session2_1to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
         if (Session2_Weekend) {newApp.Session_Two_Availability__c += 'I am available on the weekend. ';}
-        if (Session2_Other) {newApp.Session_Two_Availability__c += 'I have availability that extends beyond the hours listed here; please contact me to discuss additional opportunities. ';}
-        if (Session2_Varies) {newApp.Session_Two_Availability__c += 'My availability varies; please contact me to discuss my options. ';}
+        if (Session2_Other) {newApp.Session_Two_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
         if (Session2_NotAvailable) {newApp.Session_Two_Availability__c += 'I\'m not available to volunteer. ';}
         // Ladies Rock Availability
         newApp.Ladies_Rock_Availability__c = '';
         if (LadiesRock_OpenAvailability) {newApp.Ladies_Rock_Availability__c += 'I have open availability; I can help any time throughout the session. ';}
-        if (LadiesRock_FullTIme) {newApp.Ladies_Rock_Availability__c += 'I am available Friday - Sunday, Insert Full Time Hours ';}
-        if (LadiesRock_Morning) {newApp.Ladies_Rock_Availability__c += 'I am available Friday - Sunday, Insert Morning Hours ';}
-        if (LadiesRock_Evening) {newApp.Ladies_Rock_Availability__c += 'I am available Friday - Sunday, Insert Evening Hours ';}
-        if (LadiesRock_Sunday) {newApp.Ladies_Rock_Availability__c += 'I am available on Sunday (Showcase!) ';}
-        if (LadiesRock_Other) {newApp.Ladies_Rock_Availability__c += 'I have availability that extends beyond the hours listed here; please contact me to discuss additional opportunities. ';}
-        if (LadiesRock_Varies) {newApp.Ladies_Rock_Availability__c += 'My availability varies; please contact me to discuss my options. ';}
+        if (LadiesRock_FridayMorning) {newApp.Ladies_Rock_Availability__c += 'I am available Friday 7 PM - 9 PM ';}
+        if (LadiesRock_WeekendMorning) {newApp.Ladies_Rock_Availability__c += 'I am available Saturday, Sunday & Monday 9 AM - 12 PM ';}
+        if (LadiesRock_WeekendEvening) {newApp.Ladies_Rock_Availability__c += 'I am available Friday - Sunday, Insert Evening Hours ';}
+        if (LadiesRock_MondayEvening) {newApp.Ladies_Rock_Availability__c += 'I am available Monday 6 PM - 8 PM ';}
+        if (LadiesRock_Other) {newApp.Ladies_Rock_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
         if (LadiesRock_NotAvailable) {newApp.Ladies_Rock_Availability__c += 'I\'m not available to volunteer. ';}
         // Load in/Load out
         newApp.Load_In_Load_Out_Availability__c = '';
@@ -130,7 +132,26 @@ global class VolunteerApplicationControl {
         if(LoadInSession1) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 1; ';}
         if(LoadInSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 2; ';}
         if(LoadOutSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load Out Session 2; ';}
+        if(LoadOutOther) {newApp.Load_In_Load_Out_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
+        // Shred Shop
+        newApp.Shred_Shop_Availability__c = '';
+        if (ShredShop_Saturday1) {newApp.Shred_Shop_Availability__c += 'Saturday, January 21, 2017; ';}
+        if (ShredShop_Sunday1) {newApp.Shred_Shop_Availability__c += 'Sunday, March 12, 2017; ';}
+        if (ShredShop_Saturday2) {newApp.Shred_Shop_Availability__c += 'Saturday, April 22, 2017; ';}
+        if (ShredShop_Sunday2) {newApp.Shred_Shop_Availability__c += 'Sunday, May 14, 2017; ';}
+        if (ShredShop_Other) {newApp.Shred_Shop_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options.; ';}
+        if (ShredShop_NotAvailable) {newApp.Shred_Shop_Availability__c += 'I\'m not available to volunteer.';}
+        system.debug('newApp.Shred_Shop_Availability__c: ' + newApp.Shred_Shop_Availability__c);
+        //Josephinium Music Club
+        newApp.Josephinum_Music_Club_Availability__c = '';
+        if (JAMusicClub_Tuesday330_5) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 5 PM; ';}
+        if (JAMusicClub_Tuesday430_6) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 4:30 PM - 6 PM; ';}
+        if (JAMusicClub_Tuesday330_6) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 6 PM; ';}
+        if (JAMusicClub_Other) {newApp.Josephinum_Music_Club_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options.; ';}
+        if (JAMusicClub_NotAvailable) {newApp.Josephinum_Music_Club_Availability__c += 'I\'m not available to volunteer.; ';}
         // Page 3
+
+
         // Positions
         newApp.positions__c = '';
         if(BandCoach) { newApp.positions__c += 'BAND COACH **musical experience required** (Monday - Friday, 2:30pm-4:30pm; showcase and recording); ';}
@@ -144,29 +165,26 @@ global class VolunteerApplicationControl {
         if(RoadiePartTime) { newApp.positions__c += 'ROADIE *PART TIME* (We will contact you for your availability); ';}
         // Instrument Teacher
         newApp.Instrument_Teacher_Explained__c = '';
+        system.debug('InstrumentTeacherBass = ' + InstrumentTeacherBass);
         if(InstrumentTeacherBass) { newApp.Instrument_Teacher_Explained__c += 'Bass; ';}
         if(InstrumentTeacherDrums) { newApp.Instrument_Teacher_Explained__c += 'Drums; ';}
         if(InstrumentTeacherGuitar) { newApp.Instrument_Teacher_Explained__c += 'Guitar; ';}
         if(InstrumentTeacherKeyboards) { newApp.Instrument_Teacher_Explained__c += 'Keyboards; ';}
         if(InstrumentTeacherDJ) { newApp.Instrument_Teacher_Explained__c += 'Turntables/DJ; ';}
+        system.debug('newApp.Instrument_Teacher_Explained__c: ' + newApp.Instrument_Teacher_Explained__c);
         // Page 4
         // NONE
         // Page 5
         // Volunteered Before
         newApp.Volunteered_Before__c = '';
         if(No_First_Time) {newApp.Volunteered_Before__c += 'Nope! This is my first time. ';}
-        if(Yes2015Two) {newApp.Volunteered_Before__c += 'Yes, 2015 Session Two. ';}
-        if(Yes2015One) {newApp.Volunteered_Before__c += 'Yes, 2015 Session One. ';}
-        if(Yes2014Two) {newApp.Volunteered_Before__c += 'Yes, 2014 Session Two. ';}
-        if(Yes2014One) {newApp.Volunteered_Before__c += 'Yes, 2014 Session One. ';}
-        if(Yes2013Two) {newApp.Volunteered_Before__c += 'Yes, 2013 Session Two. ';}
-        if(Yes2013One) {newApp.Volunteered_Before__c += 'Yes, 2013 Session One. ';}
-        if(Yes2012Two) {newApp.Volunteered_Before__c += 'Yes, 2012 Session Two. ';}
-        if(Yes2012One) {newApp.Volunteered_Before__c += 'Yes, 2012 Session One. ';}
-        if(Yes2011Two) {newApp.Volunteered_Before__c += 'Yes, 2011 Session Two. ';}
-        if(Yes2011One) {newApp.Volunteered_Before__c += 'Yes, 2011 Session One. ';}
-        if(Yes2010Two) {newApp.Volunteered_Before__c += 'Yes, 2010 Session Two. ';}
-        if(Yes2010One) {newApp.Volunteered_Before__c += 'Yes, 2010 Session One. ';}
+        if(Yes2016) {newApp.Volunteered_Before__c += 'Yes, in 2016. ';}
+        if(Yes2015) {newApp.Volunteered_Before__c += 'Yes, in 2015. ';}
+        if(Yes2014) {newApp.Volunteered_Before__c += 'Yes, in 2014. ';}
+        if(Yes2013) {newApp.Volunteered_Before__c += 'Yes, in 2013. ';}
+        if(Yes2012) {newApp.Volunteered_Before__c += 'Yes, in 2012. ';}
+        if(Yes2011) {newApp.Volunteered_Before__c += 'Yes, in 2011. ';}
+        if(Yes2010) {newApp.Volunteered_Before__c += 'Yes, in 2010. ';}
         if(Yes2009) {newApp.Volunteered_Before__c += 'Yes, in 2009. ';}
         if(Yes2008) {newApp.Volunteered_Before__c += 'Yes, in 2008. ';}
         if(Yes2007) {newApp.Volunteered_Before__c += 'Yes, in 2007. ';}
@@ -189,8 +207,7 @@ global class VolunteerApplicationControl {
     public boolean getrenderPage5() { return this.pageNumber == 5; }
     public boolean getrenderPage6() { return this.pageNumber == 6; }
     public boolean getrenderPage7() { return this.pageNumber == 7; }
-    public boolean getrenderPage8() { return this.pageNumber == 8; }
-    public boolean getSaveDisabled() { return this.pageNumber != 7; }
+    public boolean getSaveDisabled() { return this.pageNumber != 6; }
     public void nextpage() {
         this.pageNumber++;
     }

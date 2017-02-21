@@ -94,14 +94,6 @@ public with sharing class Test_VolunteerApplicationControl {
         Test.stopTest();
     }
     @isTest
-    static void test_getrenderPage8()
-    {
-        Test.startTest();
-        VolunteerApplicationControl vac = new VolunteerApplicationControl();
-        vac.getrenderPage8();
-        Test.stopTest();
-    }
-    @isTest
     static void test_getSaveDisabled()
     {
         Test.startTest();
@@ -130,7 +122,7 @@ public with sharing class Test_VolunteerApplicationControl {
     {
         Test.startTest();
         VolunteerApplicationControl vac = new VolunteerApplicationControl();
-        Boolean validationOn = vac.getValidationOn();
+        Boolean validationOn = vac.validationOn;
         Test.stopTest();
         system.assert(validationOn);
     }
@@ -165,35 +157,41 @@ public with sharing class Test_VolunteerApplicationControl {
         vac.Session2_Varies = true;
         vac.Session2_NotAvailable = true;
         vac.LadiesRock_OpenAvailability = true;
-        vac.LadiesRock_FullTIme = true;
-        vac.LadiesRock_Morning = true;
-        vac.LadiesRock_Evening = true;
-        vac.LadiesRock_Sunday = true;
+        vac.LadiesRock_FridayMorning = true;
+        vac.LadiesRock_WeekendMorning = true;
+        vac.LadiesRock_WeekendEvening = true;
+        vac.LadiesRock_MondayEvening = true;
         vac.LadiesRock_Other = true;
-        vac.LadiesRock_Varies = true;
         vac.LadiesRock_NotAvailable = true;
         vac.LoadInLadiesRock = true;
         vac.LoadInSession1 = true;
         vac.LoadInSession2 = true;
         vac.LoadOutSession2 = true;
+        vac.LoadOutOther = true;
+        vac.ShredShop_Saturday1 = true;
+        vac.ShredShop_Sunday1 = true;
+        vac.ShredShop_Saturday2 = true;
+        vac.ShredShop_Sunday2 = true;
+        vac.ShredShop_Other = true;
+        vac.ShredShop_NotAvailable = true;
+        vac.JAMusicClub_Tuesday330_5 = true;
+        vac.JAMusicClub_Tuesday430_6 = true;
+        vac.JAMusicClub_Tuesday330_6 = true;
+        vac.JAMusicClub_Other = true;
+        vac.JAMusicClub_NotAvailable = true;
         vac.InstrumentTeacherBass = true;
         vac.InstrumentTeacherDrums = true;
         vac.InstrumentTeacherGuitar = true;
         vac.InstrumentTeacherKeyboards = true;
         vac.InstrumentTeacherDJ = true;
         vac.No_First_Time = true;
-        vac.Yes2015Two = true;
-        vac.Yes2015One = true;
-        vac.Yes2014Two = true;
-        vac.Yes2014One = true;
-        vac.Yes2013Two = true;
-        vac.Yes2013One = true;
-        vac.Yes2012Two = true;
-        vac.Yes2012One = true;
-        vac.Yes2011Two = true;
-        vac.Yes2011One = true;
-        vac.Yes2010Two = true;
-        vac.Yes2010One = true;
+        vac.Yes2016 = true;
+        vac.Yes2015 = true;
+        vac.Yes2014 = true;
+        vac.Yes2013 = true;
+        vac.Yes2012 = true;
+        vac.Yes2011 = true;
+        vac.Yes2010 = true;
         vac.Yes2009 = true;
         vac.Yes2008 = true;
         vac.Yes2007 = true;

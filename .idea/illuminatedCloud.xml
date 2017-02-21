@@ -4,17 +4,7 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="buildSuccessDatesBySourceRootRelativePath">
-            <map>
-              <entry key="CLASSES/GRCUTILS.CLS" value="1457898064000" />
-              <entry key="CLASSES/TEST_GRCUTILS.CLS" value="1457898837000" />
-              <entry key="CLASSES/TEST_VOLUNTEERAPPLICATIONCONTROL.CLS" value="1457296032000" />
-              <entry key="CLASSES/VOLUNTEERAPPLICATIONCONTROL.CLS" value="1453074688000" />
-              <entry key="PAGES/CAMPER_APPLICATION.PAGE" value="1453069655000" />
-              <entry key="PAGES/VOLUNTEER_APPLICATION.PAGE" value="1453077354000" />
-            </map>
-          </option>
-          <option name="checkForConflicts" value="true" />
+          <option name="connectionName" value="girlsRockDevOrg" />
           <option name="defaultModuleName" value="girlsRockDevOrg" />
           <option name="developmentPackages">
             <list>
@@ -25,18 +15,9 @@
               </DevelopmentPackageExt>
             </list>
           </option>
-          <option name="name" value="girlsRockDevOrg" />
-          <option name="offlineSymbolTableGenerationDate" value="1453053228136" />
           <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/girlsRockDevOrg/OfflineSymbolTable.zip" />
-          <option name="organizationNamespace" value="grcapp" />
-          <option name="organizationType" value="DEVELOPMENT" />
-          <option name="password" value="dfe7df99df8cdff0dfe4dffbdfcddf9adfeddf9ddfdddfe9" />
-          <option name="securityToken" value="dff2dfe8dffcdfeedfc1dff3dfdddfe8df9edf92dfe4dfffdf9ddfcddfc5dfffdfefdfeedffadfd8dfc3dffddfdedff2dfff" />
-          <option name="username" value="girlsrockdevorg@mikesherry.com" />
-          <option name="workaroundForHttp411IssueEnabled" value="true" />
         </IlluminatedCloudConnection>
       </list>
     </option>
-    <option name="selectedConnectionIndex" value="0" />
   </component>
 </project>

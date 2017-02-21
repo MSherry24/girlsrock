@@ -79,15 +79,30 @@
     }
         
     var waitThenRedirect = function() {
-    	window.setTimeout(function() {
-    		window.location.href = "http://girlsrockchicago.org/girlscamp/confirmation/";
-    	}, 10000);
+        window.setTimeout(function() {
+            window.location.href = "http://girlsrockchicago.org/girlscamp/confirmation/";
+        }, 10000);
     };
+
+    function hasValidationErrors() {
+        if (!j$('[id*=PaymentMethod]').val()) {
+            return true;
+        }
+        if(j$('[id*=ChildMustBeAvailable]:checked').length ==0) {
+            return true;
+        }
+        return false;
+    }
     
     var saving = function() {
-        j$('[id*="saveButton"]').attr('value', 'Please Wait');
-        j$('[id*="saveButton"]').addClass('btnDisabled');
+        if (!hasValidationErrors()) {
+            j$('[id*="saveButton"]').attr('value', 'Please Wait');
+            j$('[id*="saveButton"]').addClass('btnDisabled');
+        }
     }
+
+
+
     </script>
    <apex:form id="page">
         <apex:actionFunction name="save" action="save" rerender="" />
