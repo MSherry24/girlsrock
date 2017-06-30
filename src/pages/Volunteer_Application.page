@@ -96,7 +96,7 @@
                 var waitThenRedirect = function() {
                     if (!j$(".error").length) {
                          window.setTimeout(function() {
-                            window.location.href = "http://girlsrockchicago.org/volunteer/";
+                            window.location.href = "https://girlsrockchicago.org/get-involved/";
                         }, 10000);
                     }
                 };
@@ -358,9 +358,9 @@
                                 <apex:inputField value="{!newApp.Session_Two_Availability_Comments__c}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="What is your availability during LADIES ROCK CAMP?  Check all that apply."/>
+                                <apex:outputLabel value="What is your availability during LET'S ROCK CAMP?  Check all that apply."/>
                                 <apex:outputPanel>
-                                    <div class="italic">Ladies Rock Camp: {!LadiesRockStart} - {!LadiesRockEnd}</div>
+                                    <div class="italic">Let's Rock Camp: {!LadiesRockStart} - {!LadiesRockEnd}</div>
                                     <table>
                                         <tbody>
                                             <tr>
@@ -407,7 +407,7 @@
                                         <tbody>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LoadInLadiesRock}"/></td>
-                                                <td><span>Load In Ladies Rock Camp - {!LadiesRockLoadIn1}, 9 AM - 5 PM</span></td>
+                                                <td><span>Load In Let's Rock Camp - {!LadiesRockLoadIn1}, 9 AM - 5 PM</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LoadInSession1}"/></td>
@@ -755,7 +755,7 @@
                                         </tr>
                                         <tr>
                                             <td><apex:inputCheckbox value="{!VolunteeredButNotForCamp}"/></td>
-                                            <td><span>I have volunteered for Ladies Rock! Camp or interned for Girls Rock! Chicago before, but I have not worked at camp.</span></td>
+                                            <td><span>I have volunteered for Let's Rock! Camp or interned for Girls Rock! Chicago before, but I have not worked at camp.</span></td>
                                         </tr>
                                         <tr>
                                             <td><apex:inputCheckbox value="{!VolunteeredInAnotherCity}"/></td>
@@ -860,7 +860,7 @@
                             <apex:outputLabel value="THANK YOU for applying to volunteer at Girls Rock! Chicago's 2017 summer camp!" styleClass="title" />
                             <apex:outputLabel value="Press the 'Submit Application' button to complete your application" styleClass="question" />
                             <apex:outputLabel value="Volunteer with us all year long!" styleClass="italic"/>
-                            <apex:outputLabel value="If you are interested in volunteering with Girls Rock! Chicago throughout the year, please visit our website http://girlsrockchicago.org/volunteer/get-involved-now to find out the most up to speed volunteer needs or email volunteer@girlsrockchicago.org with any questions you may have." styleClass="italic widelabel"/>
+                            <apex:outputLabel value="If you are interested in volunteering with Girls Rock! Chicago throughout the year, please visit our website https://girlsrockchicago.org/get-involved to find out the most up to speed volunteer needs or email volunteer@girlsrockchicago.org with any questions you may have." styleClass="italic widelabel"/>
                             <br/>
                             <div class="question">
                                 <p>
@@ -868,7 +868,7 @@
                                 </p>
                                 <br/>
                                 <br/>
-                                <a href="http://girlsrockchicago.org/volunteer/">
+                                <a href="https://girlsrockchicago.org/get-involved/">
                                     If you are not automatically redirected in ten seconds, click here.
                                 </a>
                             </div>

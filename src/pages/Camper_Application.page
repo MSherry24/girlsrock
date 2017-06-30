@@ -80,7 +80,7 @@
         
     var waitThenRedirect = function() {
         window.setTimeout(function() {
-            window.location.href = "http://girlsrockchicago.org/girlscamp/confirmation/";
+            window.location.href = "https://girlsrockchicago.org/camp-application-confirmation/";
         }, 10000);
     };
 
@@ -127,6 +127,7 @@
                     <apex:outputLabel value="Page 1 of 10" styleClass="question" />
                     <apex:outputLabel value="Which session of camp would you like to attend? *" styleClass="question" />
                     <apex:outputLabel value="Campers may only select one session." />
+                    <apex:outputLabel value="Please note: The 8 - 11 year old group is full in session one." />
                     <apex:selectRadio value="{!session}" required="false">
                         <apex:selectOptions value="{!sessionOptions}"/>
                     </apex:selectRadio>
@@ -157,7 +158,7 @@
                         <apex:outputLabel value="{!$ObjectType.Camper_Application__c.fields.Preferred_Gender_Pronouns__c.Label}" styleClass="question"/>
                         <apex:outputPanel >
                             <apex:inputField id="preferredGenderPronouns" value="{!newApp.Preferred_Gender_Pronouns__c}" required="false"/>
-                            <div class="italicText">Preferred Gender Pronouns are the set of pronouns that an individual would like others to use when talking to or about that individual. Girls Rock! Chicago strives to be as inclusive as possible of transgender and gender nonconforming youth. Examples include she/her/hers, they/them/theirs, and he/him/his.</div>
+                            <div class="italicText">Personal Gender Pronouns are the set of pronouns that an individual would like others to use when talking to or about that individual. Girls Rock! Chicago strives to be as inclusive as possible of transgender and gender nonconforming youth. Examples include she/her/hers, they/them/theirs, and he/him/his.</div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
@@ -196,79 +197,55 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <apex:inputCheckbox value="{!attendedJune2010}" />
-                                            <apex:outputLabel value="June 2010"/>
+                                            <apex:inputCheckbox value="{!attended2010}" />
+                                            <apex:outputLabel value="2010"/>
                                         </td>
                                         <td>
-                                            <apex:inputCheckbox value="{!attendedAugust2010}" />
-                                            <apex:outputLabel value="August 2010"/>
+                                            <apex:inputCheckbox value="{!attended2011}" />
+                                            <apex:outputLabel value="2011"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <apex:inputCheckbox value="{!attendedJune2011}" />
-                                            <apex:outputLabel value="June 2011"/>
+                                            <apex:inputCheckbox value="{!attended2012}" />
+                                            <apex:outputLabel value="2012"/>
                                         </td>
                                         <td>
-                                            <apex:inputCheckbox value="{!attendedAugust2011}" />
-                                            <apex:outputLabel value="August 2011"/>
+                                            <apex:inputCheckbox value="{!attended2013}" />
+                                            <apex:outputLabel value="2013"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <apex:inputCheckbox value="{!attendedJune2012}" />
-                                            <apex:outputLabel value="June 2012"/>
+                                            <apex:inputCheckbox value="{!attended2014}" />
+                                            <apex:outputLabel value="2014"/>
                                         </td>
                                         <td>
-                                            <apex:inputCheckbox value="{!attendedAugust2012}" />
-                                            <apex:outputLabel value="August 2012"/>
+                                            <apex:inputCheckbox value="{!attended2015}" />
+                                            <apex:outputLabel value="2015"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <apex:inputCheckbox value="{!attendedJune2013}" />
-                                            <apex:outputLabel value="June 2013"/>
+                                            <apex:inputCheckbox value="{!attended2016}" />
+                                            <apex:outputLabel value="2016"/>
                                         </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attendedAugust2013}" />
-                                            <apex:outputLabel value="August 2013"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attendedJune2014}" />
-                                            <apex:outputLabel value="June 2014"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attendedAugust2014}" />
-                                            <apex:outputLabel value="August 2014"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attendedJune2015}" />
-                                            <apex:outputLabel value="June 2015"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attendedAugust2015}" />
-                                            <apex:outputLabel value="August 2015"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <apex:inputCheckbox value="{!attendedInAnotherCity}" />
                                             <apex:outputLabel value="Attended Camp in Another City"/>
                                         </td>
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <apex:inputCheckbox value="{!appliedNeverAttended}" />
                                             <apex:outputLabel value="Applied, but Never Attended"/>
                                         </td>
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <apex:inputCheckbox value="{!neverAttendedOrApplied}" />
                                             <apex:outputLabel value="Never Attended or Applied Before"/>
                                         </td>
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <apex:inputCheckbox value="{!other}" />
                                             <apex:outputLabel value="Other"/>
@@ -334,22 +311,22 @@
                             </div>
                         </apex:outputpanel>
                     </apex:pageblockSectionItem>
-                    <!--<apex:pageblockSectionItem >-->
-                        <!--<apex:outputLabel value="{!$Label.CampAppSuderStudent}" styleClass="question"/>-->
-                        <!--<apex:outputpanel >-->
-                            <!--<apex:selectRadio value="{!studentAtSuder}">-->
-                            	<!--<apex:selectOptions value="{!YesNoOptions}"/>-->
-                        	<!--</apex:selectRadio>-->
-                        <!--</apex:outputpanel>-->
-                    <!--</apex:pageblockSectionItem>-->
                     <apex:pageblockSectionItem >
-                        <apex:outputLabel value="Is the camper a current student at Josephinum Academy?" styleClass="question"/>
+                        <apex:outputLabel value="{!$Label.CampAppSuderStudent}" styleClass="question"/>
                         <apex:outputpanel >
-                            <apex:selectRadio value="{!studentAtJosephinum}">
-                                <apex:selectOptions value="{!YesNoOptions}"/>
-                            </apex:selectRadio>
+                            <apex:selectRadio value="{!studentAtSuder}">
+                            	<apex:selectOptions value="{!YesNoOptions}"/>
+                        	</apex:selectRadio>
                         </apex:outputpanel>
                     </apex:pageblockSectionItem>
+                    <!--<apex:pageblockSectionItem >-->
+                        <!--<apex:outputLabel value="Is the camper a current student at Josephinum Academy?" styleClass="question"/>-->
+                        <!--<apex:outputpanel >-->
+                            <!--<apex:selectRadio value="{!studentAtJosephinum}">-->
+                                <!--<apex:selectOptions value="{!YesNoOptions}"/>-->
+                            <!--</apex:selectRadio>-->
+                        <!--</apex:outputpanel>-->
+                    <!--</apex:pageblockSectionItem>-->
                 </apex:pageblockSection>
             </apex:outputPanel>
             <!-- Page 3 - Contact Information -->
@@ -458,7 +435,7 @@
             </apex:outputPanel>
             <!-- Page 5 - Instrument Selection -->
             <apex:outputPanel id="page5">
-                <apex:pageblockSection columns="1" rendered="{!renderPage5}" >
+                <apex:pageblockSection columns="1" rendered="{!renderPage5}">
                     <apex:outputLabel value="{!$Label.CampAppInstrumentSelection}" styleClass="title" />
                     <apex:outputLabel value="Page 5 of 10" styleClass="question" />
                     <apex:outputLabel value="**You must make three DIFFERENT selections below**" />
@@ -507,6 +484,10 @@
                         <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentExperience}" styleClass="question"/>
                         <apex:inputField id="X3rdChoiceInstrumentExperience" value="{!newApp.X3rd_Choice_Instrument_Experience__c}" required="true" />
                     </apex:pageblockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Give us an idea of how often your child practices and if they have taken lessons." styleClass="question"/>
+                        <apex:inputField value="{!newApp.grcapp__how_often_does_your_child_practice__c}" required="true"/>
+                    </apex:pageBlockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="Does your camper plan on bringing an instrument to camp?" styleClass="question"/>
                         <apex:inputField value="{!newApp.Bringing_Instrument_to_Camp__c}" required="true"/>
@@ -654,7 +635,8 @@
                             <apex:selectRadio value="{!applyingForFinancialAid}">
                             	<apex:selectOptions value="{!YesNoOptions}"/>
                         	</apex:selectRadio>
-                            <div class="italicText">The full price of tuition is $500. Please see our financial aid guideliness here: <a class="link" onClick="window.open('https://goo.gl/OmFihP');">https://goo.gl/OmFihP</a></div>
+                            <div class="italicText">The full price of tuition is $500. You must apply for financial aid if you are unable to pay full tuition. Girls Rock! Chicago adheres to these financial aid guidelines when making decisions regarding tuition: <a class="link" onClick="window.open('https://goo.gl/OmFihP');">https://goo.gl/OmFihP</a></div>
+                            <div><img src="{!$Resource.FinancialAidGuidelines2017}"/></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                 </apex:pageblockSection>    
@@ -771,7 +753,7 @@
                         </p>
                         <br/>
                         <br/>
-                        <a href="http://girlsrockchicago.org/girlscamp/confirmation/">
+                        <a href="https://girlsrockchicago.org/camp-application-confirmation/">
                             If you are not automatically redirected in ten seconds, click here.
                         </a>
                     </div>

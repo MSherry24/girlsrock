@@ -24,18 +24,13 @@ public class CamperApplicationControl {
     public boolean attended2007 { get; set; }
     public boolean attended2008 { get; set; }
     public boolean attended2009 { get; set; }
-    public boolean attendedJune2010 { get; set; }
-    public boolean attendedAugust2010 { get; set; }
-    public boolean attendedJune2011 { get; set; }
-    public boolean attendedAugust2011 { get; set; }
-    public boolean attendedJune2012 { get; set; }
-    public boolean attendedAugust2012 { get; set; }
-    public boolean attendedJune2013 { get; set; }
-    public boolean attendedAugust2013 { get; set; }
-    public boolean attendedJune2014 { get; set; }
-    public boolean attendedAugust2014 { get; set; }
-    public boolean attendedJune2015 { get; set; }
-    public boolean attendedAugust2015 { get; set; }
+    public boolean attended2010{ get; set; }
+    public boolean attended2011{ get; set; }
+    public boolean attended2012{ get; set; }
+    public boolean attended2013{ get; set; }
+    public boolean attended2014{ get; set; }
+    public boolean attended2015{ get; set; }
+    public boolean attended2016{ get; set; }
     public boolean attendedInAnotherCity { get; set; }
     public boolean appliedNeverAttended { get; set; }
     public boolean neverAttendedOrApplied { get; set; }
@@ -154,16 +149,13 @@ public class CamperApplicationControl {
         if (attended2007 ==  true) { attendedBefore += '2007;'; }
         if (attended2008 ==  true) { attendedBefore += '2008;'; }
         if (attended2009 ==  true) { attendedBefore += '2009;'; }
-        if (attendedJune2010 ==  true) { attendedBefore += 'June 2010;'; }
-        if (attendedAugust2010 ==  true) { attendedBefore += 'August 2010;'; }
-        if (attendedJune2011 ==  true) { attendedBefore += 'June 2011;'; }
-        if (attendedAugust2011 ==  true) { attendedBefore += 'August 2011;'; }
-        if (attendedJune2012 ==  true) { attendedBefore += 'June 2012;'; }
-        if (attendedAugust2012 ==  true) { attendedBefore += 'August 2012;'; }
-        if (attendedJune2013 ==  true) { attendedBefore += 'June 2013;'; }
-        if (attendedAugust2013 ==  true) { attendedBefore += 'August 2013;'; }
-        if (attendedJune2014 ==  true) { attendedBefore += 'June 2014;'; }
-        if (attendedAugust2014 ==  true) { attendedBefore += 'August 2014;'; }
+        if (attended2010 ==  true) { attendedBefore += '2010;'; }
+        if (attended2011 ==  true) { attendedBefore += '2011;'; }
+        if (attended2012 ==  true) { attendedBefore += '2012;'; }
+        if (attended2013 ==  true) { attendedBefore += '2013;'; }
+        if (attended2014 ==  true) { attendedBefore += '2014;'; }
+        if (attended2015 ==  true) { attendedBefore += '2015;'; }
+        if (attended2016 ==  true) { attendedBefore += '2016;'; }
         if (attendedInAnotherCity ==  true) { attendedBefore += 'Attended camp in Another City;'; }
         if (appliedNeverAttended == true) { attendedBefore += 'Applied, but Never Attended'; }
         if (neverAttendedOrApplied == true) { attendedBefore += 'Never Attended or Applied'; }
