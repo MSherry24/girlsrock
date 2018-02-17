@@ -38,12 +38,6 @@ global class VolunteerApplicationControl {
     public Boolean LoadOutSession2 { get; set; }
     public Boolean LoadInLadiesRock { get; set; }
     public Boolean LoadOutOther { get; set; }
-    public Boolean ShredShop_Saturday1 { get; set; }
-    public Boolean ShredShop_Sunday1 {get; set; }
-    public Boolean ShredShop_Saturday2 { get; set; }
-    public Boolean ShredShop_Sunday2 {get; set; }
-    public Boolean ShredShop_Other {get; set; }
-    public Boolean ShredShop_NotAvailable { get; set; }
     public Boolean JAMusicClub_Tuesday330_5 { get; set; }
     public Boolean JAMusicClub_Tuesday430_6 { get; set; }
     public Boolean JAMusicClub_Tuesday330_6 { get; set; }
@@ -118,15 +112,6 @@ global class VolunteerApplicationControl {
         if(LoadInSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 2; ';}
         if(LoadOutSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load Out Session 2; ';}
         if(LoadOutOther) {newApp.Load_In_Load_Out_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
-        // Shred Shop
-        newApp.Shred_Shop_Availability__c = '';
-        if (ShredShop_Saturday1) {newApp.Shred_Shop_Availability__c += 'Saturday, January 21, 2017; ';}
-        if (ShredShop_Sunday1) {newApp.Shred_Shop_Availability__c += 'Sunday, March 12, 2017; ';}
-        if (ShredShop_Saturday2) {newApp.Shred_Shop_Availability__c += 'Saturday, April 22, 2017; ';}
-        if (ShredShop_Sunday2) {newApp.Shred_Shop_Availability__c += 'Sunday, May 14, 2017; ';}
-        if (ShredShop_Other) {newApp.Shred_Shop_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options.; ';}
-        if (ShredShop_NotAvailable) {newApp.Shred_Shop_Availability__c += 'I\'m not available to volunteer.';}
-        system.debug('newApp.Shred_Shop_Availability__c: ' + newApp.Shred_Shop_Availability__c);
         //Josephinium Music Club
         newApp.Josephinum_Music_Club_Availability__c = '';
         if (JAMusicClub_Tuesday330_5) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 5 PM; ';}
