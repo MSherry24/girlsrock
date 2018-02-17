@@ -434,44 +434,6 @@
                                 <apex:inputField value="{!newApp.Load_In_Load_Out_Comments__c}" />
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="What is your availability during GR!C ShredShop? Check all that apply."/>
-                                <apex:outputPanel >
-                                    <div class="italic">ShredShop is a weekend workshop series requiring a 2 - 8 hour commitment between 10 AM and 6 PM.</div>
-                                    <table>
-                                        <tbody>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!ShredShop_Saturday1}"/></td>
-                                            <td><span>Saturday, January 21, 2017</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!ShredShop_Sunday1}"/></td>
-                                            <td><span>Sunday, March 12, 2017</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!ShredShop_Saturday2}"/></td>
-                                            <td><span>Saturday, April 22, 2017</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!ShredShop_Sunday2}"/></td>
-                                            <td><span>Sunday, May 14, 2017</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!ShredShop_Other}"/></td>
-                                            <td><span>I have availability that is different than the hours listed here;  please contact me to discuss my options.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!ShredShop_NotAvailable}"/></td>
-                                            <td><span>I'm not available to volunteer.</span></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </apex:outputPanel>
-                            </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Comments"/>
-                                <apex:inputField value="{!newApp.Shred_Shop_Availability_Comments__c}" />
-                            </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What is your availability during Josephinum Academy Music Club?"/>
                                 <apex:outputPanel >
                                     <div class="italic">Josephinum Academy Music Club is held every Tuesday from 3:45 - 5:45 PM from January 10, 2017 - April 25, 2017.</div>
@@ -522,7 +484,7 @@
                                             <td>
                                                 <apex:inputCheckbox value="{!BandCoach}" />
                                                 <span>BAND COACH</span>
-                                                <span> - <b>musical experience required</b></span>
+                                                <span> - <b>performace experience required</b></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -648,7 +610,7 @@
                             <apex:outputLabel value="RELATED EXPERIENCE" styleClass="title" />
                             <apex:outputLabel value="Page 4 of 6" styleClass="question" />
                             <apex:pageBlockSectionItem>
-                                <apex:OutputLabel value="Do you have experience working with girls and/or transgender youth ages 8 to 16?"/>
+                                <apex:OutputLabel value="Do you have experience working with youth ages 8 to 16?"/>
                                 <apex:inputField value="{!newapp.Girls_Work_Experience__c}" styleClass="girlsWorkExperience" onChange="showHideSectionByPicklistValue('girlsWorkExperience', 'girlsWorkExperienceExplained', ['Yes']);" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem>
@@ -656,7 +618,7 @@
                                 <apex:inputField value="{!newapp.Girls_Work_Experience_Explained__c}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem>
-                                <apex:outputLabel value="What language(s) do you speak?"/>
+                                <apex:outputLabel value="What language(s) are you comfortable using?"/>
                                 <apex:inputField value="{!newapp.Languages__c}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem>
@@ -700,74 +662,13 @@
                             <apex:outputLabel value="GENERAL VOLUNTEER INFO" styleClass="title" />
                             <apex:outputLabel value="Page 5 of 6" styleClass="question" />
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Have you volunteered before?"/>
-                                <apex:outputPanel>
-                                    <div class="italic">Check all that apply.</div>
-                                    <table>
-                                        <tbody>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!No_First_Time}"/></td>
-                                            <td><span>Nope! This is my first time.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value ="{!Yes2016}"/></td>
-                                            <td><span>Yes, in 2016.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value ="{!Yes2015}"/></td>
-                                            <td><span>Yes, in 2015.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value ="{!Yes2014}"/></td>
-                                            <td><span>Yes, in 2014.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value ="{!Yes2013}"/></td>
-                                            <td><span>Yes, in 2013.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value ="{!Yes2012}"/></td>
-                                            <td><span>Yes, in 2012.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value ="{!Yes2011}"/></td>
-                                            <td><span>Yes, in 2011.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value ="{!Yes2010}"/></td>
-                                            <td><span>Yes, in 2010.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!Yes2009}"/></td>
-                                            <td><span>Yes, in 2009.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!Yes2008}"/></td>
-                                            <td><span>Yes, in 2008.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!Yes2007}"/></td>
-                                            <td><span>Yes, in 2007.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!Yes2006}"/></td>
-                                            <td><span>Yes, in 2006</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!VolunteeredButNotForCamp}"/></td>
-                                            <td><span>I have volunteered for Let's Rock! Camp or interned for Girls Rock! Chicago before, but I have not worked at camp.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!VolunteeredInAnotherCity}"/></td>
-                                            <td><span>I have volunteered for rock camp in another city.</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><apex:inputCheckbox value="{!VolunteeredButNotWorkedAtCamp}"/></td>
-                                            <td><span>I have volunteered or interned for Girls Rock! Chicago before, but I have not worked at camp.</span></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </apex:outputPanel>
+                                <apex:outputLabel value="Have you volunteered with Girls Rock! Chicago before?"/>
+                                <apex:OutputPanel>
+                                    <apex:inputField value="{!newapp.Volunteered_Before__c}" required="true"/>
+                                    <div class="italic wideLabel">
+                                        Describe your experience.
+                                    </div>
+                                </apex:OutputPanel>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem>
                                 <apex:OutputLabel value="What is your t-shirt size?"/>

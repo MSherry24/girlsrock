@@ -6,15 +6,6 @@
         <IlluminatedCloudConnection>
           <option name="connectionName" value="girlsRockDevOrg" />
           <option name="defaultModuleName" value="girlsRockDevOrg" />
-          <option name="developmentPackages">
-            <list>
-              <DevelopmentPackageExt>
-                <option name="description" value="grcCampApp" />
-                <option name="managed" value="true" />
-                <option name="name" value="grcCampApp" />
-              </DevelopmentPackageExt>
-            </list>
-          </option>
           <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/girlsRockDevOrg/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>

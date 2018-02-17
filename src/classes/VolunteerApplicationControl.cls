@@ -54,21 +54,6 @@ global class VolunteerApplicationControl {
     public Boolean InstrumentTeacherGuitar { get; set; }
     public Boolean InstrumentTeacherKeyboards { get; set; }
     public Boolean InstrumentTeacherDJ { get; set; }
-    public Boolean No_First_Time { get; set; }
-    public Boolean Yes2016 { get; set; }
-    public Boolean Yes2015 { get; set; }
-    public Boolean Yes2014 { get; set; }
-    public Boolean Yes2013 { get; set; }
-    public Boolean Yes2012 { get; set; }
-    public Boolean Yes2011 { get; set; }
-    public Boolean Yes2010 { get; set; }
-    public Boolean Yes2009 { get; set; }
-    public Boolean Yes2008 { get; set; }
-    public Boolean Yes2007 { get; set; }
-    public Boolean Yes2006 { get; set; }
-    public Boolean VolunteeredButNotForCamp { get; set; }
-    public Boolean VolunteeredInAnotherCity { get; set; }
-    public Boolean VolunteeredButNotWorkedAtCamp { get; set; }
     public String SessionOneStart { get{ return GrcUtils.SessionOneStart; } }
     public String SessionOneEnd { get{ return GrcUtils.SessionOneEnd; } }
     public String SessionTwoStart { get{ return GrcUtils.SessionTwoStart; } }
@@ -173,25 +158,7 @@ global class VolunteerApplicationControl {
         if(InstrumentTeacherDJ) { newApp.Instrument_Teacher_Explained__c += 'Turntables/DJ; ';}
         system.debug('newApp.Instrument_Teacher_Explained__c: ' + newApp.Instrument_Teacher_Explained__c);
         // Page 4
-        // NONE
         // Page 5
-        // Volunteered Before
-        newApp.Volunteered_Before__c = '';
-        if(No_First_Time) {newApp.Volunteered_Before__c += 'Nope! This is my first time. ';}
-        if(Yes2016) {newApp.Volunteered_Before__c += 'Yes, in 2016. ';}
-        if(Yes2015) {newApp.Volunteered_Before__c += 'Yes, in 2015. ';}
-        if(Yes2014) {newApp.Volunteered_Before__c += 'Yes, in 2014. ';}
-        if(Yes2013) {newApp.Volunteered_Before__c += 'Yes, in 2013. ';}
-        if(Yes2012) {newApp.Volunteered_Before__c += 'Yes, in 2012. ';}
-        if(Yes2011) {newApp.Volunteered_Before__c += 'Yes, in 2011. ';}
-        if(Yes2010) {newApp.Volunteered_Before__c += 'Yes, in 2010. ';}
-        if(Yes2009) {newApp.Volunteered_Before__c += 'Yes, in 2009. ';}
-        if(Yes2008) {newApp.Volunteered_Before__c += 'Yes, in 2008. ';}
-        if(Yes2007) {newApp.Volunteered_Before__c += 'Yes, in 2007. ';}
-        if(Yes2006) {newApp.Volunteered_Before__c += 'Yes, in 2006 ';}
-        if(VolunteeredButNotForCamp) {newApp.Volunteered_Before__c += 'I have volunteered for Ladies Rock! Camp or interned for Girls Rock! Chicago before, but I have not worked at camp. ';}
-        if(VolunteeredInAnotherCity) {newApp.Volunteered_Before__c += 'I have volunteered for rock camp in another city. ';}
-        if(VolunteeredButNotWorkedAtCamp) {newApp.Volunteered_Before__c += 'I have volunteered or interned for Girls Rock! Chicago before, but I have not worked at camp. ';}
         // Page 6
         // Page 7
         upsert newApp;
