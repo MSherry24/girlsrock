@@ -20,20 +20,6 @@ public class CamperApplicationControl {
     public Integer pageNumber { get; set;}
     Camper_Application__c newApp { get; set; }
 
-    public boolean attended2006 { get; set; }
-    public boolean attended2007 { get; set; }
-    public boolean attended2008 { get; set; }
-    public boolean attended2009 { get; set; }
-    public boolean attended2010{ get; set; }
-    public boolean attended2011{ get; set; }
-    public boolean attended2012{ get; set; }
-    public boolean attended2013{ get; set; }
-    public boolean attended2014{ get; set; }
-    public boolean attended2015{ get; set; }
-    public boolean attended2016{ get; set; }
-    public boolean attendedInAnotherCity { get; set; }
-    public boolean appliedNeverAttended { get; set; }
-    public boolean neverAttendedOrApplied { get; set; }
     public boolean Other { get; set; }
     public boolean campAppBass { get; set; }
     public boolean campAppDjTurntable { get; set; }
@@ -102,7 +88,6 @@ public class CamperApplicationControl {
         // Page 1
         newApp.Session_Choice__c = this.session == 'SESSION1' ? 'Session 1' : 'Session 2';
         // Page 2
-        attendedBefore();
         newApp.Name = newApp.Camper_First_Name__c + ' ' + newApp.Camper_Last_Name__c;
         previousInstrumentExperience();
         newApp.Attend_2nd_Choice_Session__c = attendSecondSession == 'Yes' ? true : false;
@@ -142,27 +127,6 @@ public class CamperApplicationControl {
     }
 
     //Page 2 methods
-    public void attendedBefore()
-    {
-        String attendedBefore = '';
-        if (attended2006 ==  true) { attendedBefore += '2006;'; }
-        if (attended2007 ==  true) { attendedBefore += '2007;'; }
-        if (attended2008 ==  true) { attendedBefore += '2008;'; }
-        if (attended2009 ==  true) { attendedBefore += '2009;'; }
-        if (attended2010 ==  true) { attendedBefore += '2010;'; }
-        if (attended2011 ==  true) { attendedBefore += '2011;'; }
-        if (attended2012 ==  true) { attendedBefore += '2012;'; }
-        if (attended2013 ==  true) { attendedBefore += '2013;'; }
-        if (attended2014 ==  true) { attendedBefore += '2014;'; }
-        if (attended2015 ==  true) { attendedBefore += '2015;'; }
-        if (attended2016 ==  true) { attendedBefore += '2016;'; }
-        if (attendedInAnotherCity ==  true) { attendedBefore += 'Attended camp in Another City;'; }
-        if (appliedNeverAttended == true) { attendedBefore += 'Applied, but Never Attended'; }
-        if (neverAttendedOrApplied == true) { attendedBefore += 'Never Attended or Applied'; }
-        if (Other == true) { attendedBefore += 'Other'; }
-        newApp.Attended_Camp_Before__c = attendedBefore;
-    }
-
     public void previousInstrumentExperience()
     {
         String previousInstruments = '';

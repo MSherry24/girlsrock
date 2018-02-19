@@ -51,10 +51,11 @@
     <script type="text/javascript">
     j$ = jQuery.noConflict();
     j$(document).ready(function () {
-                initialize();
+        initialize();
     });
     function initialize() {
-        
+        addCalYears();
+        j$('.hideRow').closest('tr').hide();
     }
     function textBoxEnableValidation(theCheckBox, theTextBox) {
         // No longer needed
@@ -101,13 +102,37 @@
         }
     }
 
+    function showHideSectionByPicklistValue(pickListClass, sectionClass, values) {
+        var pickListValue = j$('.' +  pickListClass).val();
+        if (j$.inArray(pickListValue, values) !== -1) {
+            j$('.' +  sectionClass).closest('tr').show();
+        } else {
+            j$('.' +  sectionClass).closest('tr').hide();
+            j$('.' + sectionClass + 'Text').val('');
+        }
+    }
 
+    function removeInstruments(updatedList) {
+        resetDuplicateSelections(updatedList);
+    }
+
+    function resetDuplicateSelections(updatedList) {
+        var picklists = ['X1stChoiceInstrument', 'X2ndChoiceInstrument', 'X3rdChoiceInstrument'],
+            newSelection = j$('.' + updatedList).val();
+
+        for (var i = 0; i < picklists.length; i++) {
+            var currentPicklist = j$('.' + picklists[i]);
+            if (picklists[i] !== updatedList && currentPicklist.val() === newSelection) {
+                currentPicklist.val("");
+            }
+        }
+    }
 
     </script>
    <apex:form id="page">
         <apex:actionFunction name="save" action="save" rerender="" />
-       <apex:actionStatus id="nextStatus" onstop="addCalYears()"/>
-       <apex:actionStatus id="prevStatus" onstop="addCalYears()"/>
+       <apex:actionStatus id="nextStatus" onstop="initialize()"/>
+       <apex:actionStatus id="prevStatus" onstop="initialize()"/>
         <apex:pageBlock >
             <apex:pageBlockButtons >
                 <apex:commandButton action="{!prevPage}" id="prevButton" disabled="{!renderPage1 || renderPage11}"
@@ -158,7 +183,7 @@
                         <apex:outputLabel value="{!$ObjectType.Camper_Application__c.fields.Preferred_Gender_Pronouns__c.Label}" styleClass="question"/>
                         <apex:outputPanel >
                             <apex:inputField id="preferredGenderPronouns" value="{!newApp.Preferred_Gender_Pronouns__c}" required="false"/>
-                            <div class="italicText">Personal Gender Pronouns are the set of pronouns that an individual would like others to use when talking to or about that individual. Girls Rock! Chicago strives to be as inclusive as possible of transgender and gender nonconforming youth. Examples include she/her/hers, they/them/theirs, and he/him/his.</div>
+                            <div class="italicText">Personal Gender Pronouns are the set of pronouns that an individual would like others to use when talking to or about that individual. Examples include she/her/hers, they/them/theirs, and he/him/his. </div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
@@ -171,90 +196,12 @@
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.CampAppAttendedBefore}" styleClass="question" />
-                        <apex:outputPanel >
-                            <apex:outputLabel value="You may select more than one answer" />
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2006}" />
-                                            <apex:outputLabel value="2006"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2007}" />
-                                            <apex:outputLabel value="2007"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2008}" />
-                                            <apex:outputLabel value="2008"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2009}" />
-                                            <apex:outputLabel value="2009"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2010}" />
-                                            <apex:outputLabel value="2010"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2011}" />
-                                            <apex:outputLabel value="2011"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2012}" />
-                                            <apex:outputLabel value="2012"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2013}" />
-                                            <apex:outputLabel value="2013"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2014}" />
-                                            <apex:outputLabel value="2014"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2015}" />
-                                            <apex:outputLabel value="2015"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attended2016}" />
-                                            <apex:outputLabel value="2016"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!attendedInAnotherCity}" />
-                                            <apex:outputLabel value="Attended Camp in Another City"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!appliedNeverAttended}" />
-                                            <apex:outputLabel value="Applied, but Never Attended"/>
-                                        </td>
-                                        <td>
-                                            <apex:inputCheckbox value="{!neverAttendedOrApplied}" />
-                                            <apex:outputLabel value="Never Attended or Applied Before"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <apex:inputCheckbox value="{!other}" />
-                                            <apex:outputLabel value="Other"/>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </apex:outputPanel>
+                        <apex:inputField  styleClass="attendedBefore" value="{!newApp.Attended_Camp_Before_Boolean__c}" onChange="showHideSectionByPicklistValue('attendedBefore', 'howManyYears', ['Yes'])" required="true"/>
                     </apex:pageblockSectionItem>
+                    <apex:pageBlockSectionItem>
+                        <apex:outputLabel value="If yes, how many years?" styleClass="question hideRow howManyYears"/>
+                        <apex:inputField styleClass="howManyYearsText" value="{!newApp.If_Yes_How_Many_Years__c}" />
+                    </apex:pageBlockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.CampAppPreviousInstrument}" styleClass="question"/>
                         <apex:outputPanel >
@@ -442,7 +389,7 @@
                     <apex:outputLabel value="{!$Label.campApp1stChoice}" />
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campApp1stChoiceInstrument}" styleClass="question"/>
-                        <apex:inputField id="X1stChoiceInstrument" value="{!newApp.X1st_Choice_Instrument__c}" required="true" />
+                        <apex:inputField id="X1stChoiceInstrument" styleClass="X1stChoiceInstrument" value="{!newApp.X1st_Choice_Instrument__c}" required="true" onChange="removeInstruments('X1stChoiceInstrument');"/>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentAtHome}" styleClass="question"/>
@@ -457,7 +404,7 @@
                     <apex:outputLabel value="{!$Label.campApp2ndChoice}" />
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campApp2ndChoiceInstrument}" styleClass="question"/>
-                        <apex:inputField id="X2ndChoiceInstrument" value="{!newApp.X2nd_Choice_Instrument__c}" required="true" />
+                        <apex:inputField id="X2ndChoiceInstrument" styleClass="X2ndChoiceInstrument" value="{!newApp.X2nd_Choice_Instrument__c}" onChange="removeInstruments('X2ndChoiceInstrument');" required="true" />
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentAtHome}" styleClass="question"/>
@@ -472,7 +419,7 @@
                     <apex:outputLabel value="{!$Label.campApp3rdChoice}" />
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campApp3rdChoiceInstrument}" styleClass="question"/>
-                        <apex:inputField id="X3rdChoiceInstrument" value="{!newApp.X3rd_Choice_Instrument__c}" required="true" />
+                        <apex:inputField id="X3rdChoiceInstrument" styleClass="X3rdChoiceInstrument" value="{!newApp.X3rd_Choice_Instrument__c}" onChange="removeInstruments('X3rdChoiceInstrument');" required="true" />
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentAtHome}" styleClass="question"/>
@@ -482,7 +429,7 @@
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campApp1stChoiceInstrumentExperience}" styleClass="question"/>
-                        <apex:inputField id="X3rdChoiceInstrumentExperience" value="{!newApp.X3rd_Choice_Instrument_Experience__c}" required="true" />
+                        <apex:inputField id="X3rdChoiceInstrumentExperience" value="{!newApp.X3rd_Choice_Instrument_Experience__c}"  required="true" />
                     </apex:pageblockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="Give us an idea of how often your child practices and if they have taken lessons." styleClass="question"/>
@@ -490,7 +437,10 @@
                     </apex:pageBlockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="Does your camper plan on bringing an instrument to camp?" styleClass="question"/>
-                        <apex:inputField value="{!newApp.Bringing_Instrument_to_Camp__c}" required="true"/>
+                        <apex:outputPanel >
+                            <apex:inputField value="{!newApp.Bringing_Instrument_to_Camp__c}" required="true"/>
+                            <div class="italicText">Please note, we cannot use any kind of acoustic instruments at camp.</div>
+                        </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                     	<apex:outputLabel value="{!$Label.rightOrLeftHanded}" styleClass="question"/>
@@ -501,15 +451,15 @@
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campAppExplainExperience}" styleClass="question"/>
                         <apex:outputPanel >
-                            <div id="camperExperienceLabel" class="wideLabel"><apex:outputLabel value="{!$Label.campAppExplainExperienceExtra}" /></div>
                             <div><apex:inputField id="MusicExperience" value="{!newApp.Music_Experience__c}" required="true" /></div>
+                            <div id="camperExperienceLabel" class="wideLabel italicText"><apex:outputLabel value="{!$Label.campAppExplainExperienceExtra}" /></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.campAppPerformedBefore}" styleClass="question"/>
                         <apex:outputPanel >
-                            <div><apex:outputLabel value="{!$Label.campAppPerformedBeforeExtra}" /></div>
                             <div><apex:inputField id="PerformedBefore" value="{!newApp.Performed_Before__c}" required="true" /></div>
+                            <div><apex:outputLabel styleClass="italicText" value="{!$Label.campAppPerformedBeforeExtra}" /></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >

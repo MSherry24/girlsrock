@@ -41,16 +41,8 @@ public class test_CamperApplicationControl {
     {
         Test.startTest();
         CamperApplicationControl cac = new CamperApplicationControl();
+        cac.newApp.Attended_Camp_Before_Boolean__c = 'Yes';
         cac.save();
-        Test.stopTest();
-    }
-    
-    @isTest
-	static void test_attendedBefore()
-    {
-        Test.startTest();
-        CamperApplicationControl cac = new CamperApplicationControl();
-        cac.attendedBefore();
         Test.stopTest();
     }
     
