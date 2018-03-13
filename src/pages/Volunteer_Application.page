@@ -436,20 +436,20 @@
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What is your availability during Josephinum Academy Music Club?"/>
                                 <apex:outputPanel >
-                                    <div class="italic">Josephinum Academy Music Club is held every Tuesday from 3:45 - 5:45 PM from January 10, 2017 - April 25, 2017.</div>
+                                    <div class="italic">Josephinum Academy Music Club is held every {!JamDayOfTheWeek} from {!JamStartTime} - {!JamEndTime} from {!JamStartDate} - {!JamEndDate}.</div>
                                     <table>
                                         <tbody>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!JAMusicClub_Tuesday330_5}"/></td>
-                                                <td><span>Tuesdays from 3:30 PM - 5 PM</span></td>
+                                                <td><span>{!JamDayOfTheWeek}s from {!JamVolunteerStartTime1} - {!JamVolunteerEndTime1}</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!JAMusicClub_Tuesday430_6}"/></td>
-                                                <td><span>Tuesdays from 4:30 PM - 6 PM</span></td>
+                                                <td><span>{!JamDayOfTheWeek}s from {!JamVolunteerStartTime2} - {!JamVolunteerEndTime2}</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!JAMusicClub_Tuesday330_6}"/></td>
-                                                <td><span>Tuesdays from 3:30 PM - 6 PM</span></td>
+                                                <td><span>{!JamDayOfTheWeek}s from {!JamVolunteerStartTime3} - {!JamVolunteerEndTime3}</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!JAMusicClub_Other}"/></td>
@@ -647,8 +647,12 @@
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem>
                                 <apex:outputLabel value="Who should we contact in the event of an emergency?"/>
+                                <apex:inputField id="emergencyContact" value="{!newApp.Emergency_Contact__c}" required="{!validationOn}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="What is your emergency contact's phone number?"/>
                                 <apex:outputPanel>
-                                    <apex:inputField id="emergencyContact" value="{!newApp.Emergency_Contact__c}" required="{!validationOn}"/>
+                                    <apex:inputField id="emergencyContactPhone" value="{!newApp.Emergency_Contact_Phone__c}" required="{!validationOn}"/>
                                     <div class="wideLabel italic">
                                         Please provide us with the name and telephone number for the best person(s) to contact should anything go wrong.
                                     </div>

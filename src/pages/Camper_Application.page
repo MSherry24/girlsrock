@@ -152,7 +152,6 @@
                     <apex:outputLabel value="Page 1 of 10" styleClass="question" />
                     <apex:outputLabel value="Which session of camp would you like to attend? *" styleClass="question" />
                     <apex:outputLabel value="Campers may only select one session." />
-                    <apex:outputLabel value="Please note: The 8 - 11 year old group is full in session one." />
                     <apex:selectRadio value="{!session}" required="false">
                         <apex:selectOptions value="{!sessionOptions}"/>
                     </apex:selectRadio>
@@ -586,7 +585,7 @@
                             	<apex:selectOptions value="{!YesNoOptions}"/>
                         	</apex:selectRadio>
                             <div class="italicText">The full price of tuition is $500. You must apply for financial aid if you are unable to pay full tuition. Girls Rock! Chicago adheres to these financial aid guidelines when making decisions regarding tuition: <a class="link" onClick="window.open('https://goo.gl/OmFihP');">https://goo.gl/OmFihP</a></div>
-                            <div><img src="{!$Resource.FinancialAidGuidelines2017}"/></div>
+                            <div><img src="{!$Resource.FinancialAidGuidelines}"/></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                 </apex:pageblockSection>    

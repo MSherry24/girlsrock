@@ -48,20 +48,31 @@ global class VolunteerApplicationControl {
     public Boolean InstrumentTeacherGuitar { get; set; }
     public Boolean InstrumentTeacherKeyboards { get; set; }
     public Boolean InstrumentTeacherDJ { get; set; }
-    public String SessionOneStart { get{ return GrcUtils.SessionOneStart; } }
-    public String SessionOneEnd { get{ return GrcUtils.SessionOneEnd; } }
-    public String SessionTwoStart { get{ return GrcUtils.SessionTwoStart; } }
-    public String SessionTwoEnd { get{ return GrcUtils.SessionTwoEnd; } }
-    public String LadiesRockStart { get{ return GrcUtils.LadiesRockStart; } }
-    public String LadiesRockEnd { get{ return GrcUtils.LadiesRockEnd; } }
-    public String Session1LoadIn1 { get {return GrcUtils.Session1LoadIn1;} }
-    public String Session1LoadIn2 { get {return GrcUtils.Session1LoadIn2;} }
-    public String Session1LoadOut { get {return GrcUtils.Session1LoadOut;} }
-    public String Session2LoadIn1 { get {return GrcUtils.Session2LoadIn1;} }
-    public String Session2LoadIn2 { get {return GrcUtils.Session2LoadIn2;} }
-    public String Session2LoadOut { get {return GrcUtils.Session2LoadOut;} }
-    public String LadiesRockLoadIn1 { get {return GrcUtils.LadiesRockLoadIn1;} }
-    public String LadiesRockLoadIn2 { get {return GrcUtils.LadiesRockLoadIn2;} }
+    public String SessionOneStart { get { return GrcUtils.SessionOneStart; } }
+    public String SessionOneEnd { get { return GrcUtils.SessionOneEnd; } }
+    public String SessionTwoStart { get { return GrcUtils.SessionTwoStart; } }
+    public String SessionTwoEnd { get { return GrcUtils.SessionTwoEnd; } }
+    public String LadiesRockStart { get { return GrcUtils.LadiesRockStart; } }
+    public String LadiesRockEnd { get { return GrcUtils.LadiesRockEnd; } }
+    public String Session1LoadIn1 { get { return GrcUtils.Session1LoadIn1; } }
+    public String Session1LoadIn2 { get { return GrcUtils.Session1LoadIn2; } }
+    public String Session1LoadOut { get { return GrcUtils.Session1LoadOut; } }
+    public String Session2LoadIn1 { get { return GrcUtils.Session2LoadIn1; } }
+    public String Session2LoadIn2 { get { return GrcUtils.Session2LoadIn2; } }
+    public String Session2LoadOut { get { return GrcUtils.Session2LoadOut; } }
+    public String LadiesRockLoadIn1 { get { return GrcUtils.LadiesRockLoadIn1; } }
+    public String LadiesRockLoadIn2 { get { return GrcUtils.LadiesRockLoadIn2; } }
+    public String JamDayOfTheWeek { get { return GrcUtils.JamDayOfTheWeek;} }
+    public String JamStartTime { get { return GrcUtils.JamStartTime;} }
+    public String JamEndTime { get { return GrcUtils.JamEndTime;} }
+    public String JamStartDate { get { return GrcUtils.JamStartDate;} }
+    public String JamEndDate { get { return GrcUtils.JamEndDate;} }
+    public String JamVolunteerStartTime1 { get { return GrcUtils.JamVolunteerStartTime1;} }
+    public String JamVolunteerStartTime2 { get { return GrcUtils.JamVolunteerStartTime2;} }
+    public String JamVolunteerStartTime3 { get { return GrcUtils.JamVolunteerStartTime3;} }
+    public String JamVolunteerEndTime1 { get { return GrcUtils.JamVolunteerEndTime1;} }
+    public String JamVolunteerEndTime2 { get { return GrcUtils.JamVolunteerEndTime2;} }
+    public String JamVolunteerEndTime3 { get { return GrcUtils.JamVolunteerEndTime3;} }
 
     Volunteer_Application__c newApp { get; set; }
     public Boolean validationOn { get { return true; }}
