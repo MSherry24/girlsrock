@@ -382,6 +382,7 @@
                                                 <td><apex:inputCheckbox value="{!LoadInJulySaturday3pm}"/></td>
                                                 <td><span>3 PM - 5 PM at Suder</span></td>
                                             </tr>
+                                            <tr></tr>
                                             <tr>
                                                 <td colspan="2" class="italic">Load-In Sunday, July 21st</td>
                                             </tr>
@@ -401,6 +402,7 @@
                                                 <td><apex:inputCheckbox value="{!LoadInJulySunday3pm}"/></td>
                                                 <td><span>3 PM - 5 PM at Suder</span></td>
                                             </tr>
+                                            <tr></tr>
                                             <tr>
                                                 <td colspan="2" class="italic">Load-In Saturday, August 3rd</td>
                                             </tr>
@@ -420,9 +422,50 @@
                                                 <td><apex:inputCheckbox value="{!LoadInAugustSaturday3pm}"/></td>
                                                 <td><span>3 PM - 5 PM at Suder</span></td>
                                             </tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td colspan="2" class="italic">Load-In Sunday, August 4th</td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LoadInAugustSunday11am}"/></td>
+                                                <td><span>11 AM - 1 PM at Suder </span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LoadInAugustSunday1pm}"/></td>
+                                                <td><span>1 PM - 3 PM at Suder</span></td>
+                                            </tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td colspan="2" class="italic">Load-Out Saturday, August 12th</td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LoadOutAugustSaturday9am}"/></td>
+                                                <td><span>9 AM - 11 AM at Suder</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LoadOutAugustSaturday11am}"/></td>
+                                                <td><span>11 AM - 1 PM at Storage Unit</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LoadOutAugustSaturday1pm}"/></td>
+                                                <td><span>1 PM - 3 PM at Storage Unit</span></td>
+                                            </tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LoadInOutOther}"/></td>
+                                                <td><span>I have availability that is different than the hours listed here;  I will contact you to discuss my options.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><apex:inputCheckbox value="{!LoadInOutNone}"/></td>
+                                                <td><span>I am unable to assist with Load-In or Load-Out.</span></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Comments"/>
+                                <apex:inputField value="{!newApp.Load_In_Load_Out_Comments__c}" />
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Our adult program, Let's Rock! Camp, will take place in October. What is your availability to volunteer on the following dates? Check all that apply."/>
@@ -453,7 +496,7 @@
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LadiesRock_Other}"/></td>
                                                 <td>
-                                                    <div>I have availability that extends beyond the hours listed here; please contact me to discuss additional opportunities.</div>
+                                                    <div>I have availability that is different than the hours listed here; I will contact you to discuss my options.</div>
                                                     <div class="italic">*LR!C Load-in and Load-Out times: TBD but likely October 11th, afternoon, and October 14th, afternoon</div>
                                                 </td>
                                             </tr>
@@ -469,12 +512,7 @@
                                 <apex:outputLabel value="Comments"/>
                                 <apex:inputField value="{!newApp.Ladies_Rock_Availability_Comments__c}" />
                             </apex:pageBlockSectionItem>
-                            
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Comments"/>
-                                <apex:inputField value="{!newApp.Load_In_Load_Out_Comments__c}" />
-                            </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
+                            <!-- <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What is your availability during Josephinum Academy Music Club?"/>
                                 <apex:outputPanel >
                                     <div class="italic">Josephinum Academy Music Club is held every {!JamDayOfTheWeek} from {!JamStartTime} - {!JamEndTime} from {!JamStartDate} - {!JamEndDate}.</div>
@@ -507,7 +545,7 @@
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Comments"/>
                                 <apex:inputField value="{!newApp.grcapp__Josephinum_Club_Availability_Comments__c}" />
-                            </apex:pageBlockSectionItem>
+                            </apex:pageBlockSectionItem> -->
                         </apex:pageBlockSection>
                     </apex:outputPanel>
                     <!-- Page 3 - INTERESTS -->
@@ -525,7 +563,7 @@
                                             <td>
                                                 <apex:inputCheckbox value="{!BandCoach}" />
                                                 <span>BAND COACH</span>
-                                                <span> - <b>performace experience required</b></span>
+                                                <span> - <b>performance experience required</b></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -578,6 +616,13 @@
                                             <td>
                                                 <apex:inputCheckbox value="{!RoadiePartTime}" />
                                                 <span>ROADIE</span>
+                                                <span> - <b>PART TIME</b></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:inputCheckbox value="{!FrontDeskParkTime}" />
+                                                <span>FRPMT DESK</span>
                                                 <span> - <b>PART TIME</b></span>
                                             </td>
                                         </tr>
@@ -760,7 +805,7 @@
                                     </div>
                                     <br/>
                                     <div class="italic wideLabel">
-                                        Josephinum Academy is located at the intersection of LeMoyne and Oakley in Chicago's Wicker Park, and Suder Montessori is located at the intersection of Damen and Washington in Chicago's Near West Side neighborhood.
+                                        Girls Rock! Chicago summer camp is held at Suder Montessori Magnet Elementary School, located at the intersection of Damen and Washington in Chicago's Near West Side neighborhood.
                                     </div>
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>
@@ -769,12 +814,8 @@
                                 <apex:inputField value="{!newApp.Carpool__c}" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Do you require transit assistance? (Select Yes if the cost of transit to/from camp could prohibit your ability to volunteer)" />
-                                <apex:inputField value="{!newApp.Transit_Assistance__c}" styleClass="transitAssistance" onChange="showHideSectionByPicklistValue('transitAssistance', 'transitAssistanceExplained', ['Yes']);" required="true"/>
-                            </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel styleClass="transitAssistanceExplained hideRow" value="Please describe your need for transit assistance so we may begin to explore ways to provide this support."/>
-                                <apex:inputField value="{!newApp.Transit_Assistance_Explained__c}"/>
+                                <apex:outputLabel value="If you drive, would you be willing to run an occasional errand for staff if needed during camp?" />
+                                <apex:inputField value="{!newApp.Can_Run_Errands__c}" />
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="If you are interested in HOSTING for a camp week, please select the number of volunteers you could comfortably house."/>

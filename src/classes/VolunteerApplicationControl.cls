@@ -10,6 +10,7 @@ global class VolunteerApplicationControl {
     public Boolean JuniorCounsellor { get; set; }
     public Boolean RoadieFullTime { get; set; }
     public Boolean RoadiePartTime { get; set; }
+    public Boolean FrontDeskPartTime { get; set;}
     public Boolean Session1_OpenAvailability { get; set; }
     public Boolean Session1_9to5 { get; set; }
     public Boolean Session1_9to1 { get; set; }
@@ -144,27 +145,30 @@ global class VolunteerApplicationControl {
         if (LadiesRock_NotAvailable) {newApp.Ladies_Rock_Availability__c += 'I\'m not available to volunteer. ';}
         // Load in/Load out
         newApp.Load_In_Load_Out_Availability__c = '';
-        if (LoadInJulySaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 9 AM - 11 AM at Storage Unit; ';}
-        if (LoadInJulySaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 11 AM - 1 PM at Suder; ';}
-        if (LoadInJulySaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 1 PM - 3 PM at Suder; ';}
-        if (LoadInJulySaturday3pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 3 PM - 5 PM at Suder; ';}
+        if (LoadInJulySaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'July 20, 9 AM - 11 AM at Storage Unit; ';}
+        if (LoadInJulySaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'July 20, 11 AM - 1 PM at Suder; ';}
+        if (LoadInJulySaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'July 20, 1 PM - 3 PM at Suder; ';}
+        if (LoadInJulySaturday3pm) {newApp.Load_In_Load_Out_Availability__c += 'July 20, 3 PM - 5 PM at Suder; ';}
 
-        if (LoadInJulySunday9am) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 9 AM - 11 AM at Suder; ';}
-        if (LoadInJulySunday11am) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 11 AM - 1 PM at Suder; ';}
-        if (LoadInJulySunday1pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 1 PM - 3 PM at Suder; ';}
-        if (LoadInJulySunday3pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 3 PM - 5 PM at Suder; ';}
+        if (LoadInJulySunday9am) {newApp.Load_In_Load_Out_Availability__c += 'July 21, 9 AM - 11 AM at Suder; ';}
+        if (LoadInJulySunday11am) {newApp.Load_In_Load_Out_Availability__c += 'July 21, 11 AM - 1 PM at Suder; ';}
+        if (LoadInJulySunday1pm) {newApp.Load_In_Load_Out_Availability__c += 'July 21, 1 PM - 3 PM at Suder; ';}
+        if (LoadInJulySunday3pm) {newApp.Load_In_Load_Out_Availability__c += 'July 21, 3 PM - 5 PM at Suder; ';}
 
-        if (LoadInAugustSaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 9 AM - 11 AM at Suder; ';}
-        if (LoadInAugustSaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 11 AM - 1 PM at Suder; ';}
-        if (LoadInAugustSaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 1 PM - 3 PM at Suder; ';}
-        if (LoadInAugustSaturday3pm) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 3 PM - 5 PM at Suder; ';}
+        if (LoadInAugustSaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'August 3rd, 9 AM - 11 AM at Suder; ';}
+        if (LoadInAugustSaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'August 3rd, 11 AM - 1 PM at Suder; ';}
+        if (LoadInAugustSaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'August 3rd, 1 PM - 3 PM at Suder; ';}
+        if (LoadInAugustSaturday3pm) {newApp.Load_In_Load_Out_Availability__c += 'August 3rd, 3 PM - 5 PM at Suder; ';}
 
-        if (LoadInAugustSunday11am) {newApp.Load_In_Load_Out_Availability__c += 'August, Sunday, 11 AM - 1 PM at Suder; ';}
-        if (LoadInAugustSunday1pm) {newApp.Load_In_Load_Out_Availability__c += 'August, Sunday, 1 PM - 3 PM at Suder; ';}
+        if (LoadInAugustSunday11am) {newApp.Load_In_Load_Out_Availability__c += 'August 4th, 11 AM - 1 PM at Suder; ';}
+        if (LoadInAugustSunday1pm) {newApp.Load_In_Load_Out_Availability__c += 'August 4th, 1 PM - 3 PM at Suder; ';}
 
-        if (LoadOutAugustSaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'Out, August, Saturday, 9 AM - 11 AM at Suder; ';}
-        if (LoadOutAugustSaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'Out, August, Saturday, 11 AM - 1 PM at Storage Unit; ';}
-        if (LoadOutAugustSaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'Out, August, Saturday, 1 PM - 3 PM at Storage Unit; ';}
+        if (LoadOutAugustSaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'August 12 (Out), 9 AM - 11 AM at Suder; ';}
+        if (LoadOutAugustSaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'August 12 (Out), 11 AM - 1 PM at Storage Unit; ';}
+        if (LoadOutAugustSaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'August 12 (Out), 1 PM - 3 PM at Storage Unit; ';}
+
+        if (LoadInOutOther) {newApp.Load_In_Load_Out_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options.; ';}
+        if (LoadInOutNone) {newApp.Load_In_Load_Out_Availability__c += 'I am unable to assist with Load-In or Load-Out.; ';}
 
         //Josephinium Music Club
         newApp.Josephinum_Music_Club_Availability__c = '';
@@ -188,6 +192,7 @@ global class VolunteerApplicationControl {
         if(JuniorCounsellor) { newApp.positions__c += 'JUNIOR COUNSELOR *FULL TIME* (Monday - Friday, 9am-5pm; showcase); ';}
         if(RoadieFullTime) { newApp.positions__c += 'ROADIE *FULL TIME* (Monday - Friday, 9am-5pm; showcase); ';}
         if(RoadiePartTime) { newApp.positions__c += 'ROADIE *PART TIME* (We will contact you for your availability); ';}
+        if(FrontDeskPartTime) {newApp.positions__c += 'FRONT DESK *PART TIME*';}
         // Instrument Teacher
         newApp.Instrument_Teacher_Explained__c = '';
         system.debug('InstrumentTeacherBass = ' + InstrumentTeacherBass);
