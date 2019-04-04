@@ -38,6 +38,32 @@ global class VolunteerApplicationControl {
     public Boolean LoadOutSession2 { get; set; }
     public Boolean LoadInLadiesRock { get; set; }
     public Boolean LoadOutOther { get; set; }
+    
+    public Boolean LoadInJulySaturday9am { get; set; }
+    public Boolean LoadInJulySaturday11am { get; set; }
+    public Boolean LoadInJulySaturday1pm { get; set; }
+    public Boolean LoadInJulySaturday3pm { get; set; }
+
+    public Boolean LoadInJulySunday9am { get; set; }
+    public Boolean LoadInJulySunday11am { get; set; }
+    public Boolean LoadInJulySunday1pm { get; set; }
+    public Boolean LoadInJulySunday3pm { get; set; }
+
+    public Boolean LoadInAugustSaturday9am { get; set; }
+    public Boolean LoadInAugustSaturday11am { get; set; }
+    public Boolean LoadInAugustSaturday1pm { get; set; }
+    public Boolean LoadInAugustSaturday3pm { get; set; }
+
+    public Boolean LoadInAugustSunday11am { get; set; }
+    public Boolean LoadInAugustSunday1pm { get; set; }
+    
+    public Boolean LoadOutAugustSaturday9am { get; set; }
+    public Boolean LoadOutAugustSaturday11am { get; set; }
+    public Boolean LoadOutAugustSaturday1pm { get; set; }
+
+    public Boolean LoadInOutOther { get; set; }
+    public Boolean LoadInOutNone { get; set; }
+
     public Boolean JAMusicClub_Tuesday330_5 { get; set; }
     public Boolean JAMusicClub_Tuesday430_6 { get; set; }
     public Boolean JAMusicClub_Tuesday330_6 { get; set; }
@@ -75,7 +101,7 @@ global class VolunteerApplicationControl {
     public String JamVolunteerEndTime3 { get { return GrcUtils.JamVolunteerEndTime3;} }
 
     Volunteer_Application__c newApp { get; set; }
-    public Boolean validationOn { get { return true; }}
+    public Boolean validationOn { get { return false; }}
 
     // Logic Controls
     public VolunteerApplicationControl() {
@@ -96,7 +122,7 @@ global class VolunteerApplicationControl {
         if (Session1_9to1) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
         if (Session1_1to5) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
         if (Session1_Weekend) {newApp.Session_One_Availability__c += 'I am available on the weekend. ';}
-        if (Session1_Other) {newApp.Session_One_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
+        if (Session1_Other) {newApp.Session_One_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options. ';}
         if (Session1_NotAvailable) {newApp.Session_One_Availability__c += 'I\'m not available to volunteer. ';}
         // Session 2 Availability
         newApp.Session_Two_Availability__c = '';
@@ -105,7 +131,7 @@ global class VolunteerApplicationControl {
         if (Session2_9to1) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
         if (Session2_1to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
         if (Session2_Weekend) {newApp.Session_Two_Availability__c += 'I am available on the weekend. ';}
-        if (Session2_Other) {newApp.Session_Two_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
+        if (Session2_Other) {newApp.Session_Two_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options. ';}
         if (Session2_NotAvailable) {newApp.Session_Two_Availability__c += 'I\'m not available to volunteer. ';}
         // Ladies Rock Availability
         newApp.Ladies_Rock_Availability__c = '';
@@ -114,15 +140,32 @@ global class VolunteerApplicationControl {
         if (LadiesRock_WeekendMorning) {newApp.Ladies_Rock_Availability__c += 'I am available Saturday, Sunday & Monday 9 AM - 12 PM ';}
         if (LadiesRock_WeekendEvening) {newApp.Ladies_Rock_Availability__c += 'I am available Friday - Sunday, Insert Evening Hours ';}
         if (LadiesRock_MondayEvening) {newApp.Ladies_Rock_Availability__c += 'I am available Monday 6 PM - 8 PM ';}
-        if (LadiesRock_Other) {newApp.Ladies_Rock_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
+        if (LadiesRock_Other) {newApp.Ladies_Rock_Availability__c += 'I have availability that is different than the hours listed here; I will contact you to discuss my options. ';}
         if (LadiesRock_NotAvailable) {newApp.Ladies_Rock_Availability__c += 'I\'m not available to volunteer. ';}
         // Load in/Load out
         newApp.Load_In_Load_Out_Availability__c = '';
-        if(LoadInLadiesRock) {newApp.Load_In_Load_Out_Availability__c += 'Load In Ladies Rock; ';}
-        if(LoadInSession1) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 1; ';}
-        if(LoadInSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load In Session 2; ';}
-        if(LoadOutSession2) {newApp.Load_In_Load_Out_Availability__c += 'Load Out Session 2; ';}
-        if(LoadOutOther) {newApp.Load_In_Load_Out_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options. ';}
+        if (LoadInJulySaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 9 AM - 11 AM at Storage Unit; ';}
+        if (LoadInJulySaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 11 AM - 1 PM at Suder; ';}
+        if (LoadInJulySaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 1 PM - 3 PM at Suder; ';}
+        if (LoadInJulySaturday3pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Saturday, 3 PM - 5 PM at Suder; ';}
+
+        if (LoadInJulySunday9am) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 9 AM - 11 AM at Suder; ';}
+        if (LoadInJulySunday11am) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 11 AM - 1 PM at Suder; ';}
+        if (LoadInJulySunday1pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 1 PM - 3 PM at Suder; ';}
+        if (LoadInJulySunday3pm) {newApp.Load_In_Load_Out_Availability__c += 'July, Sunday, 3 PM - 5 PM at Suder; ';}
+
+        if (LoadInAugustSaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 9 AM - 11 AM at Suder; ';}
+        if (LoadInAugustSaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 11 AM - 1 PM at Suder; ';}
+        if (LoadInAugustSaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 1 PM - 3 PM at Suder; ';}
+        if (LoadInAugustSaturday3pm) {newApp.Load_In_Load_Out_Availability__c += 'August, Saturday, 3 PM - 5 PM at Suder; ';}
+
+        if (LoadInAugustSunday11am) {newApp.Load_In_Load_Out_Availability__c += 'August, Sunday, 11 AM - 1 PM at Suder; ';}
+        if (LoadInAugustSunday1pm) {newApp.Load_In_Load_Out_Availability__c += 'August, Sunday, 1 PM - 3 PM at Suder; ';}
+
+        if (LoadOutAugustSaturday9am) {newApp.Load_In_Load_Out_Availability__c += 'Out, August, Saturday, 9 AM - 11 AM at Suder; ';}
+        if (LoadOutAugustSaturday11am) {newApp.Load_In_Load_Out_Availability__c += 'Out, August, Saturday, 11 AM - 1 PM at Storage Unit; ';}
+        if (LoadOutAugustSaturday1pm) {newApp.Load_In_Load_Out_Availability__c += 'Out, August, Saturday, 1 PM - 3 PM at Storage Unit; ';}
+
         //Josephinium Music Club
         newApp.Josephinum_Music_Club_Availability__c = '';
         if (JAMusicClub_Tuesday330_5) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 5 PM; ';}
@@ -130,6 +173,7 @@ global class VolunteerApplicationControl {
         if (JAMusicClub_Tuesday330_6) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 6 PM; ';}
         if (JAMusicClub_Other) {newApp.Josephinum_Music_Club_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options.; ';}
         if (JAMusicClub_NotAvailable) {newApp.Josephinum_Music_Club_Availability__c += 'I\'m not available to volunteer.; ';}
+
         // Page 3
 
 

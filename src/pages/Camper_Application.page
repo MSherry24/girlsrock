@@ -44,6 +44,9 @@
         .wideLabel {
             width: 500px;
         }
+        .financialAidImage {
+            height:800px;
+        }
     </style>
     <!-- <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-1.11.1.min.js')}" /> -->
     <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
@@ -258,13 +261,20 @@
                         </apex:outputpanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.CampAppWhatSchoolWillStudentAttend}" styleClass="question"/>
+                        <apex:outputPanel >
+                            <apex:inputField id="whatSchool" value="{!newApp.what_school_will_student_attend__c}" required="false"/>
+                            <div class="italicText">If TBD, please write the name of the school they most recently attended.</div>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <!-- <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.CampAppSuderStudent}" styleClass="question"/>
                         <apex:outputpanel >
                             <apex:selectRadio value="{!studentAtSuder}">
                             	<apex:selectOptions value="{!YesNoOptions}"/>
                         	</apex:selectRadio>
                         </apex:outputpanel>
-                    </apex:pageblockSectionItem>
+                    </apex:pageblockSectionItem> -->
                     <!--<apex:pageblockSectionItem >-->
                         <!--<apex:outputLabel value="Is the camper a current student at Josephinum Academy?" styleClass="question"/>-->
                         <!--<apex:outputpanel >-->
@@ -584,8 +594,8 @@
                             <apex:selectRadio value="{!applyingForFinancialAid}">
                             	<apex:selectOptions value="{!YesNoOptions}"/>
                         	</apex:selectRadio>
-                            <div class="italicText">The full price of tuition is $500. You must apply for financial aid if you are unable to pay full tuition. Girls Rock! Chicago adheres to these financial aid guidelines when making decisions regarding tuition: <a class="link" onClick="window.open('https://goo.gl/OmFihP');">https://goo.gl/OmFihP</a></div>
-                            <div><img src="{!$Resource.FinancialAidGuidelines}"/></div>
+                            <div class="italicText">The full price of tuition is $500. You must apply for financial aid if you are unable to pay full tuition. Girls Rock! Chicago adheres to these financial aid guidelines when making decisions regarding tuition: <a class="link" onClick="window.open('https://docs.google.com/document/d/16AR99teC46w_nzSSxE4OpsEHtxUujqqbNViGFlqfJ8M/edit');">Financial Aid Document</a></div>
+                            <div><img class="financialAidImage" src="{!$Resource.FinancialAidGuidelines2019}"/></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                 </apex:pageblockSection>    
@@ -613,7 +623,7 @@
                                     <br/>
                                     <div>
                                         <span>{!$Label.CampAppFinancialAid4}</span>
-                                        <span> <a class="link" onClick="window.open('https://goo.gl/OmFihP');">https://goo.gl/OmFihP</a></span>
+                                        <span> <a class="link" onClick="window.open('https://docs.google.com/document/d/16AR99teC46w_nzSSxE4OpsEHtxUujqqbNViGFlqfJ8M/edit');">Financial Aid Document</a></span>
                                     </div>
                                 </div>
                             </apex:outputPanel>
@@ -702,7 +712,7 @@
                         </p>
                         <br/>
                         <br/>
-                        <a href="https://girlsrockchicago.org/camp-application-confirmation/">
+                        <a href="http://girlsrockchicago.org/camp-application-confirmation/">
                             If you are not automatically redirected in ten seconds, click here.
                         </a>
                     </div>
