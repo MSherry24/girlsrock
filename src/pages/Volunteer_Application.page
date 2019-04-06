@@ -259,6 +259,12 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
+                                                        <apex:inputCheckbox value="{!Session1_8to9 }"/>
+                                                        <span>I am available Monday - Friday, 8AM - 9AM. (Before-Care)</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
                                                         <apex:inputCheckbox value="{!Session1_9to5 }"/>
                                                         <span>I am available Monday - Friday, 9AM - 5PM.</span>
                                                     </td>
@@ -273,6 +279,12 @@
                                                     <td>
                                                         <apex:inputCheckbox value="{!Session1_1to5 }"/>
                                                         <span>I am available Monday - Friday, 1PM - 5PM.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session1_5to6 }"/>
+                                                        <span>I am available Monday - Friday, 5PM - 6PM (After-Care).</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -314,6 +326,12 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                    <td>
+                                                        <apex:inputCheckbox value="{!Session2_8to9 }"/>
+                                                        <span>I am available Monday - Friday, 8AM - 9AM. (Before-Care)</span>
+                                                    </td>
+                                                </tr>
+                                            <tr>
                                                 <td>
                                                     <apex:inputCheckbox value="{!Session2_9to5 }"/>
                                                     <span>I am available Monday - Friday, 9AM - 5PM.</span>
@@ -329,6 +347,12 @@
                                                 <td>
                                                     <apex:inputCheckbox value="{!Session2_1to5 }"/>
                                                     <span>I am available Monday - Friday, 1PM - 5PM.</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!Session2_5to6 }"/>
+                                                    <span>I am available Monday - Friday, 5PM - 6PM (After-Care).</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -621,7 +645,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <apex:inputCheckbox value="{!FrontDeskParkTime}" />
+                                                <apex:inputCheckbox value="{!FrontDeskPartTime}" />
                                                 <span>FRPMT DESK</span>
                                                 <span> - <b>PART TIME</b></span>
                                             </td>
@@ -784,7 +808,21 @@
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Can we quote you?"/>
-                                <apex:inputField value="{!newApp.Can_we_quote_you__c}" />
+                                <apex:OutputPanel>
+                                    <apex:inputField value="{!newApp.Can_we_quote_you__c}" />
+                                    <div class="italic wideLabel">
+                                        GR!C would love to use your inspired words on our website and in PR materials. Would you be comfortable with that?
+                                    </div>
+                                </apex:OutputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="I authorize the Girls Rock Chicago staff to record and edit into photos/footage/videos/promotional pieces/documentaries for camp and outside media use (such as on social media or in marketing materials), my name, text, likeness, voice, interview, and performance. Girls Rock! Chicago shall own all rights, title(s), and interest(s) in and to the program(s), including the recording(s), to be used and disposed of at the discretion of Girls Rock! Chicago."/>
+                                <apex:OutputPanel>
+                                    <apex:inputField value="{!newApp.mediaAuthorization__c}" />
+                                    <div class="italic wideLabel">
+                                        GR!C would love to use your inspired words on our website and in PR materials. Would you be comfortable with that?
+                                    </div>
+                                </apex:OutputPanel>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Extra notes that didn't fit anywhere else? Additional questions? Write 'em here:"/>
@@ -812,6 +850,10 @@
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Interested in carpool?"/>
                                 <apex:inputField value="{!newApp.Carpool__c}" required="{!validationOn}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Do you require transit assistance? (Select Yes if the cost of transit to/from camp could prohibit your ability to volunteer)"/>
+                                <apex:inputField value="{!newApp.Transit_Assistance__c}" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="If you drive, would you be willing to run an occasional errand for staff if needed during camp?" />

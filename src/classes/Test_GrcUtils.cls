@@ -5,20 +5,31 @@ public with sharing class Test_GrcUtils {
     static void test_Dates()
     {
         Important_Dates__c dates = new Important_Dates__c (
-                Session_One_Start__c = Date.Today(),
-                Session_One_End__c = Date.Today(),
-                Session_Two_Start__c = Date.Today(),
-                Session_Two_End__c = Date.Today(),
-                Ladies_Rock_Start__c = Date.Today(),
-                Ladies_Rock_End__c = Date.Today(),
-                Session_One_Load_In_1__c = Date.Today(),
-                Session_One_Load_In_2__c = Date.Today(),
-                Session_One_Load_Out__c = Date.Today(),
-                Session_Two_Load_In_1__c = Date.Today(),
-                Session_Two_Load_In_2__c = Date.Today(),
-                Session_Two_Load_Out__c = Date.Today(),
-                Ladies_Rock_Load_In_1__c = Date.Today(),
-                Ladies_Rock_Load_In_2__c = Date.Today()
+            Session_One_Start__c = Date.Today(),
+            Session_One_End__c = Date.Today(),
+            Session_Two_Start__c = Date.Today(),
+            Session_Two_End__c = Date.Today(),
+            Ladies_Rock_Start__c = Date.Today(),
+            Ladies_Rock_End__c = Date.Today(),
+            Session_One_Load_In_1__c = Date.Today(),
+            Session_One_Load_In_2__c = Date.Today(),
+            Session_One_Load_Out__c = Date.Today(),
+            Session_Two_Load_In_1__c = Date.Today(),
+            Session_Two_Load_In_2__c = Date.Today(),
+            Session_Two_Load_Out__c = Date.Today(),
+            Ladies_Rock_Load_In_1__c = Date.Today(),
+            Ladies_Rock_Load_In_2__c = Date.Today(),
+            Jam_Day_Of_The_Week__c = Date.Today().format(),
+            Jam_Start_Time__c = Date.Today().format(),
+            Jam_End_Time__c = Date.Today(),
+            Jam_Start_Date__c = Date.Today(),
+            Jam_End_Date__c = Date.Today().format(),
+            Jam_Volunteer_Start_Time_1__c = Date.Today().format(),
+            Jam_Volunteer_Start_Time_2__c = Date.Today().format(),
+            Jam_Volunteer_Start_Time_3__c = Date.Today().format(),
+            Jam_Volunteer_End_Time_1__c = Date.Today().format(),
+            Jam_Volunteer_End_Time_2__c = Date.Today().format(),
+            Jam_Volunteer_End_Time_3__c = Date.Today(.format())
         );
         insert dates;
 
@@ -41,6 +52,17 @@ public with sharing class Test_GrcUtils {
             String SessionOneEndVerbose = GrcUtils.SessionOneEndVerbose;
             String SessionTwoStartVerbose = GrcUtils.SessionTwoStartVerbose;
             String SessionTwoEndVerbose = GrcUtils.SessionTwoEndVerbose;
+            String JamDayOfTheWeek = GrcUtils.JamDayOfTheWeek;
+            String JamStartTime = GrcUtils.JamStartTime;
+            String JamEndTime = GrcUtils.JamEndTime;
+            String JamStartDate = GrcUtils.JamStartDate;
+            String JamEndDate = GrcUtils.JamEndDate;
+            String JamVolunteerStartTime1 = GrcUtils.JamVolunteerStartTime1;
+            String JamVolunteerStartTime2 = GrcUtils.JamVolunteerStartTime2;
+            String JamVolunteerStartTime3 = GrcUtils.JamVolunteerStartTime3;
+            String JamVolunteerEndTime1 = GrcUtils.JamVolunteerEndTime1;
+            String JamVolunteerEndTime2 = GrcUtils.JamVolunteerEndTime2;
+            String JamVolunteerEndTime3 = GrcUtils.JamVolunteerEndTime3;
         Test.stopTest();
 
         System.AssertNotEquals(null,SessionOneStart);
@@ -61,5 +83,16 @@ public with sharing class Test_GrcUtils {
         System.AssertNotEquals(null,SessionOneEndVerbose);
         System.AssertNotEquals(null,SessionTwoStartVerbose);
         System.AssertNotEquals(null,SessionTwoEndVerbose);
+        System.AssertNotEquals(null,JamDayOfTheWeek);
+        System.AssertNotEquals(null,JamStartTime);
+        System.AssertNotEquals(null,JamEndTime);
+        System.AssertNotEquals(null,JamStartDate);
+        System.AssertNotEquals(null,JamEndDate);
+        System.AssertNotEquals(null,JamVolunteerStartTime1);
+        System.AssertNotEquals(null,JamVolunteerStartTime2);
+        System.AssertNotEquals(null,JamVolunteerStartTime3);
+        System.AssertNotEquals(null,JamVolunteerEndTime1);
+        System.AssertNotEquals(null,JamVolunteerEndTime2);
+        System.AssertNotEquals(null,JamVolunteerEndTime3);
     }
 }

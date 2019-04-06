@@ -12,17 +12,21 @@ global class VolunteerApplicationControl {
     public Boolean RoadiePartTime { get; set; }
     public Boolean FrontDeskPartTime { get; set;}
     public Boolean Session1_OpenAvailability { get; set; }
+    public Boolean Session1_8to9 { get; set; }
     public Boolean Session1_9to5 { get; set; }
     public Boolean Session1_9to1 { get; set; }
     public Boolean Session1_1to5 { get; set; }
+    public Boolean Session1_5to6 { get; set; }
     public Boolean Session1_Weekend { get; set; }
     public Boolean Session1_Other { get; set; }
     public Boolean Session1_Varies { get; set; }
     public Boolean Session1_NotAvailable { get; set; }
     public Boolean Session2_OpenAvailability { get; set; }
+    public Boolean Session2_8to9 { get; set; }
     public Boolean Session2_9to5 { get; set; }
     public Boolean Session2_9to1 { get; set; }
     public Boolean Session2_1to5 { get; set; }
+    public Boolean Session2_5to6 { get; set; }
     public Boolean Session2_Weekend { get; set; }
     public Boolean Session2_Other { get; set; }
     public Boolean Session2_Varies { get; set; }
@@ -102,7 +106,7 @@ global class VolunteerApplicationControl {
     public String JamVolunteerEndTime3 { get { return GrcUtils.JamVolunteerEndTime3;} }
 
     Volunteer_Application__c newApp { get; set; }
-    public Boolean validationOn { get { return false; }}
+    public Boolean validationOn { get { return true; }}
 
     // Logic Controls
     public VolunteerApplicationControl() {
@@ -117,20 +121,26 @@ global class VolunteerApplicationControl {
         // NONE
         // Page 2
         //Session 1 Availability
+        system.debug('Session1_OpenAvailability: ' + Session1_OpenAvailability);
         newApp.Session_One_Availability__c = '';
         if (Session1_OpenAvailability) {newApp.Session_One_Availability__c += 'I have open availability; I can help any time throughout the week. ';}
+        system.debug('Session1_8to9: ' + Session1_8to9);
+        if (Session1_8to9) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 8AM - 9AM. (Before-Care) ';}
         if (Session1_9to5) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 9AM - 5PM. ';}
         if (Session1_9to1) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
         if (Session1_1to5) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
+        if (Session1_5to6) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 5PM - 6PM (After-Care). ';}
         if (Session1_Weekend) {newApp.Session_One_Availability__c += 'I am available on the weekend. ';}
         if (Session1_Other) {newApp.Session_One_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options. ';}
         if (Session1_NotAvailable) {newApp.Session_One_Availability__c += 'I\'m not available to volunteer. ';}
         // Session 2 Availability
         newApp.Session_Two_Availability__c = '';
         if (Session2_OpenAvailability) {newApp.Session_Two_Availability__c += 'I have open availability; I can help any time throughout the week. ';}
+        if (Session2_8to9) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 8AM - 9AM. (Before-Care) ';}
         if (Session2_9to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 5PM. ';}
         if (Session2_9to1) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
         if (Session2_1to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
+        if (Session2_5to6) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 5PM - 6PM (After-Care). ';}
         if (Session2_Weekend) {newApp.Session_Two_Availability__c += 'I am available on the weekend. ';}
         if (Session2_Other) {newApp.Session_Two_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options. ';}
         if (Session2_NotAvailable) {newApp.Session_Two_Availability__c += 'I\'m not available to volunteer. ';}
