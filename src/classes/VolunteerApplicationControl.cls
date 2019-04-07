@@ -136,11 +136,11 @@ global class VolunteerApplicationControl {
         // Session 2 Availability
         newApp.Session_Two_Availability__c = '';
         if (Session2_OpenAvailability) {newApp.Session_Two_Availability__c += 'I have open availability; I can help any time throughout the week. ';}
-        if (Session2_8to9) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 8AM - 9AM. (Before-Care) ';}
+        if (Session2_8to9) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 8AM - 9AM. (Before-Care) ';}
         if (Session2_9to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 5PM. ';}
         if (Session2_9to1) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
         if (Session2_1to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
-        if (Session2_5to6) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 5PM - 6PM (After-Care). ';}
+        if (Session2_5to6) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 5PM - 6PM (After-Care). ';}
         if (Session2_Weekend) {newApp.Session_Two_Availability__c += 'I am available on the weekend. ';}
         if (Session2_Other) {newApp.Session_Two_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options. ';}
         if (Session2_NotAvailable) {newApp.Session_Two_Availability__c += 'I\'m not available to volunteer. ';}
@@ -182,11 +182,11 @@ global class VolunteerApplicationControl {
 
         //Josephinium Music Club
         newApp.Josephinum_Music_Club_Availability__c = '';
-        if (JAMusicClub_Tuesday330_5) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 5 PM; ';}
-        if (JAMusicClub_Tuesday430_6) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 4:30 PM - 6 PM; ';}
-        if (JAMusicClub_Tuesday330_6) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 6 PM; ';}
-        if (JAMusicClub_Other) {newApp.Josephinum_Music_Club_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options.; ';}
-        if (JAMusicClub_NotAvailable) {newApp.Josephinum_Music_Club_Availability__c += 'I\'m not available to volunteer.; ';}
+        // if (JAMusicClub_Tuesday330_5) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 5 PM; ';}
+        // if (JAMusicClub_Tuesday430_6) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 4:30 PM - 6 PM; ';}
+        // if (JAMusicClub_Tuesday330_6) {newApp.Josephinum_Music_Club_Availability__c += 'Tuesdays from 3:30 PM - 6 PM; ';}
+        // if (JAMusicClub_Other) {newApp.Josephinum_Music_Club_Availability__c += 'I have availability that is different than the hours listed here;  please contact me to discuss my options.; ';}
+        // if (JAMusicClub_NotAvailable) {newApp.Josephinum_Music_Club_Availability__c += 'I\'m not available to volunteer.; ';}
 
         // Page 3
 

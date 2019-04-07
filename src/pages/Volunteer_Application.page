@@ -96,7 +96,7 @@
                 var waitThenRedirect = function() {
                     if (!j$(".error").length) {
                          window.setTimeout(function() {
-                            window.location.href = "https://girlsrockchicago.org/get-involved/";
+                            window.location.href = "http://girlsrockchicago.org/get-involved/";
                         }, 10000);
                     }
                 };
@@ -646,7 +646,7 @@
                                         <tr>
                                             <td>
                                                 <apex:inputCheckbox value="{!FrontDeskPartTime}" />
-                                                <span>FRPMT DESK</span>
+                                                <span>FRONT DESK</span>
                                                 <span> - <b>PART TIME</b></span>
                                             </td>
                                         </tr>
@@ -886,10 +886,10 @@
                     <!-- Page 7 - THANK YOU for applying to volunteer at Girls Rock! Chicago's 2016 summer camp! -->
                     <apex:outputPanel id="page7">
                         <apex:pageBlockSection columns="1" rendered="{!renderPage7}" >
-                            <apex:outputLabel value="THANK YOU for applying to volunteer at Girls Rock! Chicago's 2017 summer camp!" styleClass="title" />
+                            <apex:outputLabel value="THANK YOU for applying to volunteer at Girls Rock! Chicago's 2019 summer camp!" styleClass="title" />
                             <apex:outputLabel value="Press the 'Submit Application' button to complete your application" styleClass="question" />
                             <apex:outputLabel value="Volunteer with us all year long!" styleClass="italic"/>
-                            <apex:outputLabel value="If you are interested in volunteering with Girls Rock! Chicago throughout the year, please visit our website https://girlsrockchicago.org/get-involved to find out the most up to speed volunteer needs or email volunteer@girlsrockchicago.org with any questions you may have." styleClass="italic widelabel"/>
+                            <apex:outputLabel value="If you are interested in volunteering with Girls Rock! Chicago throughout the year, please visit our website http://girlsrockchicago.org/get-involved/ to find out the most up to speed volunteer needs or email volunteer@girlsrockchicago.org with any questions you may have." styleClass="italic widelabel"/>
                             <br/>
                             <div class="question">
                                 <p>
@@ -897,7 +897,7 @@
                                 </p>
                                 <br/>
                                 <br/>
-                                <a href="https://girlsrockchicago.org/get-involved/">
+                                <a href="http://girlsrockchicago.org/get-involved/">
                                     If you are not automatically redirected in ten seconds, click here.
                                 </a>
                             </div>
