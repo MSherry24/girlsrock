@@ -392,7 +392,7 @@
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LoadInJulySaturday9am}"/></td>
-                                                <td><span>9 AM - 11 AM at Storage Unit</span></td>
+                                                <td><span>9 AM - 11 AM at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654.</span></td>
                                             </tr>
                                             <tr>
                                                 <td><apex:inputCheckbox value="{!LoadInJulySaturday11am}"/></td>
@@ -817,12 +817,7 @@
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="I authorize the Girls Rock Chicago staff to record and edit into photos/footage/videos/promotional pieces/documentaries for camp and outside media use (such as on social media or in marketing materials), my name, text, likeness, voice, interview, and performance. Girls Rock! Chicago shall own all rights, title(s), and interest(s) in and to the program(s), including the recording(s), to be used and disposed of at the discretion of Girls Rock! Chicago."/>
-                                <apex:OutputPanel>
-                                    <apex:inputField value="{!newApp.mediaAuthorization__c}" />
-                                    <div class="italic wideLabel">
-                                        GR!C would love to use your inspired words on our website and in PR materials. Would you be comfortable with that?
-                                    </div>
-                                </apex:OutputPanel>
+                                <apex:inputField value="{!newApp.mediaAuthorization__c}" />
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Extra notes that didn't fit anywhere else? Additional questions? Write 'em here:"/>
