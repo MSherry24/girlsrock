@@ -644,7 +644,7 @@
                     </apex:pageblockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.grcapp__campapphowmuchtuitioncanyoupay}" styleClass="question" />
-                        <apex:inputField id="HowMuchCanYouAffordToPay" value="{!newApp.How_Much_Tuition_2020__c}" required="true" />
+                        <apex:inputField id="HowMuchCanYouAffordToPay" value="{!newApp.grcapp__How_Much_Tuition_2016__c}" required="true" />
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.grcapp__campapptotalestimatedincome}" styleClass="question" />
