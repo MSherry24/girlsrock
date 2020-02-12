@@ -594,13 +594,6 @@
                 <apex:pageblockSection columns="1" rendered="{!renderPage8}" >
                 <apex:outputLabel value="{!$Label.grcapp__campappfinanacialaid}" styleClass="title" />
                     <apex:outputLabel value="Page 8 of 10" styleClass="question" />
-                    <apex:pageBlockSectionItem >
-                        <apex:outputLabel value="Would you like to donate an additional amount?" styleClass="question" />
-                        <apex:outputPanel>
-                            <apex:inputField id="DonateAdditionalAmount" value="{!newApp.Donate_Additional_Amount__c}" required="false" />
-                            <div class="italicText">The generosity of our donors and community partners help us run camp every year. If you wish to add a donation to your camper's tuition, please write that amount here.</div>
-                        </apex:outputPanel>
-                    </apex:pageBlockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.grcapp__campappapplyingforfinancialaid}" styleClass="question"/>
                         <apex:outputPanel >
@@ -608,10 +601,17 @@
                             	<apex:selectOptions value="{!YesNoOptions}"/>
                         	</apex:selectRadio>
                             <div class="italicText">The full price of tuition is $500. You must apply for financial aid if you are unable to pay full tuition. Girls Rock! Chicago adheres to these financial aid guidelines when making decisions regarding tuition: <a class="link" onClick="window.open('https://docs.google.com/document/d/16AR99teC46w_nzSSxE4OpsEHtxUujqqbNViGFlqfJ8M/edit');">Financial Aid Document</a></div>
-                            <div><img class="financialAidImage" src="{!$Resource.FinancialAidGuideline2020}"/></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
-                     
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Would you like to donate an additional amount?" styleClass="question" />
+                        <apex:outputPanel >
+                            <apex:inputField id="DonateAdditionalAmount" value="{!newApp.Donate_Additional_Amount__c}" required="false" />
+                            <div class="italicText">The generosity of our donors and community partners help us run camp every year. If you wish to add a donation to your camper's tuition, please write that amount here.</div>
+                            <br/>
+                            <div><img class="financialAidImage" src="{!$Resource.FinancialAidGuideline2020}"/></div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
                 </apex:pageblockSection>    
             </apex:outputPanel>
             <!-- Page 9 - Financial Aid Application (skip if no financial aid) -->
@@ -644,7 +644,7 @@
                     </apex:pageblockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.grcapp__campapphowmuchtuitioncanyoupay}" styleClass="question" />
-                        <apex:inputField id="HowMuchCanYouAffordToPay" value="{!newApp.grcapp__How_Much_Tuition_2016__c}" required="true" />
+                        <apex:inputField id="HowMuchCanYouAffordToPay" value="{!newApp.How_Much_Tuition_2016__c}" required="true" />
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.grcapp__campapptotalestimatedincome}" styleClass="question" />
