@@ -202,6 +202,15 @@ public with sharing class Test_VolunteerApplicationControl {
         vac.InstrumentTeacherKeyboards = true;
         vac.InstrumentTeacherDJ = true;
         vac.FrontDeskPartTime = true;
+        vac.AmericanNative = true;
+        vac.Asian = true;
+        vac.Black_AfricanAmerican = true;
+        vac.Hispanic_Latinx = true;
+        vac.Multiracial = true;
+        vac.NativeHawaiian_PacificIslander = true;
+        vac.White = true;
+        vac.Other = true;
+        vac.PreferNotToDisclose = true;
         vac.newApp.grcapp__First_Name__c = 'test';
         vac.newApp.grcapp__Last_Name__c = 'test';
         vac.newApp.grcapp__Date_of_Birth__c = Date.Today();
