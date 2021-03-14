@@ -15,21 +15,17 @@ global class VolunteerApplicationControl {
     public Boolean CoolDownCrewA { get; set; }
     public Boolean CoolDownCrewB { get; set; }
     public Boolean Session1_OpenAvailability { get; set; }
-    public Boolean Session1_8to9 { get; set; }
-    public Boolean Session1_9to5 { get; set; }
-    public Boolean Session1_9to1 { get; set; }
+    public Boolean Session1_10to5 { get; set; }
+    public Boolean Session1_10to1 { get; set; }
     public Boolean Session1_1to5 { get; set; }
-    public Boolean Session1_5to6 { get; set; }
     public Boolean Session1_Weekend { get; set; }
     public Boolean Session1_Other { get; set; }
     public Boolean Session1_Varies { get; set; }
     public Boolean Session1_NotAvailable { get; set; }
     public Boolean Session2_OpenAvailability { get; set; }
-    public Boolean Session2_8to9 { get; set; }
-    public Boolean Session2_9to5 { get; set; }
-    public Boolean Session2_9to1 { get; set; }
+    public Boolean Session2_10to5 { get; set; }
+    public Boolean Session2_10to1 { get; set; }
     public Boolean Session2_1to5 { get; set; }
-    public Boolean Session2_5to6 { get; set; }
     public Boolean Session2_Weekend { get; set; }
     public Boolean Session2_Other { get; set; }
     public Boolean Session2_Varies { get; set; }
@@ -102,6 +98,11 @@ global class VolunteerApplicationControl {
     public Boolean White { get; set; }
     public Boolean Other { get; set; }
     public Boolean PreferNotToDisclose { get; set; }
+    // Group Class Volunteer
+    public Boolean GroupClass_No { get; set; }
+    public Boolean GroupClass_NoExperience_Interested { get; set; }
+    public Boolean GroupClass_Experience_Interested { get; set; }
+    public Boolean GroupClass_Assistant { get; set; }
 
     public String SessionOneStart { get { return GrcUtils.SessionOneStart; } }
     public String SessionOneEnd { get { return GrcUtils.SessionOneEnd; } }
@@ -155,26 +156,20 @@ global class VolunteerApplicationControl {
         newApp.grcapp__Racial_or_Ethnic_Info__c = String.join(ethnicityInfo, '; ');
         // Page 2
         //Session 1 Availability
-        system.debug('Session1_OpenAvailability: ' + Session1_OpenAvailability);
         newApp.Session_One_Availability__c = '';
         if (Session1_OpenAvailability) {newApp.Session_One_Availability__c += 'I have open availability; I can help any time throughout the week. ';}
-        system.debug('Session1_8to9: ' + Session1_8to9);
-        if (Session1_8to9) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 8AM - 9AM. (Before-Care) ';}
-        if (Session1_9to5) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 9AM - 5PM. ';}
-        if (Session1_9to1) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
+        if (Session1_10to5) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 10AM - 5PM. ';}
+        if (Session1_10to1) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 10AM - 1PM. ';}
         if (Session1_1to5) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
-        if (Session1_5to6) {newApp.Session_One_Availability__c += 'I am available Monday - Friday, 5PM - 6PM (After-Care). ';}
         if (Session1_Weekend) {newApp.Session_One_Availability__c += 'I am available on the weekend. ';}
         if (Session1_Other) {newApp.Session_One_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options. ';}
         if (Session1_NotAvailable) {newApp.Session_One_Availability__c += 'I\'m not available to volunteer. ';}
         // Session 2 Availability
         newApp.Session_Two_Availability__c = '';
         if (Session2_OpenAvailability) {newApp.Session_Two_Availability__c += 'I have open availability; I can help any time throughout the week. ';}
-        if (Session2_8to9) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 8AM - 9AM. (Before-Care) ';}
-        if (Session2_9to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 5PM. ';}
-        if (Session2_9to1) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 9AM - 1PM. ';}
+        if (Session2_10to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 10AM - 5PM. ';}
+        if (Session2_10to1) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 10AM - 1PM. ';}
         if (Session2_1to5) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 1PM - 5PM. ';}
-        if (Session2_5to6) {newApp.Session_Two_Availability__c += 'I am available Monday - Friday, 5PM - 6PM (After-Care). ';}
         if (Session2_Weekend) {newApp.Session_Two_Availability__c += 'I am available on the weekend. ';}
         if (Session2_Other) {newApp.Session_Two_Availability__c += 'I have availability that is different than the hours listed here;  I will contact you to discuss my options. ';}
         if (Session2_NotAvailable) {newApp.Session_Two_Availability__c += 'I\'m not available to volunteer. ';}
@@ -190,6 +185,7 @@ global class VolunteerApplicationControl {
         if (LadiesRock_Other) {newApp.Ladies_Rock_Availability__c += 'I have availability that is different than the hours listed here; I will contact you to discuss my options. ';}
         if (LadiesRock_NotAvailable) {newApp.Ladies_Rock_Availability__c += 'I\'m not available to volunteer. ';}
         // Guitar Club Availability
+        newApp.Guitar_Club_Availability__c = '';
         if (GuitarClub_Monday) { newApp.Guitar_Club_Availability__c += 'Monday afternoons from 3:15 - 5:00. '; }
         if (GuitarClub_Tuesday) { newApp.Guitar_Club_Availability__c += 'Tuesday afternoons from 3:15 - 5:00. '; }
         if (GuitarClub_Wednesday) { newApp.Guitar_Club_Availability__c += 'Wednesday afternoons from 3:15 - 5:00. '; }
@@ -238,15 +234,15 @@ global class VolunteerApplicationControl {
         newApp.positions__c = '';
         if(BandCoach) { newApp.positions__c += 'BAND COACH **musical experience required** (Monday - Friday, 2:30pm-4:30pm; showcase and recording); ';}
         if(InstrumentTeacher) { newApp.positions__c += 'INSTRUMENT TEACHER **musical experience required** (Monday - Friday, 10:30am-12:30pm); ';}
-        if(CounsellorA) { newApp.positions__c += 'COUNSELOR - Shift A (11 am - 2 pm) ';}
-        if(CounsellorB) { newApp.positions__c += 'COUNSELOR - Shift B (2:15 pm - 5:00 pm) ';}
+        if(CounsellorA) { newApp.positions__c += 'COUNSELOR - Shift A (11 am - 2 pm); ';}
+        if(CounsellorB) { newApp.positions__c += 'COUNSELOR - Shift B (2:15 pm - 5:00 pm); ';}
         if(WorkshopLeader) { newApp.positions__c += 'WORKSHOP LEADER (1 hour, one day of camp); ';}
         if(JuniorCounsellor) { newApp.positions__c += 'JUNIOR COUNSELOR *FULL TIME* (Monday - Friday, 9am-5pm; showcase); ';}
-        if(FrontDeskPartTime) {newApp.positions__c += 'FRONT DESK *PART TIME*';}
-        if(CoolDownCrewA) { newApp.positions__c += 'COOL DOWN CREW - Shift A (11 am - 2 pm)';}
-        if(CoolDownCrewA) { newApp.positions__c += 'COOL DOWN CREW - Shift B (2:15 pm - 5:00 pm)';}
-        if(RoadieA) { newApp.positions__c += 'ROADIE - Shift A (11 am - 2 pm)';}
-        if(RoadieB) { newApp.positions__c += 'ROADIE - Shift B (2:15 pm - 5:00 pm)';}
+        // if(FrontDeskPartTime) {newApp.positions__c += 'FRONT DESK *PART TIME*; ';}
+        if(CoolDownCrewA) { newApp.positions__c += 'COOL DOWN CREW - Shift A (11 am - 2 pm); ';}
+        if(CoolDownCrewB) { newApp.positions__c += 'COOL DOWN CREW - Shift B (2:15 pm - 5:00 pm); ';}
+        if(RoadieA) { newApp.positions__c += 'ROADIE - Shift A (11 am - 2 pm); ';}
+        if(RoadieB) { newApp.positions__c += 'ROADIE - Shift B (2:15 pm - 5:00 pm); ';}
         // Instrument Teacher
         newApp.Instrument_Teacher_Explained__c = '';
         system.debug('InstrumentTeacherBass = ' + InstrumentTeacherBass);
@@ -260,6 +256,12 @@ global class VolunteerApplicationControl {
         // Page 5
         // Page 6
         // Page 7
+        newApp.Group_Class_Volunteer__c = '';
+        if (GroupClass_No) { newApp.Group_Class_Volunteer__c += 'I am not interested in teaching online group classes/workshops for camp. '; }
+        if (GroupClass_NoExperience_Interested) { newApp.Group_Class_Volunteer__c += 'I have not taught online group classes/workshops before but I am interested in leading these classes for camp! '; }
+        if (GroupClass_Experience_Interested) { newApp.Group_Class_Volunteer__c += 'I have taught online group classes/workshops before and am interested in leading these classes for camp! '; }
+        if (GroupClass_Assistant) { newApp.Group_Class_Volunteer__c += 'I am unsure about being a lead teacher for online classes, but am interested in attending the online classes as an assistant and/or moderator. '; }
+        // Page 8
         upsert newApp;
         this.pageNumber++;
         sendConfirmationEmail(newApp.id);
@@ -314,7 +316,10 @@ global class VolunteerApplicationControl {
         mail.setSenderDisplayName('Girls Rock! Chicago');
 
         // Set to True if you want to BCC yourself on the email.
-        mail.setBccSender(true);
+        String[] bccs = new List<String> { 'volunteer@girlsrockchicago.org' };
+
+        mail.setBccAddresses(bccs);
+        mail.setBccSender(false);
 
         system.debug('mail = ' + mail);
         // Send the email you have created.

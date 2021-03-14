@@ -350,32 +350,20 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <apex:inputCheckbox value="{!Session1_8to9 }"/>
-                                                        <span>I am available Monday - Friday, 8AM - 9AM. (Before-Care)</span>
+                                                        <apex:inputCheckbox value="{!Session1_10to5 }"/>
+                                                        <span>I am available Monday - Friday, 10AM - 5PM.</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <apex:inputCheckbox value="{!Session1_9to5 }"/>
-                                                        <span>I am available Monday - Friday, 9AM - 5PM.</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <apex:inputCheckbox value="{!Session1_9to1 }"/>
-                                                        <span>I am available Monday - Friday, 9AM - 1PM.</span>
+                                                        <apex:inputCheckbox value="{!Session1_10to1 }"/>
+                                                        <span>I am available Monday - Friday, 10AM - 1PM.</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <apex:inputCheckbox value="{!Session1_1to5 }"/>
                                                         <span>I am available Monday - Friday, 1PM - 5PM.</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <apex:inputCheckbox value="{!Session1_5to6 }"/>
-                                                        <span>I am available Monday - Friday, 5PM - 6PM (After-Care).</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -417,33 +405,21 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                    <td>
-                                                        <apex:inputCheckbox value="{!Session2_8to9 }"/>
-                                                        <span>I am available Monday - Friday, 8AM - 9AM. (Before-Care)</span>
-                                                    </td>
-                                                </tr>
-                                            <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!Session2_9to5 }"/>
-                                                    <span>I am available Monday - Friday, 9AM - 5PM.</span>
+                                                    <apex:inputCheckbox value="{!Session2_10to5 }"/>
+                                                    <span>I am available Monday - Friday, 10AM - 5PM.</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!Session2_9to1 }"/>
-                                                    <span>I am available Monday - Friday, 9AM - 1PM.</span>
+                                                    <apex:inputCheckbox value="{!Session2_10to1 }"/>
+                                                    <span>I am available Monday - Friday, 10AM - 1PM.</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <apex:inputCheckbox value="{!Session2_1to5 }"/>
                                                     <span>I am available Monday - Friday, 1PM - 5PM.</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!Session2_5to6 }"/>
-                                                    <span>I am available Monday - Friday, 5PM - 6PM (After-Care).</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1004,14 +980,14 @@
                                 <apex:outputLabel styleClass="previousConvictionsExplained hideRow" value="Please provide further explanation."/>
                                 <apex:inputField value="{!newapp.Previous_Convictions_Explained__c}"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
+                            <!-- <apex:pageBlockSectionItem >
                                 <apex:OutputLabel value="We will feed you! All lunches and snacks are provided. Do you have any dietary restrictions or allergies?"/>
                                 <apex:inputField value="{!newapp.Dietary_Restrictions__c}" styleClass="dietaryRestrictions" onChange="showHideSectionByPicklistValue('dietaryRestrictions', 'dietaryRestrictionsExplained', ['Yes']);" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel styleClass="dietaryRestrictionsExplained hideRow" value="Let's make sure we aren't giving you what you can't eat! Vegetarian? Gluten free? Let us know."/>
                                 <apex:inputField value="{!newapp.Dietary_Restrictions_Explained__c}"/>
-                            </apex:pageBlockSectionItem>
+                            </apex:pageBlockSectionItem> -->
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Who should we contact in the event of an emergency?"/>
                                 <apex:inputField id="emergencyContact" value="{!newApp.Emergency_Contact__c}" required="{!validationOn}"/>
@@ -1089,63 +1065,70 @@
                     <!-- Page 7 - TRANSIT & HOSTING -->
                     <apex:outputPanel id="page7">
                         <apex:pageBlockSection columns="1" rendered="{!renderPage7}" >
-                            <apex:outputLabel value="TRANSIT & HOSTING" styleClass="title" />
+                            <apex:outputLabel value="ACCESS TO TECHNOLOGY FOR VIRTUAL PROGRAMMING" styleClass="title" />
                             <apex:outputLabel value="Page 7 of 7" styleClass="question" />
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel />
+                            <div>Due to COVID-19 and social distancing measures, Girls Rock! Chicago will offer virtual camp programming in place of an in-person camp this summer. We will work with volunteers to create classes, workshops, and experiences for campers in Google Meet or Zoom (tbd). We will also offer pre-recorded workshops, and we hope to supplement these virtual experiences with print-out and written activities. Please answer the following questions so that we can coordinate your role at our virtual camp.</div>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Do you have in-home access to a computer, tablet, or smartphone? "/>
+                                <apex:inputField value="{!newApp.Access_to_in_home_computer__c}" required="{!validationOn}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Does your device have high-speed Internet access?"/>
+                                <apex:inputField value="{!newApp.Access_to_high_speed_Internet__c}" required="{!validationOn}"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel value="Please indicate your experience, comfort level, and interest in leading online group classes or workshops." styleClass="question"/>
                                 <apex:outputPanel >
-                                    <div class="italic wideLabel">
-                                        We are lucky to be supported by a volunteer pool that not only crosses the entire city of Chicago from the far south side to Rogers Park on the north end and all of the surrounding suburbs, but also draws travelers from cities and states without camps. In an effort to provide the most support to these fearless supporters of us, the following optional questions will address transit/hosting needs and offers.
-                                    </div>
-                                    <br/>
-                                    <div class="italic wideLabel">
-                                        Girls Rock! Chicago summer camp is held at Suder Montessori Magnet Elementary School, located at the intersection of Damen and Washington in Chicago's Near West Side neighborhood.
-                                    </div>
+                                    <apex:outputLabel styleClass="wideLabel italic" value="These statements apply to both musical and non-musical camp experiences. Check all that apply." />
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div><apex:inputCheckbox value="{!GroupClass_No}" /><span>I am not interested in teaching online group classes/workshops for camp.</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div><apex:inputCheckbox value="{!GroupClass_NoExperience_Interested}" /><span>I have not taught online group classes/workshops before but I am interested in leading these classes for camp!</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div><apex:inputCheckbox value="{!GroupClass_Experience_Interested}" /><span>I have taught online group classes/workshops before and am interested in leading these classes for camp!</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div><apex:inputCheckbox value="{!GroupClass_Assistant}" /><span>I am unsure about being a lead teacher for online classes, but am interested in attending the online classes as an assistant and/or moderator.</span></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Interested in carpool?"/>
-                                <apex:inputField value="{!newApp.Carpool__c}" required="{!validationOn}"/>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Do you have any experience addressing issues with technology (video conference troubleshooting, a/v, log-in troubleshooting)? Please describe."/>
+                                <apex:inputField value="{!newApp.Tech_Support_Experience__c}" required="false"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Do you require transit assistance? (Select Yes if the cost of transit to/from camp could prohibit your ability to volunteer)"/>
-                                <apex:inputField value="{!newApp.Transit_Assistance__c}" required="{!validationOn}"/>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Do you have skills using Garageband or other youth-friendly music production programs? We want to teach recording techniques at an introductory level for all campers. Many Girls Rock! camps are exploring Soundtrap, a secure music production website that's browser-based so it's Mac and PC-friendly. Please describe your music production skills and interest in assisting campers with DIY recording!"/>
+                                <apex:inputField value="{!newApp.Music_Production_Technology_Expereince__c}" required="false"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="If you drive, would you be willing to run an occasional errand for staff if needed during camp?" />
-                                <apex:inputField value="{!newApp.Can_Run_Errands__c}" />
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="Please provide any further details you feel necessary, including any challenges with personally accessing technology, specific classes (including instrument instruction) or workshops you're interested in teaching, etc. For specific questions and concerns about teaching online, please email volunteer@girlsrockchicago.org."/>
+                                <apex:inputField value="{!newApp.Additional_Volunteer_Info__c}" required="false"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="If you are interested in HOSTING for a camp week, please select the number of volunteers you could comfortably house."/>
-                                <apex:inputField value="{!newApp.Interested_in_Hosting__c}" styleclass="interestedInHostingInput" onChange="showHideSectionByPicklistValue('interestedInHostingInput', 'interestedInHostingExplained', ['0', '1', '2', '3', '4', 'I have lots of room'])"/>
-                            </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel styleClass="interestedInHostingExplained hideRow" value="Notes about your housing situation or preferences you'd like to mention:"/>
-                                <apex:outputPanel >
-                                    <apex:inputField value="{!newApp.Interested_in_Hosting_Explained__c}"/>
-                                    <div class="italic wideLabel">
-                                        (You may include things like "I have a full bed that could sleep two people" "I have a spare couch" "Bring a sleeping bag" "I have cats," etc.)
-                                    </div>
-                                </apex:outputPanel>
-                            </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="If you are interested in being HOSTED, please note any particular needs or allergies you might have."/>
-                                <apex:outputPanel >
-                                    <apex:inputField value="{!newApp.Need_Hosting_Explained__c}"/>
-                                    <div class="italic wideLabel">
-                                        (Include which session(s) you're volunteering for and if you're traveling with anyone else)
-                                    </div>
-                                </apex:outputPanel>
+                            <apex:pageBlockSectionItem>
+                                <apex:outputLabel value="If there are ways we can help support you and your ability to volunteer during camp, please share your thoughts here."/>
+                                <apex:inputField value="{!newApp.Additional_Volunteer_Throughts__c}" required="false"/>
                             </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     </apex:outputPanel>
                     <!-- Page 8 - THANK YOU for applying to volunteer at Girls Rock! Chicago's 2016 summer camp! -->
                     <apex:outputPanel id="page8">
                         <apex:pageBlockSection columns="1" rendered="{!renderPage8}" >
-                            <apex:outputLabel value="THANK YOU for applying to volunteer at Girls Rock! Chicago's 2020 summer camp!" styleClass="title" />
-                            <apex:outputLabel value="Press the 'Submit Application' button to complete your application" styleClass="question" />
-                            <apex:outputLabel value="Volunteer with us all year long!" styleClass="italic"/>
-                            <apex:outputLabel value="If you are interested in volunteering with Girls Rock! Chicago throughout the year, please visit our website http://girlsrockchicago.org/get-involved/ to find out the most up to speed volunteer needs or email volunteer@girlsrockchicago.org with any questions you may have." styleClass="italic widelabel"/>
+                            <apex:outputLabel value="THANK YOU for applying to volunteer with Girls Rock! Chicago!" styleClass="title" />
+                            <apex:outputLabel value="Our Volunteer Coordinators will reach out with information about background checks, orientations and trainings, and our available financial aid/volunteer stipends. " styleClass="italic"/>
                             <br/>
                             <div class="question">
                                 <p>

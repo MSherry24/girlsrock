@@ -45,6 +45,7 @@ public class CamperApplicationControl {
     public String Session2LoadIn1 { get {return GrcUtils.Session2LoadIn1;} }
     public String Session2LoadIn2 { get {return GrcUtils.Session2LoadIn2;} }
     public String Session2LoadOut { get {return GrcUtils.Session2LoadOut;} }
+    public String FinancialAidUrl { get {return GrcUtils.FinancialAidDocumentUrl;} }
     public Boolean BringingBass {get; set;}
     public Boolean BringingElectricGuitar {get; set;}
     public Boolean BringingKeyboard {get; set;}
