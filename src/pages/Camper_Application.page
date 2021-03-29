@@ -79,7 +79,7 @@
         var startYear = new Date().getFullYear() - 90;
         for (var year = startYear; year < startYear + 100; year++) {
             select.options[select.options.length] = new Option(year, year);
-    	}
+        }
     }
         
     var waitThenRedirect = function() {
@@ -152,8 +152,8 @@
             <apex:outputPanel id="page1">
                 <apex:pageBlockSection columns="1" rendered="{!renderPage1}" >
                     <apex:outputLabel value="{!$Label.grcapp__campapptitle}" styleClass="title" />
-                    <div>Our 2021 Virtual Camp, hosted over Zoom, will include live instrument classes, workshops, band practices, a showcase, and more. Check out last year’s schedule (link) as an example. We’ll share an updated schedule for 2021 in May!</div>
-                    <div>This year, we intend to host an optional, outdoor, socially-distanced hangouts for campers before the start of each session. We plan to host different age groups at different times in order to keep the gatherings small. Those dates, hours, and locations are currently TBD and we will share those details with you once they are confirmed!</div>
+                    <div>Our 2021 Virtual Camp, hosted over Zoom, will include live instrument classes, workshops, band practices, a showcase, and more. Check out last year’s schedule as an example: <a href="https://drive.google.com/file/d/11HjlCUx15V0QSDTZ_e5Ba1Cewn9ojXnP/view">2020 August Virtual Camp</a>. We’ll share an updated schedule for 2021 in May!</div>
+                    <div>This year, we intend to host an optional, outdoor, socially-distanced hangout for campers before the start of each session. We plan to host different age groups at different times in order to keep the gatherings small. Those dates, hours, and locations are currently TBD- we will share those details with you once they are confirmed!</div>
                     <div>We will also loan instruments to campers who need them. After fully completing your application, we will send you a signup link for gear pickup and return along with your tuition invoice/other camp forms.</div>
                     <apex:outputLabel value="Page 1 of 10" styleClass="question" />
                     <apex:outputLabel value="Which session of camp would you like to attend? *" styleClass="question" />
@@ -163,7 +163,7 @@
                     </apex:selectRadio>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="Campers will need a device (computer, tablet, or phone) with Internet access and Zoom in order to participate in virtual camp. Headphones are also recommended." styleClass="question"/>
-                        <apex:outputPanel>
+                        <apex:outputPanel >
                             <apex:inputField id="canAccessZoom" value="{!newApp.Can_Access_Zoom__c}" required="true"/>
                             <div>Please check the box to confirm that your child will have access to a device with Internet/Zoom.</div>
                         </apex:outputPanel>
@@ -261,8 +261,8 @@
                         </apex:outputpanel>
                         <apex:outputpanel >
                             <apex:selectRadio value="{!camperSiblingsAttending}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
                             <div><apex:outputLabel value="{!$Label.grcapp__campappifyes}" styleClass="italicText" /></div>
                             <div class="wideLabel">
                                 <apex:input value="{!camperSiblings}" id="camperSiblingsTextbox"/>
@@ -278,14 +278,14 @@
                     </apex:pageblockSectionItem>
                       <apex:pageblockSectionItem >
                         <apex:outputLabel value="What is your child's T-shirt size?" styleClass="question"/>
-                        <apex:inputField id="tshirtSize" value="{!newApp.t_shirt_size__c}" required="false"/>
+                        <apex:inputField id="tshirtSize" value="{!newApp.T_Shirt_Size__c}" required="false"/>
                     </apex:pageblockSectionItem>
                     <!-- <apex:pageblockSectionItem >
                         <apex:outputLabel value="{!$Label.CampAppSuderStudent}" styleClass="question"/>
                         <apex:outputpanel >
                             <apex:selectRadio value="{!studentAtSuder}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
                         </apex:outputpanel>
                     </apex:pageblockSectionItem> -->
                     <!--<apex:pageblockSectionItem >-->
@@ -471,13 +471,13 @@
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="Please indicate whether you'd like to borrow an instrument from GR!C for camp." styleClass="question"/>
                         <apex:outputPanel >
-                            <apex:inputField value="{!newApp.Borrowing_An_Instrument__c}" required="false"/>
+                            <apex:inputField value="{!newApp.Borrowing_an_Instrument__c}" required="false"/>
                             <div class="italicText">If so, we'll reach out to you to schedule a pickup time.</div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
-                    	<apex:outputLabel value="{!$Label.grcapp__rightorlefthanded}" styleClass="question"/>
-                    	<apex:selectRadio id="rightOrLeftHanded" value="{!rightOrLeftHanded}" required="true">
+                        <apex:outputLabel value="{!$Label.grcapp__rightorlefthanded}" styleClass="question"/>
+                        <apex:selectRadio id="rightOrLeftHanded" value="{!rightOrLeftHanded}" required="true">
                             <apex:selectOptions value="{!RightOrLeftHandedOptions}"/>
                         </apex:selectRadio>
                     </apex:pageblockSectionItem>
@@ -516,8 +516,8 @@
                         <apex:outputLabel value="{!$Label.grcapp__campappmedicalcondiditonsallergies}" styleClass="question"/>
                         <apex:outputPanel >
                             <apex:selectRadio value="{!medicalConditionsOrAllergies}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
@@ -530,8 +530,8 @@
                             <div class="wideLabel"><apex:outputLabel value="{!$Label.grcapp__campappbehavioraloremotionalextra}" /></div>
                             <div>
                                 <apex:selectRadio value="{!behavioralOrEmotional}">
-                            		<apex:selectOptions value="{!YesNoOptions}"/>
-                        		</apex:selectRadio>
+                                    <apex:selectOptions value="{!YesNoOptions}"/>
+                                </apex:selectRadio>
                             </div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
@@ -543,8 +543,8 @@
                         <apex:outputLabel value="{!$Label.grcapp__campappdietaryrestrictionsallergies}" styleClass="question"/>
                         <apex:outputPanel >
                             <apex:selectRadio value="{!dietaryRestrictions}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
@@ -553,7 +553,7 @@
                     </apex:pageblockSectionItem>
                     <apex:pageblockSectionItem >
                         <apex:outputLabel value="Is there anything that GR!C can do to make virtual camp more accessible for your child?" styleClass="question"/>
-                        <apex:inputField id="DietaryRestrictionsList" value="{!newApp.how_can_we_make_camp_more_accessible__c}" required="false" />
+                        <apex:inputField id="DietaryRestrictionsList" value="{!newApp.How_can_we_make_camp_more_accessible__c}" required="false" />
                     </apex:pageblockSectionItem>
                 </apex:pageblockSection>
             </apex:outputPanel> 
@@ -626,8 +626,8 @@
                         <apex:outputLabel value="{!$Label.grcapp__campappapplyingforfinancialaid}" styleClass="question"/>
                         <apex:outputPanel >
                             <apex:selectRadio value="{!applyingForFinancialAid}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
                             <div class="italicText">The full price of tuition is $275. You must apply for financial aid if you are unable to pay full tuition. Girls Rock! Chicago adheres to these financial aid guidelines when making decisions regarding tuition: <a class="link" onClick="window.open('https://docs.google.com/document/d/1oXJj6gH-xTnEjd1q2geYqcQGfA6j-4ilCAMMhJyhTns/edit');">Financial Aid Document</a></div>
                         </apex:outputPanel>
                     </apex:pageblockSectionItem>
@@ -637,7 +637,7 @@
                             <apex:inputField id="DonateAdditionalAmount" value="{!newApp.Donate_Additional_Amount__c}" required="false" />
                             <div class="italicText">The generosity of our donors and community partners help us run camp every year. If you wish to add a donation to your camper's tuition, please write that amount here.</div>
                             <br/>
-                            <div><img class="financialAidImage" src="{!$Resource.FinancialAidGuideline2020}"/></div>
+                            <div><img class="financialAidImage" src="{!$Resource.FinancialAidGuideline2021}"/></div>
                         </apex:outputPanel>
                     </apex:pageBlockSectionItem>
                 </apex:pageblockSection>    
@@ -682,16 +682,16 @@
                         <apex:outputLabel value="{!$Label.grcapp__campappwaivefee}" styleClass="question" />
                         <apex:outputPanel >
                             <apex:selectRadio value="{!waiveFee}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
                         </apex:outputPanel>
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
                         <apex:outputLabel value="{!$Label.grcapp__campappsingleincomefamily}" styleClass="question" />
                         <apex:outputPanel >
                             <apex:selectRadio value="{!singleIncomeFamily}">
-                            	<apex:selectOptions value="{!YesNoOptions}"/>
-                        	</apex:selectRadio>
+                                <apex:selectOptions value="{!YesNoOptions}"/>
+                            </apex:selectRadio>
                         </apex:outputPanel>
                     </apex:pageBlockSectionItem>
                     <apex:pageBlockSectionItem >
@@ -708,8 +708,8 @@
                             <div class="wideLabel"><apex:outputLabel value="{!$Label.grcapp__campappneedlunchtext}" /></div>
                             <div>
                                 <apex:selectRadio value="{!needLunch}">
-                            		<apex:selectOptions value="{!YesNoOptions}"/>
-                        		</apex:selectRadio>
+                                    <apex:selectOptions value="{!YesNoOptions}"/>
+                                </apex:selectRadio>
                             </div>
                         </apex:outputPanel>
                     </apex:pageBlockSectionItem> -->
@@ -748,8 +748,8 @@
             </apex:outputPanel>
             <apex:outputPanel id="page11">
                 <apex:pageblockSection columns="1" rendered="{!renderPage11}" >
-                	<div class="title">
-						Thank you for applying to Girls Rock! Chicago.
+                    <div class="title">
+                        Thank you for applying to Girls Rock! Chicago.
                     </div>
                     <br/>
                     <div class="question">
