@@ -160,6 +160,13 @@
                         <apex:pageBlockSection columns="1" >
                             <apex:outputLabel value="2020 GR!C Volunteer Application" styleClass="title" />
                         </apex:pageBlockSection>
+                        <apex:pageBlockSection>
+                            <div>
+                                Our 2021 Virtual Camp, hosted over Zoom, will include live instrument classes, workshops, band practices, a showcase, and more. Here is our 
+                                <a href="https://drive.google.com/file/d/1aWFf-z-AF3cX8D4arU0BKb3Ja7zRxgSW/view">2021 Camp Season Schedule for Volunteers!</a>
+                                This year, we will also host an optional, outdoor, socially-distanced hangout for campers before the start of each session.
+                            </div>
+                        </apex:pageBlockSection>
                     </apex:outputPanel>
                     <!-- Page 1 - Personal Information -->
                     <apex:outputPanel id="page1">
@@ -180,16 +187,16 @@
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="How do you pronounce your name?" styleClass="question"/>
-                                <apex:outputPanel>
+                                <apex:outputPanel >
                                     <apex:inputField id="namePronunciation" value="{!newApp.Name_Pronunciation__c}" required="false"/>
                                     <div id="namePronunciation-Help" class="wideLabel italic">
                                         ex: Madeline (Mad-uh-lynn)
                                     </div>
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>
-                           <apex:pageBlockSectionItem>
+                           <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What are your gender pronouns?" styleClass="question"/>
-                                <apex:outputPanel>
+                                <apex:outputPanel >
                                     <apex:inputField id="preferredPronouns" value="{!newApp.What_are_your_preferred_gender_pronouns__c}" required="false"/>
                                     <div id="preferredPronouns-Help" class="wideLabel italic">
                                         A gender pronoun is the pronoun or set of pronouns that an individual would like others to use when talking to or about that individual. Examples of answers to this question are "she/her/hers," "he/him/his," and "they/them/theirs."
@@ -317,7 +324,7 @@
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="What is your gender identity?" styleClass="question"/>
-                                <apex:outputPanel>
+                                <apex:outputPanel >
                                     <apex:inputField id="genderIdentity" value="{!newApp.Gender_Identity__c}" required="false"/>
                                     <div id="genderIdentity-Help" class="wideLabel italic">
                                         ex: genderfluid, trans, female, agender, nonbinary, male, genderqueer, bigender, etc.
@@ -449,189 +456,206 @@
                                 <apex:inputField value="{!newApp.Session_Two_Availability_Comments__c}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Please choose one time slot (or more!) for at least one date to help with Gear Distribution"/>
-                                <apex:outputPanel>
-                                    <div class="italic">This year for virtual camp, we're happy to offer our campers free loan of their instrument for camp. 
-                                    Camper families will pickup their instruments and camp materials at our storage unit, East Bank Storage at 429 W. Ohio St, Chicago, IL 60654. 
-                                    We will need to sort through our many instruments, document which are being checked out, and pass them out to our camper families. 
-                                    In between camp sessions, we will need to collect some instruments and sanitize them before distribution for Session 2. 
-                                    We can't do it without your help! Refreshments &amp; snacks will be on hand! We will prioritize the health and safety of our volunteers and camper families. We hope to minimize contact as much as possible by doing trunk drops, and we will provide volunteers with masks and gloves. Here is a rough, current schedule of our gear distribution calendar, as we do not know how many campers will need to borrow an instrument. We estimate that not all of these dates and times may not be necessary and are likely subject to change by elimination.
+                                <apex:outputLabel value="Outdoor Hang - Availability"/>
+                                <apex:outputPanel >
+                                    <div>
+                                        We will host an Outdoor Hangout on Saturday, July 3rd for Session 1 campers. 
+                                        Our location will likely be the courtyard (and maybe parking lot) at Suder Montessori 
+                                        Elementary, 2022 W Washington Blvd in Chicago. The Outdoor Hangout for Session 2 
+                                        campers will be Saturday, July 24th (again, at Suder). If interested and available, 
+                                        please indicate your preferences for volunteering at either or both of these hangouts! 
+                                        We will use safety measures such as visual indicators for social distancing, mask 
+                                        requirements, and limited crowd size. These hangouts are OPTIONAL, not required, for 
+                                        volunteers and campers! Check out the 
+                                        <a href="https://drive.google.com/file/d/1aWFf-z-AF3cX8D4arU0BKb3Ja7zRxgSW/view">schedule</a>
+                                        for our current tentative plans and ideas.
                                     </div>
                                     <br/>
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td colspan="2" class="italic">Load-Out Wednesday, June 24th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
+                                                <td colspan="2"><b>Availability 7/3</b> *If the weather is bad, our makeup date will be Saturday, 7/10.</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJune24_2pm}"/>
-                                                    <span>2:00 PM - 4:30 PM</span>
+                                                    <apex:inputCheckbox value="{!OutdoorHangSession1_Morning}"/>
+                                                    <span>8:30 AM - 11:30 AM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJune24_430pm}"/>
-                                                    <span>4:30 PM - 7:00 PM</span>
+                                                    <apex:inputCheckbox value="{!OutdoorHangSession1_Afternoon}"/>
+                                                    <span>11:30 AM - 2:30 PM</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" class="italic">Load-Out Saturday, June 27th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!OutdoorHangSession1_Interested}"/>
+                                                    <span>Interested, but unsure of my availability right now. I will get in touch with GR!C staff about it!</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="bold"><b>Availability 7/24</b> *If the weather is bad, our makeup date will be Sunday, 7/25.</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJune27_9am}"/>
+                                                    <apex:inputCheckbox value="{!OutdoorHangSession2_Morning}"/>
+                                                    <span>8:30 AM - 11:30 AM</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!OutdoorHangSession2_Afternoon}"/>
+                                                    <span>11:30 AM - 2:30 PM</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!OutdoorHangSession2_Interested}"/>
+                                                    <span>Interested, but unsure of my availability right now. I will get in touch with GR!C staff about it!</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                             <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Outdoor Hang - Interests"/>
+                                <apex:outputPanel >
+                                    <div>Area of Interest in Volunteering Outdoors</div>
+                                    <table>
+                                        <tbody>
+                                             <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!OutdoorHangAreaOfInterest_Leader}"/>
+                                                    <span>Activity Leader (e.g. skill share, concert, socially distanced games...)</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!OutdoorHangAreaOfInterest_Support}"/>
+                                                    <span>General Support (assisting with setup, helping campers participate, etc.)</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!OutdoorHangAreaOfInterest_Unsure}"/>
+                                                    <span>Other/Unsure/I'll follow up with GR!C Staff!</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Please choose one time slot (or more!) for at least one date to help with Gear Distribution"/>
+                                <apex:outputPanel >
+                                    <div class="italic">We're happy to offer our campers free loan of their instrument for 
+                                        virtual camp. Families will pick up their instruments and camp materials at our storage 
+                                        unit, East Bank Storage at 429 W. Ohio St, Chicago, IL 60654. We will need to sort through 
+                                        our many instruments, document which are being checked out, and pass them out to our camper 
+                                        families. In between camp sessions, we will need to collect some instruments and sanitize 
+                                        them before distribution for Session 2. We can't do it without your help! Refreshments &amp; 
+                                        snacks will be on hand! We will prioritize the health and safety of our volunteers and camper 
+                                        families. We hope to minimize contact by doing trunk drops, and we will provide volunteers 
+                                        with masks and gloves. Here is a rough schedule of our current gear distribution calendar, 
+                                        as we do not yet know how many campers will need to borrow an instrument. Some of these 
+                                        dates and times may end up not being necessary, and are likely subject to change by elimination.		
+                                    </div>
+                                    <br/>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="italic">Load-Out Sunday, July 11th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!LoadOutSession1_part1}"/>
                                                     <span>9 AM - 11 AM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJune27_11am}"/>
-                                                    <span>11 AM - 1 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="italic">Load-Out Sunday, June 28th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJune28_11am}"/>
+                                                    <apex:inputCheckbox value="{!LoadOutSession1_part2}"/>
                                                     <span>11 AM - 1PM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJune28_1pm}"/>
+                                                    <apex:inputCheckbox value="{!LoadOutSession1_part3}"/>
                                                     <span>1 PM - 3 PM</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" class="italic">Load-Out Saturday, July 11th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!LoadOutSession1_part4}"/>
+                                                    <span>3 PM - 5 PM</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="italic">Load-In, Sanitizing, &amp; Load-Out Saturday, July 31st at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJuly11_11am}"/>
-                                                    <span>11 AM - 1:30 PM</span>
+                                                    <apex:inputCheckbox value="{!LoadOutSession2_part1}"/>
+                                                    <span>9 AM - 11 AM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutJuly11_130pm}"/>
-                                                    <span>1:30 PM - 4PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="italic">Load-In &amp; Sanitizing Saturday, July 25th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInJuly25_10am}"/>
-                                                    <span>10 AM - 12:30 PM</span>
+                                                    <apex:inputCheckbox value="{!LoadOutSession2_part2}"/>
+                                                    <span>11 AM - 1PM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadInJuly25_1230pm}"/>
-                                                    <span>12:30 PM - 3:00 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="italic">Load-In &amp; Sanitizing Sunday, July 26th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInJuly26_11am}"/>
-                                                    <span>11 AM - 1 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInJuly26_1pm}"/>
+                                                    <apex:inputCheckbox value="{!LoadOutSession2_part3}"/>
                                                     <span>1 PM - 3 PM</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" class="italic">Load-Out Saturday, August 1st at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!LoadOutSession2_part4}"/>
+                                                    <span>3 PM - 5 PM</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="italic">Load-In Saturday, August 14th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutAug1_10am}"/>
-                                                    <span>10 AM - 12 PM </span>
+                                                    <apex:inputCheckbox value="{!LoadIn_part1}"/>
+                                                    <span>9 AM - 11 AM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutAug1_12pm}"/>
-                                                    <span>12 PM - 2 PM</span>
+                                                    <apex:inputCheckbox value="{!LoadIn_part2}"/>
+                                                    <span>11 AM - 1PM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <apex:inputCheckbox value="{!LoadOutAug1_2pm}"/>
-                                                    <span>2 PM - 4 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="italic">Load-In &amp; Sanitizing Wednesday, August 12th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInAug12_330pm}"/>
-                                                    <span>3:30 PM - 5:30 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInAug12_530pm}"/>
-                                                    <span>5:30 PM - 7:30 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="italic">Load-In &amp; Sanitizing Saturday, August 15th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInAug15_930am}"/>
-                                                    <span>9:30 AM - 11:30 AM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInAug15_1130am}"/>
-                                                    <span>11:30 AM - 1:30 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInAug15_130pm}"/>
-                                                    <span>1:30 PM - 3:30 PM </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="italic">Load-In &amp; Sanitizing Sunday, August 16th at Storage Unit, located at 429 W. Ohio St, Chicago, IL 60654</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInAug16_11am}"/>
-                                                    <span>11 AM - 1 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LoadInAug16_1pm}"/>
+                                                    <apex:inputCheckbox value="{!LoadIn_part3}"/>
                                                     <span>1 PM - 3 PM</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:inputCheckbox value="{!LoadIn_part4}"/>
+                                                    <span>3 PM - 5 PM</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <apex:inputCheckbox value="{!LoadInOutOther}"/>
-                                                    <span>I have availability that is different than the hours listed here;  I will contact you to discuss my options.</span>
+                                                    <span>My availability is different than the hours listed here. I will contact you to discuss my options.</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <apex:inputCheckbox value="{!LoadInOutNone}"/>
-                                                    <span>I am unable to assist with Load-In or Load-Out.</span>
+                                                    <span>I am unable to assist with Gear Distribution</span>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -681,118 +705,17 @@
                     <!-- Page 3 - YEAR-ROUND PROGRAMS -->
                     <apex:outputPanel id="page3">
                         <apex:pageBlockSection columns="1" rendered="{!renderPage3}" >
-                            <apex:outputLabel value="SUMMER CAMP AVAILABILITY" styleClass="title" />
+                            <apex:outputLabel value="YEAR ROUND PROGRAMS" styleClass="title" />
                             <apex:outputLabel value="Page 3 of 7" styleClass="question" />
-                            <div>In past years, we have run our adult program, Let's Rock! Chicago, over long weekends in February and October. LR!C included a Friday night orientation, Saturday and Sunday programming, more band practice on Monday, and a showcase on Monday night.</div>
+                            <div>Our program for adults, Let's Rock! Chicago has run in recent years over long weekends in October and January. LR!C includes an evening orientation, weekend workshops and instrument classes, band practices, a showcase, and opportunities to hang out! Volunteers generally teach classes and workshops or coach bands, and assist with load-in, load-out, and the showcase.</div>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="What is your general availability during the year to volunteer for LR!C during the following time slots? Check all that apply."/>
-                                <apex:outputPanel >
-                                    <div class="italic">Let's Rock! Camp 2020/21: Dates TBD</div>
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LetsRock_Friday}"/>
-                                                    <span>I am generally available on Fridays from 7 PM - 9 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LetsRock_Saturday9am}"/>
-                                                    <span>I am generally available on Saturdays and Sundays from 9 AM - 12 PM</span>
-                                                    </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LetsRock_Saturday1pm}"/>
-                                                    <span>I am generally available on Saturdays and Sundays from 1 PM - 6 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LetsRock_Monday9am}"/>
-                                                    <span>I am generally available on Mondays from 9 AM - 12 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LetsRock_Monday1pm}"/>
-                                                    <span>I am generally available on Mondays from 1 PM - 6 PM</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LetsRock_Monday6pm}"/>
-                                                    <span>I am generally available on Mondays from 6 PM - 8 PM </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LadiesRock_OpenAvailability}"/>
-                                                    <span>I have open availability; I can help any time throughout the session.</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LadiesRock_Other}"/>
-                                                    <span>I have availability that is different than the hours listed here; I will contact you to discuss my options.</span>
-                                                    <div class="italic">***LR!C Load-in and Load-Out times are TBD. In the past, we're run Load-In on the Friday afternoon and Load-Out on the Monday afternoon of the program.</div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!LadiesRock_NotAvailable}"/>
-                                                    <span>I'm not available to volunteer.</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </apex:outputPanel>
+                                <apex:outputLabel value="Please describe your general interest in volunteering at future LR!C's, including any questions that you have about the program."/>
+                                <apex:inputField value="{!newApp.Ladies_Rock_Availability__c}" />
                             </apex:pageBlockSectionItem>
-                            <div>During the 2019/2020 school year, we piloted our after-school program, Girls Rock! Guitar Club, for fourth-graders at Cardenas Middle School in Little Village. This club met on Tuesdays from 3:30 - 5:00 pm, with Teacher Meetings at 1:30 pm at our office in West Town. We hope to run this program again in the 2020/2021 school year if health and safety regulations allow.</div>
-                            <apex:pageBlockSectionItem>
-                                <apex:outputLabel value="If you're interested in volunteering after-school (no guitar experience necessary!), please indicate your general after-school availability. Check all that apply."/>
-                                <apex:outputPanel >
-                                    <div class="italic">Girls Rock! Guitar Club: Weekdays and dates TBD</div>
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!GuitarClub_Monday}"/>
-                                                    <span>Monday afternoons from 3:15 - 5:00</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!GuitarClub_Tuesday}"/>
-                                                    <span>Tuesday afternoons from 3:15 - 5:00</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!GuitarClub_Wednesday}"/>
-                                                    <span>Wednesday afternoons from 3:15 - 5:00</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!GuitarClub_Thursday}"/>
-                                                    <span>Thursday afternoons from 3:15 - 5:00</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <apex:inputCheckbox value="{!GuitarClub_Friday}"/>
-                                                    <span>Friday afternoons from 3:15 - 5:00</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </apex:outputPanel>
-                            </apex:pageBlockSectionItem>
+                            <div>During the 2019/20 school year, we piloted Girls Rock! Guitar Club, an after-school program for fourth-graders at Cardenas Elementary in Little Village. During our current school year and the pandemic, we have offered a virtual after-school program called 'Bandwagon.' This program, held on Tuesday evenings, included band practices, workshops, and instrument classes. We do not yet know what our after-school programs will look like in the upcoming school year, but we strongly hope to offer them, especially once it is safe to do so in person.</div>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel value="Comments"/>
-                                <apex:inputField value="{!newApp.Ladies_Rock_Availability_Comments__c}" />
+                                <apex:outputLabel value="Please describe your general interest and availability in volunteering for after-school OR weekend youth programs during the school year, including any questions you have about what they could entail!"/>
+                                <apex:inputField value="{!newApp.Guitar_Club_Availability__c}" />
                             </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
                     </apex:outputPanel>
@@ -804,18 +727,21 @@
                             <apex:pageblockSectionItem >
                                 <apex:outputLabel value="What CAMP position(s) are you interested in?" styleClass="question"/>
                                 <apex:outputPanel >
-                                    <apex:outputLabel styleClass="wideLabel italic" value="Detailed job descriptions are on our website. Some positions, like Counselor and Band Coach, require a full-week volunteer commitment. While you may volunteer in multiple part-time roles, if you are interested in being a Band Coach or a Counselor, we need you to pick your preference between the two (Band Coaches and Counselors work together as partners at camp). Let us know if you have questions about what to pick! Everyone, please keep Sunday afternoon open for the showcase!" />
+                                    <apex:outputLabel styleClass="wideLabel italic" value="Volunteer roles are described further on our website. Some positions, like Counselor and Band Coach, require a full-week volunteer commitment. While you may volunteer in multiple part-time roles, if you are interested in being a Band Coach or a Counselor, we need you to pick your preference between the two (Band Coaches and Counselors work together as partners at camp). Let us know if you have questions about what to pick! Everyone, please keep Sunday afternoon open for the showcase!" />
+                                    <apex:outputLabel styleClass="wideLabel italic" value="New volunteers will attend virtual Info Sessions to learn more about their potential volunteer role at camp. Additionally, all volunteers will attend virtual Orientation before camp starts." />
                                     <table>
                                         <tbody>
                                         <tr>
                                             <td>
-                                                <span><b>BAND COACH - performance experience required</b></span>
+                                                <span><b>BAND COACH **musical experience required**</b></span>
+                                                <div><i>Guide camper bands through writing and recording an original song to be shared in our virtual showcase.</i></div>
                                                 <div><apex:inputCheckbox value="{!BandCoach}" /><span>2:15 pm - 3:15 pm</span></div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span><b>INSTRUMENT TEACHER - musical experience required</b></span>
+                                                <span><b>INSTRUMENT TEACHER **musical experience required**</b></span>
+                                                <div><i>Teach the fundamentals of playing an instrument to small groups of campers.</i></div>
                                                 <div>
                                                     <apex:inputCheckbox value="{!InstrumentTeacher}" id="instrumentTeacherCheckbox" onClick="showHideSection('instrumentTeacherCheckbox', 'instrument-teacher');"/>
                                                     <span>11:00 am - 12:00 pm</span>
@@ -824,8 +750,8 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span><b>COUNSELOR</b></span>
-                                                <div>Please indicate which shift works best for you (or choose both!)</div>
+                                                <span><b>COUNSELOR: Pick one or both shifts!</b></span>
+                                                <div><i>Foster fun, supportive spaces during group activities throughout the camp day. Help campers speak up, participate, and solve conflicts, and assist facilitators and band coaches as needed.</i></div>
                                                 <div>
                                                     <apex:inputCheckbox value="{!CounsellorA}" />
                                                     <span>Shift A (11 am - 2 pm) </span>
@@ -838,7 +764,8 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span><b>WORKSHOP LEADER</b></span>
+                                                <span><b>WORKSHOP LEADER *insert hours*</b></span>
+                                                <div><i>Teach campers specific skills and foster conversations about an area you specialize in, such as social justice topics, writing or recording music, etc.</i></div>
                                                 <div>
                                                     <apex:inputCheckbox value="{!WorkshopLeader}" id="workshopLeader" onClick="showHideSection('workshopLeader', 'workshop-explained');"/>
                                                     <span>Time TBD</span>
@@ -847,8 +774,8 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div><b>COOL-DOWN CREW</b> - providing extra emotional support for campers when needed</div>
-                                                <div>Please indicate which shift works best for you (or choose both!)</div>
+                                                <div><b>COOL-DOWN CREW: Pick one or both shifts!</b></div>
+                                                <div><i>Provide extra emotional support for campers when needed.</i></div>
                                                 <div>
                                                     <apex:inputCheckbox value="{!CoolDownCrewA}" />
                                                     <span>Shift A (11 am - 2 pm) </span>
@@ -862,8 +789,9 @@
                                         <tr>
                                             <td>
                                                 <span><b>JUNIOR COUNSELOR</b></span>
+                                                <div><i>During Virtual Camp, Junior Counselors can assist teachers and support campers throughout all parts of the camp day.</i></div>
+                                                <div><i>They are ideally Full Time - that said, please let us know what your schedule allows for!</i></div>
                                                 <div>
-                                                    <div><i>During Virtual Camp, Junior Counselors are ideally Full Time. That said, please let us know what your schedule allows for!</i></div>
                                                     <apex:inputCheckbox id="juniorCounselorCheckbox" onchange="showHideSection('juniorCounselorCheckbox', 'JuniorCounsellorQuestion');" value="{!JuniorCounsellor}" />
                                                     <span>Full Time</span>
                                                 </div>
@@ -871,8 +799,8 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div><b>ROADIE *FULL TIME*</b></div>
-                                                <div>Please indicate which shift works best for you (or choose both!)</div>
+                                                <div><b>ROADIE: Pick one or both shifts!</b></div>
+                                                <div><i>Provide gear, instrument, or technological support throughout the camp day.</i></div>
                                                 <div>
                                                     <apex:inputCheckbox value="{!RoadieA}" />
                                                     <span>Shift A (11 am - 2 pm) </span>
@@ -942,7 +870,7 @@
                                 </apex:outputPanel>
                             </apex:pageblockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel styleClass="workshop-explained hidden" value="What workshop topic would you like to lead? We offer a few standards such as songwriting and T-shirt decorating, but we're always enthusiastically open to new suggestions. In the past, we have offered Bystander Intervention Training, the history of women in music, DIY recording, how to set up a PA, and more. Workshops for virtual camp can be Live or pre-recorded (please state which option sounds best to you). Provide a brief summary of your topic(s) and we will contact you!"/>
+                                <apex:outputLabel styleClass="workshop-explained hidden" value="What workshop topic would you like to lead? We offer a few standards such as songwriting and T-shirt decorating, and are enthusiastically open to new ideas. In the past, we have offered Bystander Intervention Training, the history of women and TGNC folks in music, DIY recording, and more. Workshops for virtual camp can be Live or pre-recorded (please state which option sounds best to you). Provide a brief summary of your topic(s) and we will contact you!"/>
                                 <apex:inputField styleClass="workshop-explained hidden" value="{!newapp.Workshop_Leader_Explained__c}"/>
                             </apex:pageBlockSectionItem>
                         </apex:pageBlockSection>
@@ -1067,14 +995,14 @@
                         <apex:pageBlockSection columns="1" rendered="{!renderPage7}" >
                             <apex:outputLabel value="ACCESS TO TECHNOLOGY FOR VIRTUAL PROGRAMMING" styleClass="title" />
                             <apex:outputLabel value="Page 7 of 7" styleClass="question" />
-                            <div>Due to COVID-19 and social distancing measures, Girls Rock! Chicago will offer virtual camp programming in place of an in-person camp this summer. We will work with volunteers to create classes, workshops, and experiences for campers in Google Meet or Zoom (tbd). We will also offer pre-recorded workshops, and we hope to supplement these virtual experiences with print-out and written activities. Please answer the following questions so that we can coordinate your role at our virtual camp.</div>
-                            <apex:pageBlockSectionItem>
+                            <div>In order for camp to be safe and accessible during the pandemic, GR!C will offer virtual camp programming in place of in-person camp this summer. We will work with volunteers to create classes, workshops, and experiences for campers using Zoom. We will also offer pre-recorded workshops, and we hope to supplement virtual classes with print-outs and written activities. Please answer the following questions so that we can coordinate your role at our virtual camp.</div>
+                            <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Do you have in-home access to a computer, tablet, or smartphone? "/>
                                 <apex:inputField value="{!newApp.Access_to_in_home_computer__c}" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Does your device have high-speed Internet access?"/>
-                                <apex:inputField value="{!newApp.Access_to_high_speed_Internet__c}" required="{!validationOn}"/>
+                                <apex:inputField value="{!newApp.Access_to_high_speed_internet__c}" required="{!validationOn}"/>
                             </apex:pageBlockSectionItem>
                             <apex:pageblockSectionItem >
                                 <apex:outputLabel value="Please indicate your experience, comfort level, and interest in leading online group classes or workshops." styleClass="question"/>
@@ -1106,19 +1034,19 @@
                                     </table>
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Do you have any experience addressing issues with technology (video conference troubleshooting, a/v, log-in troubleshooting)? Please describe."/>
                                 <apex:inputField value="{!newApp.Tech_Support_Experience__c}" required="false"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem>
-                                <apex:outputLabel value="Do you have skills using Garageband or other youth-friendly music production programs? We want to teach recording techniques at an introductory level for all campers. Many Girls Rock! camps are exploring Soundtrap, a secure music production website that's browser-based so it's Mac and PC-friendly. Please describe your music production skills and interest in assisting campers with DIY recording!"/>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Do you have experience using SoundTrap, Garageband, or other youth-friendly music production programs? We want to teach introductory recording techniques afor all campers. We utilize SoundTrap at our virtual programming, which is free and available on Macs and PCs. Please describe your music production skills and interest in assisting campers with DIY recording!"/>
                                 <apex:inputField value="{!newApp.Music_Production_Technology_Expereince__c}" required="false"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="Please provide any further details you feel necessary, including any challenges with personally accessing technology, specific classes (including instrument instruction) or workshops you're interested in teaching, etc. For specific questions and concerns about teaching online, please email volunteer@girlsrockchicago.org."/>
                                 <apex:inputField value="{!newApp.Additional_Volunteer_Info__c}" required="false"/>
                             </apex:pageBlockSectionItem>
-                            <apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
                                 <apex:outputLabel value="If there are ways we can help support you and your ability to volunteer during camp, please share your thoughts here."/>
                                 <apex:inputField value="{!newApp.Additional_Volunteer_Throughts__c}" required="false"/>
                             </apex:pageBlockSectionItem>

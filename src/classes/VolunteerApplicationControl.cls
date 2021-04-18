@@ -51,6 +51,19 @@ global class VolunteerApplicationControl {
     public Boolean GuitarClub_Thursday { get; set; }
     public Boolean GuitarClub_Friday { get; set; }
     
+    public Boolean LoadOutSession1_part1 { get; set; }
+    public Boolean LoadOutSession1_part2 { get; set; }
+    public Boolean LoadOutSession1_part3 { get; set; }
+    public Boolean LoadOutSession1_part4 { get; set; }
+    public Boolean LoadOutSession2_part1 { get; set; }
+    public Boolean LoadOutSession2_part2 { get; set; }
+    public Boolean LoadOutSession2_part3 { get; set; }
+    public Boolean LoadOutSession2_part4 { get; set; }
+    public Boolean LoadIn_part1 { get; set; }
+    public Boolean LoadIn_part2 { get; set; }
+    public Boolean LoadIn_part3 { get; set; }
+    public Boolean LoadIn_part4 { get; set; }
+
     public Boolean LoadOutJune24_2pm { get; set; }
     public Boolean LoadOutJune24_430pm { get; set; }
     public Boolean LoadOutJune27_9am { get; set; }
@@ -87,6 +100,17 @@ global class VolunteerApplicationControl {
     public Boolean InstrumentTeacherGuitar { get; set; }
     public Boolean InstrumentTeacherKeyboards { get; set; }
     public Boolean InstrumentTeacherDJ { get; set; }
+
+    public Boolean OutdoorHangSession1_Morning { get; set; }
+    public Boolean OutdoorHangSession1_Afternoon { get; set; }
+    public Boolean OutdoorHangSession1_Interested { get; set; }
+    public Boolean OutdoorHangSession2_Morning { get; set; }
+    public Boolean OutdoorHangSession2_Afternoon { get; set; }
+    public Boolean OutdoorHangSession2_Interested { get; set; }
+
+    public Boolean OutdoorHangAreaOfInterest_Leader { get; set; }
+    public Boolean OutdoorHangAreaOfInterest_Support { get; set; }
+    public Boolean OutdoorHangAreaOfInterest_Unsure { get; set; }
 
     //Ethnicity Info
     public Boolean AmericanNative { get; set; }
@@ -193,6 +217,19 @@ global class VolunteerApplicationControl {
         if (GuitarClub_Friday) { newApp.Guitar_Club_Availability__c += 'Friday afternoons from 3:15 - 5:00. '; }
         // Load in/Load out
         List<String> loadInOut = new List<String>();
+
+        if (LoadOutSession1_part1) { loadInOut.add('Load out, session 1, 9 AM - 11 AM'); }
+        if (LoadOutSession1_part2) { loadInOut.add('Load out, session 1, 11 AM - 1PM'); }
+        if (LoadOutSession1_part3) { loadInOut.add('Load out, session 1, 1 PM - 3 PM'); }
+        if (LoadOutSession1_part4) { loadInOut.add('Load out, session 1, 3 PM - 5 PM'); }
+        if (LoadOutSession2_part1) { loadInOut.add('Load in/out, session 2, 9 AM - 11 AM'); }
+        if (LoadOutSession2_part2) { loadInOut.add('Load in/out, session 2, 11 AM - 1PM'); }
+        if (LoadOutSession2_part3) { loadInOut.add('Load in/out, session 2, 1 PM - 3 PM'); }
+        if (LoadOutSession2_part4) { loadInOut.add('Load in/out, session 2, 3 PM - 5 PM'); }
+        if (LoadIn_part1) { loadInOut.add('Load in, 9 AM - 11 AM'); }
+        if (LoadIn_part2) { loadInOut.add('Load in, 11 AM - 1PM'); }
+        if (LoadIn_part3) { loadInOut.add('Load in, 1 PM - 3 PM'); }
+        if (LoadIn_part4) { loadInOut.add('Load in, 3 PM - 5 PM'); }
         if (LoadOutJune24_2pm) { loadInOut.add('Load-Out Wednesday, June 24th 2 PM - 4:30 PM'); }
         if (LoadOutJune24_430pm) { loadInOut.add('Load-Out Wednesday, June 24th 4:30 PM - 7 PM'); }
         if (LoadOutJune27_9am) { loadInOut.add('Load-Out Saturday, June 27th 9 AM - 11 AM'); }
@@ -215,9 +252,24 @@ global class VolunteerApplicationControl {
         if (LoadInAug15_130pm) { loadInOut.add('Load-In Saturday, August 15th 1:30 PM - 3:30 PM '); }
         if (LoadInAug16_11am) { loadInOut.add('Load-In Sunday, August 16th 11 AM - 1 PM'); }
         if (LoadInAug16_1pm) { loadInOut.add('Load-In Sunday, August 16th 1 PM - 3 PM'); }
-        if (LoadInOutOther) { loadInOut.add('I have availability that is different than the hours listed here;  I will contact you to discuss my options.'); }
-        if (LoadInOutNone) { loadInOut.add('I am unable to assist with Load-In or Load-Out.'); }
+        if (LoadInOutOther) { loadInOut.add('My availability is different than the hours listed here. I will contact you to discuss my options.'); }
+        if (LoadInOutNone) { loadInOut.add('I am unable to assist with Gear Distribution'); }
         newApp.Load_In_Load_Out_Availability__c = String.join(loadInOut, '; ');
+
+        //Outdoor Hang Availability
+        newApp.Outdoor_Hang_Availability__c = '';
+        if (OutdoorHangSession1_Morning) { newapp.Outdoor_Hang_Availability__c += 'Session 1, morning; '; }
+        if (OutdoorHangSession1_Afternoon) { newapp.Outdoor_Hang_Availability__c += 'Session 1, afternoon; '; }
+        if (OutdoorHangSession1_Interested) { newapp.Outdoor_Hang_Availability__c += 'Session 1, interested but unsure; '; }
+        if (OutdoorHangSession2_Morning) { newapp.Outdoor_Hang_Availability__c += 'Session 2, morning; '; }
+        if (OutdoorHangSession2_Afternoon) { newapp.Outdoor_Hang_Availability__c += 'Session 2, afternoon; '; }
+        if (OutdoorHangSession2_Interested) { newapp.Outdoor_Hang_Availability__c += 'Session 2, interested but unsure; '; }
+
+        //Outdoor Hang Interests
+        newApp.Outdoor_Hang_Area_of_Interest__c = '';
+        if (OutdoorHangAreaOfInterest_Leader) { newApp.Outdoor_Hang_Area_of_Interest__c += 'Activity Leader; '; }
+        if (OutdoorHangAreaOfInterest_Support) { newApp.Outdoor_Hang_Area_of_Interest__c += 'General Support; '; }
+        if (OutdoorHangAreaOfInterest_Unsure) { newApp.Outdoor_Hang_Area_of_Interest__c += 'Other/Unsure; '; }
 
         //Josephinium Music Club
         newApp.Josephinum_Music_Club_Availability__c = '';
