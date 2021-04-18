@@ -155,7 +155,7 @@ global class VolunteerApplicationControl {
     public String JamVolunteerEndTime3 { get { return GrcUtils.JamVolunteerEndTime3;} }
 
     Volunteer_Application__c newApp { get; set; }
-    public Boolean validationOn { get { return false; }}
+    public Boolean validationOn { get { return true; }}
 
     // Logic Controls
     public VolunteerApplicationControl() {

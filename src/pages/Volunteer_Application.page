@@ -861,10 +861,10 @@
                                                 <td><apex:inputCheckbox value="{!InstrumentTeacherKeyboards}"/></td>
                                                 <td><span>Keyboards</span></td>
                                             </tr>
-                                            <tr>
+                                            <!-- <tr>
                                                 <td><apex:inputCheckbox value="{!InstrumentTeacherDJ}"/></td>
                                                 <td><span>Turntables/DJ</span></td>
-                                            </tr>
+                                            </tr> -->
                                         </tbody>
                                     </table>
                                 </apex:outputPanel>
